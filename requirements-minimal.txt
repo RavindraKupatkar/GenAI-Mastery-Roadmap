@@ -1,0 +1,53 @@
+# Minimal requirements for development - installs fast, no conflicts
+# For full production stack, use requirements.txt after fixing conflicts
+
+# Core Data Science (Required for Weeks 1-6)
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+
+# Jupyter & Notebooks
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipykernel>=6.25.0
+ipywidgets>=8.1.0
+notebook>=7.0.0
+
+# Data Processing
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+pyarrow>=12.0.0
+
+# Visualization
+plotly>=5.16.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+pyyaml>=6.0.0
+click>=8.1.0
+
+# Testing & Quality
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.1.0
+
+# Web Framework (for later weeks)
+fastapi>=0.103.0
+uvicorn>=0.23.0
+streamlit>=1.26.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# ML Utilities
+joblib>=1.3.0
+
+# Computer Vision
+opencv-python>=4.8.0
+Pillow>=10.0.0

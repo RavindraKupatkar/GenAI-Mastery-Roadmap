@@ -1,0 +1,7 @@
+# Python Dependencies for Learning Platform Backend (if needed)
+# Note: Main app is React/Vite (see package.json)
+# This file is for optional Python tooling/scripts only
+
+# If you need to run Python scripts for data processing or utilities:
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
