@@ -42,6 +42,13 @@ This isn't just another learning platform. This is YOUR journey tracker, account
 - Practice strategies for confidence
 - System design case studies
 
+### 🔐 Authentication & Personalization
+- **Secure Login** - Email/Password, Google, and GitHub OAuth support
+- **Gender-Based Personalization** 👤 - Tailored experience for Guys (BMW/Success focus) and Queens (Self-worth/Empowerment focus)
+- **Custom Greetings** - "Welcome Back, [Name]!" with personalized motivational quotes
+- **Profile Settings** ⚙️ - Update your name and gender preference anytime
+- **Email Verification** 📧 - Secure signup flow with verification templates
+
 ### 📊 Smart Dashboard
 - Visual overview of your journey
 - Current phase and week tracking
@@ -87,6 +94,9 @@ learning-platform/
 │   │   ├── LearningView.jsx       # Daily task tracking
 │   │   ├── InterviewPrepView.jsx  # Interview questions
 │   │   ├── PortfolioView.jsx      # Portfolio projects
+│   │   ├── AuthPage.jsx           # Login/Signup & Gender selection
+│   │   ├── ProfileSettings.jsx    # User profile management
+│   │   ├── ProtectedRoute.jsx     # Route guard
 │   │   └── Sidebar.jsx            # Navigation sidebar
 │   ├── data/
 │   │   └── curriculum.js          # All learning content
