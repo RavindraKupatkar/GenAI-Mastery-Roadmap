@@ -49,24 +49,29 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const signUp = async (email, password) => {
+  const signUp = async (email, password, fullName = '', gender = '') => {
     setError(null);
     try {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
+          // Store user profile data in metadata
+          data: {
+            full_name: fullName,
+            gender: gender
+          },
           // ✅ Supabase will send verification email to this URL
           emailRedirectTo: `${window.location.origin}/auth/callback`,
         },
       });
 
       if (error) throw error;
-      
+
       // ✅ User created but email NOT yet verified
       // Return success message to show "Check Email" screen
-      return { 
-        data, 
+      return {
+        data,
         error: null,
         message: 'signup_pending_verification'
       };
@@ -89,7 +94,7 @@ export const AuthProvider = ({ children }) => {
 
       // ✅ Check if email is verified before allowing login
       const { data: { user } } = await supabase.auth.getUser();
-      
+
       if (user && !user.email_confirmed_at) {
         // ❌ User exists but email not verified
         // Sign them out and show verification message
@@ -101,7 +106,7 @@ export const AuthProvider = ({ children }) => {
 
       setUser(user);
       setEmailVerified(true);
-      
+
       return { data, error: null };
 
     } catch (error) {
@@ -127,7 +132,10 @@ export const AuthProvider = ({ children }) => {
     setError(null);
     try {
       // Resend the signup confirmation email
-      const { error } = await supabase.auth.resendPasswordEnvelope(email, 'signup');
+      const { error } = await supabase.auth.resend({
+        type: 'signup',
+        email: email
+      });
 
       if (error) throw error;
       return { error: null };
@@ -135,6 +143,46 @@ export const AuthProvider = ({ children }) => {
       const errorMessage = error?.message || 'Failed to resend verification email.';
       setError(errorMessage);
       return { error };
+    }
+  };
+
+  // Sign in with Google OAuth
+  const signInWithGoogle = async () => {
+    setError(null);
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin
+        }
+      });
+
+      if (error) throw error;
+      return { data, error: null };
+    } catch (error) {
+      const errorMessage = error?.message || 'Failed to sign in with Google.';
+      setError(errorMessage);
+      return { data: null, error };
+    }
+  };
+
+  // Sign in with GitHub OAuth
+  const signInWithGithub = async () => {
+    setError(null);
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'github',
+        options: {
+          redirectTo: window.location.origin
+        }
+      });
+
+      if (error) throw error;
+      return { data, error: null };
+    } catch (error) {
+      const errorMessage = error?.message || 'Failed to sign in with GitHub.';
+      setError(errorMessage);
+      return { data: null, error };
     }
   };
 
@@ -163,6 +211,8 @@ export const AuthProvider = ({ children }) => {
         emailVerified,
         signUp,
         signIn,
+        signInWithGoogle,
+        signInWithGithub,
         signOut,
         resetPassword,
         resendVerificationEmail,

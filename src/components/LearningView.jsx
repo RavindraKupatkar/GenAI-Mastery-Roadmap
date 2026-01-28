@@ -1,16 +1,46 @@
 import React, { useState } from 'react';
-import { CheckCircle, Circle, ChevronRight, ExternalLink, Lightbulb, Target, Clock, Award, Sparkles } from 'lucide-react';
+import { CheckCircle, Circle, ChevronRight, ExternalLink, Lightbulb, Target, Clock, Award, Sparkles, Play, Youtube, Code } from 'lucide-react';
 import Confetti from './Confetti';
 
-const LearningView = ({ selectedPhase, selectedWeek, selectedDay, setSelectedDay, curriculum, userProgress, completeTask }) => {
+const LearningView = ({ selectedPhase, selectedWeek, selectedDay, setSelectedDay, curriculum, userProgress, completeTask, user }) => {
   const [confettiTrigger, setConfettiTrigger] = useState(0);
-  
+
+  // Get user's gender for filtering quotes
+  const userGender = user?.user_metadata?.gender || 'male';
+
+  // Helper function to filter day quote based on gender
+  const getGenderSpecificQuote = (dayQuote) => {
+    if (!dayQuote) return 'Daily Learning';
+
+    // If the quote contains both Boys and Girls sections, extract the relevant one
+    if (dayQuote.includes('Boys:') || dayQuote.includes('Girls:') || dayQuote.includes('🏎️') || dayQuote.includes('👑')) {
+      // For girls, try to find a Girls-specific quote first
+      if (userGender === 'female') {
+        // If this is a Boys quote, return a generic daily goal instead
+        if (dayQuote.includes('Boys:') || (dayQuote.includes('🏎️') && !dayQuote.includes('👑'))) {
+          return '👑 Queen energy day! Focus on mastering today\'s concepts';
+        }
+        // Remove the "Girls:" prefix if present
+        return dayQuote.replace('👑 Girls: ', '👑 ').replace('Girls: ', '');
+      } else {
+        // For boys, check if it's a Girls quote
+        if (dayQuote.includes('Girls:') || (dayQuote.includes('👑') && !dayQuote.includes('🏎️'))) {
+          return '🏎️ BMW day! Every concept mastered = one step closer to the M5';
+        }
+        // Remove the "Boys:" prefix if present  
+        return dayQuote.replace('🏎️ Boys: ', '🏎️ ').replace('Boys: ', '');
+      }
+    }
+
+    return dayQuote;
+  };
+
   if (selectedPhase === null || selectedWeek === null || selectedDay === null) {
-    return <div className="text-center py-12 text-gray-500">Select a phase, week, and day to start learning</div>;
+    return <div className="text-center py-12 text-gray-500">Select a month, week, and day to start learning</div>;
   }
 
-  const phase = curriculum.phases.find(p => p.id === selectedPhase);
-  const week = phase?.weeks_detail[selectedWeek - 1];
+  const month = curriculum.months?.find(m => m.id === selectedPhase);
+  const week = month?.weeks_detail?.find(w => w.weekNum === selectedWeek);
   const day = week?.days?.[selectedDay];
 
   if (!day) {
@@ -21,7 +51,7 @@ const LearningView = ({ selectedPhase, selectedWeek, selectedDay, setSelectedDay
         <div className="text-gray-600 mb-6">
           Focus on mastering Week 1 first. Detailed content for subsequent weeks will be available as you advance.
         </div>
-        <button 
+        <button
           onClick={() => {
             setSelectedDay(0);
           }}
@@ -33,30 +63,33 @@ const LearningView = ({ selectedPhase, selectedWeek, selectedDay, setSelectedDay
     );
   }
 
+  // Get the gender-filtered quote for display
+  const displayQuote = getGenderSpecificQuote(day.day);
+
   const isTaskCompleted = (taskId) => {
     return userProgress.completedTasks[taskId]?.completed || false;
   };
 
   const handleTaskToggle = (task) => {
     if (!isTaskCompleted(task.id)) {
-      completeTask(task.id, task.xp || 10, task.estimatedHours || 0);
-      setConfettiTrigger(prev => prev + 1); // Trigger confetti celebration!
+      completeTask(task.id, task.xp || 10, task.estimatedHours || 0.5);
+      setConfettiTrigger(prev => prev + 1);
     }
   };
 
-  const renderTask = (task) => {
-    const completed = isTaskCompleted(task.id);
-    
+  // Render a concept video card
+  const renderConcept = (concept) => {
+    const completed = isTaskCompleted(concept.id);
+
     return (
-      <div 
-        key={task.id}
-        className={`border-2 rounded-lg p-4 transition-all ${
-          completed ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-white hover:border-blue-400'
-        }`}
+      <div
+        key={concept.id}
+        className={`border-2 rounded-lg p-4 transition-all ${completed ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-white hover:border-blue-400'
+          }`}
       >
         <div className="flex items-start gap-3">
-          <button 
-            onClick={() => handleTaskToggle(task)}
+          <button
+            onClick={() => handleTaskToggle(concept)}
             className="mt-1 flex-shrink-0"
           >
             {completed ? (
@@ -65,95 +98,34 @@ const LearningView = ({ selectedPhase, selectedWeek, selectedDay, setSelectedDay
               <Circle className="text-gray-400 hover:text-blue-500" size={24} />
             )}
           </button>
-          
+
           <div className="flex-1">
             <div className="flex items-start justify-between gap-2 mb-2">
               <div>
-                <div className="font-bold text-lg">{task.title}</div>
-                {task.time && <div className="text-sm text-gray-600">{task.time}</div>}
+                <div className="font-bold text-lg flex items-center gap-2">
+                  <Youtube className="text-red-500" size={18} />
+                  {concept.title}
+                </div>
+                <div className="text-sm text-gray-600">{concept.channel} • {concept.duration}</div>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
-                {task.xp && (
-                  <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded font-semibold">
-                    +{task.xp} XP
-                  </span>
-                )}
-                {task.estimatedHours && (
-                  <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                    {task.estimatedHours}h
-                  </span>
-                )}
+                <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded font-semibold">
+                  +{concept.xp} XP
+                </span>
               </div>
             </div>
 
-            {task.description && (
-              <p className="text-gray-700 mb-3">{task.description}</p>
-            )}
-
-            {task.resources && task.resources.length > 0 && (
-              <div className="mb-3">
-                <div className="text-sm font-semibold text-gray-700 mb-1">Resources:</div>
-                <div className="space-y-1">
-                  {task.resources.map((resource, idx) => (
-                    <a 
-                      key={idx}
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      <ExternalLink size={14} />
-                      <span>{resource.name}</span>
-                      <span className="text-xs text-gray-500">({resource.type})</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {task.action && (
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-3 mb-3">
-                <div className="text-sm font-semibold text-blue-900 mb-1">Action:</div>
-                <div className="text-sm text-blue-800">{task.action}</div>
-              </div>
-            )}
-
-            {task.output && (
-              <div className="bg-purple-50 border-l-4 border-purple-500 p-3 mb-3">
-                <div className="text-sm font-semibold text-purple-900 mb-1">Expected Output:</div>
-                <div className="text-sm text-purple-800">{task.output}</div>
-              </div>
-            )}
-
-            {task.aiRelevance && (
-              <div className="bg-green-50 border-l-4 border-green-500 p-3 mb-3">
-                <div className="text-sm font-semibold text-green-900 mb-1 flex items-center gap-1">
-                  <Lightbulb size={14} />
-                  Why This Matters for AI:
-                </div>
-                <div className="text-sm text-green-800">{task.aiRelevance}</div>
-              </div>
-            )}
-
-            {task.tcsBridge && (
-              <div className="bg-orange-50 border-l-4 border-orange-500 p-3 mb-3">
-                <div className="text-sm font-semibold text-orange-900 mb-1">TCS Project Connection:</div>
-                <div className="text-sm text-orange-800">{task.tcsBridge}</div>
-              </div>
-            )}
-
-            {task.stuck && (
-              <div className="bg-gray-50 border-l-4 border-gray-400 p-3">
-                <div className="text-sm font-semibold text-gray-900 mb-1">If You're Stuck:</div>
-                <div className="text-sm text-gray-700">{task.stuck}</div>
-              </div>
-            )}
-
-            {task.portfolioNote && (
-              <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3 mt-3">
-                <div className="text-sm font-semibold text-yellow-900 mb-1">Portfolio Note:</div>
-                <div className="text-sm text-yellow-800">{task.portfolioNote}</div>
-              </div>
+            {concept.videoUrl && (
+              <a
+                href={concept.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 hover:underline bg-blue-50 px-3 py-2 rounded-lg"
+              >
+                <Play size={16} />
+                Watch Video
+                <ExternalLink size={14} />
+              </a>
             )}
           </div>
         </div>
@@ -161,60 +133,155 @@ const LearningView = ({ selectedPhase, selectedWeek, selectedDay, setSelectedDay
     );
   };
 
-  const renderTaskSection = (section, sectionName) => {
-    if (!section || !section.tasks) return null;
+  // Render a hands-on task card
+  const renderHandson = (task) => {
+    const completed = isTaskCompleted(task.id);
+
+    const difficultyColors = {
+      easy: 'bg-green-100 text-green-800',
+      medium: 'bg-yellow-100 text-yellow-800',
+      hard: 'bg-red-100 text-red-800'
+    };
 
     return (
-      <div className="mb-8">
-        <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg p-4 mb-4">
-          <div className="flex items-center justify-between flex-wrap gap-2">
-            <div>
-              <div className="text-2xl font-bold">{sectionName}</div>
-              <div className="text-sm opacity-90">{section.timeSlot}</div>
+      <div
+        key={task.id}
+        className={`border-2 rounded-lg p-4 transition-all ${completed ? 'border-green-500 bg-green-50' : 'border-gray-200 bg-white hover:border-purple-400'
+          }`}
+      >
+        <div className="flex items-start gap-3">
+          <button
+            onClick={() => handleTaskToggle(task)}
+            className="mt-1 flex-shrink-0"
+          >
+            {completed ? (
+              <CheckCircle className="text-green-600" size={24} />
+            ) : (
+              <Circle className="text-gray-400 hover:text-purple-500" size={24} />
+            )}
+          </button>
+
+          <div className="flex-1">
+            <div className="flex items-start justify-between gap-2 mb-2">
+              <div>
+                <div className="font-bold text-lg flex items-center gap-2">
+                  <Code className="text-purple-500" size={18} />
+                  {task.title}
+                </div>
+                <div className="text-sm text-gray-600">{task.platform}</div>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <span className={`text-xs px-2 py-1 rounded font-semibold ${difficultyColors[task.difficulty] || difficultyColors.medium}`}>
+                  {task.difficulty}
+                </span>
+                <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded font-semibold">
+                  +{task.xp} XP
+                </span>
+              </div>
             </div>
-            <div className="text-sm bg-white/20 px-3 py-1 rounded backdrop-blur">
-              {section.focus}
-            </div>
+
+            {task.url && task.url !== '#' && (
+              <a
+                href={task.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-purple-600 hover:text-purple-800 hover:underline bg-purple-50 px-3 py-2 rounded-lg"
+              >
+                <Code size={16} />
+                Start Challenge
+                <ExternalLink size={14} />
+              </a>
+            )}
           </div>
-        </div>
-        <div className="space-y-4">
-          {section.tasks.map(task => renderTask(task))}
         </div>
       </div>
     );
   };
 
+  // Render weekend project
+  const renderWeekendProject = (project) => {
+    const completed = isTaskCompleted(project.id);
+
+    return (
+      <div className={`border-2 rounded-xl p-6 transition-all ${completed ? 'border-green-500 bg-green-50' : 'border-purple-300 bg-purple-50'
+        }`}>
+        <div className="flex items-start gap-3">
+          <button
+            onClick={() => handleTaskToggle(project)}
+            className="mt-1 flex-shrink-0"
+          >
+            {completed ? (
+              <CheckCircle className="text-green-600" size={28} />
+            ) : (
+              <Circle className="text-purple-400 hover:text-purple-600" size={28} />
+            )}
+          </button>
+
+          <div className="flex-1">
+            <div className="flex items-start justify-between gap-2 mb-3">
+              <div>
+                <div className="font-bold text-xl flex items-center gap-2">
+                  🚀 {project.name}
+                </div>
+                <div className="text-gray-700 mt-1">{project.description}</div>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <span className="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded font-semibold">
+                  {project.estimatedHours}h
+                </span>
+                <span className="bg-yellow-200 text-yellow-800 text-sm px-3 py-1 rounded font-bold">
+                  +{project.xp} XP
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-4 border border-purple-200">
+              <div className="font-semibold text-purple-900 mb-2">Requirements:</div>
+              <ul className="space-y-1">
+                {project.requirements?.map((req, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-sm text-gray-700">
+                    <span className="text-purple-500">✓</span> {req}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // Calculate all tasks for progress
   const allTasks = [
-    ...(day.morning?.tasks || []),
-    ...(day.night?.tasks || []),
-    ...(day.allDay?.tasks || [])
+    ...(day.concepts || []),
+    ...(day.handson || []),
+    ...(day.weekendProject ? [day.weekendProject] : [])
   ];
-  
+
   const completedCount = allTasks.filter(t => isTaskCompleted(t.id)).length;
   const progressPercent = allTasks.length > 0 ? (completedCount / allTasks.length) * 100 : 0;
 
   return (
     <div className="max-w-6xl mx-auto">
       <Confetti trigger={confettiTrigger} />
-      
+
       {/* Day Header */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white mb-6 shadow-2xl">
         <div className="flex items-center justify-between flex-wrap gap-4 mb-4">
           <div>
-            <div className="text-sm opacity-90">Phase {selectedPhase} • Week {selectedWeek}</div>
-            <h1 className="text-4xl font-bold">{day.day}</h1>
+            <div className="text-sm opacity-90">Month {selectedPhase} • Week {selectedWeek}</div>
+            <h1 className="text-4xl font-bold">{displayQuote}</h1>
             <div className="text-lg mt-2 opacity-90">{day.dailyGoal}</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold mb-1">{day.totalXP}</div>
+            <div className="text-5xl font-bold mb-1">{day.totalXP || 0}</div>
             <div className="text-sm opacity-90">Total XP Available</div>
-            <div className="text-sm mt-1">{day.totalHours} hours</div>
           </div>
         </div>
 
         {/* Progress Bar */}
         <div className="bg-white/20 rounded-full h-3 mb-2">
-          <div 
+          <div
             className="bg-white h-3 rounded-full transition-all duration-500"
             style={{ width: `${progressPercent}%` }}
           ></div>
@@ -246,19 +313,75 @@ const LearningView = ({ selectedPhase, selectedWeek, selectedDay, setSelectedDay
         </button>
       </div>
 
-      {/* Task Sections */}
-      {day.morning && renderTaskSection(day.morning, "Morning Session")}
-      {day.night && renderTaskSection(day.night, "Night Session")}
-      {day.allDay && renderTaskSection(day.allDay, "All Day Focus")}
+      {/* Concepts Section */}
+      {day.concepts && day.concepts.length > 0 && (
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg p-4 mb-4">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <div className="text-2xl font-bold flex items-center gap-2">
+                  <Youtube size={24} />
+                  Learn Concepts
+                </div>
+                <div className="text-sm opacity-90">Watch these videos to understand today's topics</div>
+              </div>
+              <div className="text-sm bg-white/20 px-3 py-1 rounded backdrop-blur">
+                {day.concepts.length} videos
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4">
+            {day.concepts.map(concept => renderConcept(concept))}
+          </div>
+        </div>
+      )}
 
-      {/* Checkpoint */}
-      {day.checkpoint && (
+      {/* Hands-on Section */}
+      {day.handson && day.handson.length > 0 && (
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg p-4 mb-4">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <div className="text-2xl font-bold flex items-center gap-2">
+                  <Code size={24} />
+                  Hands-on Practice
+                </div>
+                <div className="text-sm opacity-90">Apply what you learned with these exercises</div>
+              </div>
+              <div className="text-sm bg-white/20 px-3 py-1 rounded backdrop-blur">
+                {day.handson.length} challenges
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4">
+            {day.handson.map(task => renderHandson(task))}
+          </div>
+        </div>
+      )}
+
+      {/* Weekend Project */}
+      {day.weekendProject && (
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg p-4 mb-4">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <div className="text-2xl font-bold">🎯 Weekend Project</div>
+                <div className="text-sm opacity-90">Build something awesome to solidify your learning!</div>
+              </div>
+            </div>
+          </div>
+          {renderWeekendProject(day.weekendProject)}
+        </div>
+      )}
+
+      {/* Day Complete Message */}
+      {progressPercent === 100 && (
         <div className="bg-gradient-to-r from-green-500 to-teal-500 rounded-xl p-6 text-white shadow-xl">
           <div className="flex items-center gap-3 mb-3">
-            <Target size={32} />
-            <h3 className="text-2xl font-bold">Today's Checkpoint</h3>
+            <Award size={32} />
+            <h3 className="text-2xl font-bold">🎉 Day Complete!</h3>
           </div>
-          <p className="text-lg">{day.checkpoint}</p>
+          <p className="text-lg">Amazing work! You've completed all tasks for {day.day}. Keep the momentum going!</p>
         </div>
       )}
     </div>

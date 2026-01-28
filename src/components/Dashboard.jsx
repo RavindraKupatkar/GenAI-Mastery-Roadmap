@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Flame, Trophy, Star, Menu, X } from 'lucide-react';
+import { Flame, Trophy, Star, Menu, X, LogOut, User } from 'lucide-react';
 import { curriculumData } from '../data/curriculum';
 import DashboardView from './DashboardView';
 import PhaseView from './PhaseView';
@@ -9,28 +9,33 @@ import PortfolioView from './PortfolioView';
 import ProgressCharts from './ProgressCharts';
 import Sidebar from './Sidebar';
 import * as supabaseService from '../services/supabase';
+import { useAuth } from '../context/AuthContext';
 
 const Dashboard = () => {
-  // No authentication - just load demo data
+  // Get authenticated user and sign out function
+  const { user, signOut } = useAuth();
+
   const [currentView, setCurrentView] = useState('dashboard');
   const [selectedPhase, setSelectedPhase] = useState(null);
   const [selectedWeek, setSelectedWeek] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
   const [userProgress, setUserProgress] = useState({
-    xp: 1250,
-    level: 2,
-    streak: 5,
+    xp: 0,
+    level: 1,
+    streak: 0,
     completedTasks: {},
     currentPhase: 1,
     currentWeek: 1,
-    totalHoursStudied: 42.5,
+    totalHoursStudied: 0,
     startDate: new Date().toISOString(),
     lastVisit: new Date().toISOString(),
     phaseProgress: {
-      1: { isUnlocked: true, completed: 12, total: 25, percentage: 48 },
-      2: { isUnlocked: true, completed: 0, total: 25, percentage: 0 },
-      3: { isUnlocked: false, completed: 0, total: 25, percentage: 0 },
-      4: { isUnlocked: false, completed: 0, total: 25, percentage: 0 }
+      1: { isUnlocked: true, completed: 0, total: 100, percentage: 0 },
+      2: { isUnlocked: true, completed: 0, total: 100, percentage: 0 },
+      3: { isUnlocked: true, completed: 0, total: 100, percentage: 0 },
+      4: { isUnlocked: true, completed: 0, total: 100, percentage: 0 },
+      5: { isUnlocked: true, completed: 0, total: 100, percentage: 0 },
+      6: { isUnlocked: true, completed: 0, total: 100, percentage: 0 }
     },
     weekProgress: {}
   });
@@ -90,39 +95,39 @@ const Dashboard = () => {
         }
       }
     };
-    
+
     const newLevel = Math.floor(newProgress.xp / 1000) + 1;
     if (newLevel > userProgress.level) {
       newProgress.level = newLevel;
       alert(`🎉 LEVEL UP! You're now Level ${newLevel}! Keep crushing it!`);
     }
-    
+
     // Save to Supabase
     await supabaseService.saveUserProgress(newProgress);
-    
+
     // Update phase and week progress
     await updateProgressTracking(newProgress);
-    
+
     setUserProgress(newProgress);
   };
 
   const updateProgressTracking = async (progress) => {
     // Calculate phase progress based on completed tasks
     const phaseId = progress.currentPhase;
-    const phase = curriculumData.phases.find(p => p.id === phaseId);
-    
-    if (phase && phase.weeks_detail) {
-      // Count total tasks in phase
+    const month = curriculumData.months?.find(m => m.id === phaseId);
+
+    if (month && month.weeks_detail) {
+      // Count total tasks in month
       let totalTasksInPhase = 0;
       let completedTasksInPhase = 0;
 
-      phase.weeks_detail.forEach(week => {
+      month.weeks_detail.forEach(week => {
         if (week.days) {
           week.days.forEach(day => {
             const allTasks = [
-              ...(day.morning?.tasks || []),
-              ...(day.night?.tasks || []),
-              ...(day.allDay?.tasks || [])
+              ...(day.concepts || []),
+              ...(day.handson || []),
+              ...(day.weekendProject ? [day.weekendProject] : [])
             ];
             totalTasksInPhase += allTasks.length;
             completedTasksInPhase += allTasks.filter(t => progress.completedTasks[t.id]).length;
@@ -134,16 +139,16 @@ const Dashboard = () => {
       await supabaseService.updatePhaseProgress(phaseId, completedTasksInPhase, totalTasksInPhase);
 
       // Update week progress
-      const currentWeek = phase.weeks_detail.find(w => w.weekNum === progress.currentWeek);
+      const currentWeek = month.weeks_detail.find(w => w.weekNum === progress.currentWeek);
       if (currentWeek && currentWeek.days) {
         let totalTasksInWeek = 0;
         let completedTasksInWeek = 0;
 
         currentWeek.days.forEach(day => {
           const allTasks = [
-            ...(day.morning?.tasks || []),
-            ...(day.night?.tasks || []),
-            ...(day.allDay?.tasks || [])
+            ...(day.concepts || []),
+            ...(day.handson || []),
+            ...(day.weekendProject ? [day.weekendProject] : [])
           ];
           totalTasksInWeek += allTasks.length;
           completedTasksInWeek += allTasks.filter(t => progress.completedTasks[t.id]).length;
@@ -155,10 +160,10 @@ const Dashboard = () => {
   };
 
   const renderView = () => {
-    switch(currentView) {
+    switch (currentView) {
       case 'dashboard':
-        return <DashboardView 
-          userProgress={userProgress} 
+        return <DashboardView
+          userProgress={userProgress}
           curriculum={curriculumData}
           setSelectedPhase={setSelectedPhase}
           setSelectedWeek={setSelectedWeek}
@@ -166,7 +171,7 @@ const Dashboard = () => {
           setCurrentView={setCurrentView}
         />;
       case 'phase':
-        return <PhaseView 
+        return <PhaseView
           selectedPhase={selectedPhase}
           curriculum={curriculumData}
           setSelectedWeek={setSelectedWeek}
@@ -175,7 +180,7 @@ const Dashboard = () => {
           userProgress={userProgress}
         />;
       case 'learning':
-        return <LearningView 
+        return <LearningView
           selectedPhase={selectedPhase}
           selectedWeek={selectedWeek}
           selectedDay={selectedDay}
@@ -183,41 +188,43 @@ const Dashboard = () => {
           curriculum={curriculumData}
           userProgress={userProgress}
           completeTask={completeTask}
+          user={user}
         />;
       case 'interview':
         return <InterviewPrepView curriculum={curriculumData} />;
       case 'portfolio':
         return <PortfolioView curriculum={curriculumData} />;
       case 'charts':
-        return <ProgressCharts 
+        return <ProgressCharts
           userProgress={userProgress}
         />;
       default:
-        return <DashboardView 
-          userProgress={userProgress} 
+        return <DashboardView
+          userProgress={userProgress}
           curriculum={curriculumData}
           setSelectedPhase={setSelectedPhase}
           setSelectedWeek={setSelectedWeek}
           setSelectedDay={setSelectedDay}
           setCurrentView={setCurrentView}
+          user={user}
         />;
     }
   };
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar 
+      <Sidebar
         currentView={currentView}
         setCurrentView={setCurrentView}
         showSidebar={showSidebar}
         setShowSidebar={setShowSidebar}
         userProgress={userProgress}
       />
-      
+
       <div className={`flex-1 transition-all duration-300 ${showSidebar ? 'ml-64' : 'ml-0'}`}>
         <header className="bg-white shadow-sm sticky top-0 z-10">
           <div className="px-6 py-4 flex items-center justify-between">
-            <button 
+            <button
               onClick={() => setShowSidebar(!showSidebar)}
               className="p-2 hover:bg-gray-100 rounded-lg transition"
             >
@@ -236,10 +243,29 @@ const Dashboard = () => {
                 <Star className="text-blue-500" size={20} />
                 <span className="font-semibold">{userProgress.xp} XP</span>
               </div>
+
+              {/* User Info & Logout */}
+              <div className="flex items-center gap-3 ml-4 pl-4 border-l border-gray-200">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <User className="text-blue-600" size={16} />
+                  </div>
+                  <span className="text-sm font-medium text-gray-700 max-w-[150px] truncate">
+                    {user?.email || 'Guest'}
+                  </span>
+                </div>
+                <button
+                  onClick={signOut}
+                  className="p-2 text-gray-500 hover:text-red-500 hover:bg-red-50 rounded-lg transition"
+                  title="Sign Out"
+                >
+                  <LogOut size={18} />
+                </button>
+              </div>
             </div>
           </div>
         </header>
-        
+
         <main className="p-6">
           {renderView()}
         </main>

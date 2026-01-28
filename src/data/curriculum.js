@@ -1,2320 +1,4448 @@
-import { Code, Brain, Zap, Trophy } from 'lucide-react';
+import { Code, Brain, Zap, Trophy, Rocket, Briefcase } from 'lucide-react';
 
 export const curriculumData = {
   metadata: {
-    totalWeeks: 20,
-    totalHours: 700,
-    targetOutcome: "Production-ready Gen AI Engineer earning 12-15k QAR+",
-    commitment: "Balanced 30-40 hrs/week for sustainable learning"
+    totalMonths: 6,
+    totalWeeks: 24,
+    totalHours: 600,
+    targetOutcome: "Production-ready AI Engineer with portfolio",
+    commitment: "3-4 hours daily for 6 months",
+    targetAudience: "2nd year students with no prior AI experience"
   },
-  
-  phases: [
+
+  months: [
     {
       id: 1,
-      title: "Python for AI/ML",
-      weeks: 6,
-      hoursPerWeek: 30,
+      title: "Python Programming Fundamentals",
+      weeks: 4,
       color: "from-blue-500 to-cyan-500",
       icon: Code,
-      description: "Master Python specifically for AI engineering - no fluff",
-      skillProgress: "Python 2/10 → 8/10 | AI-ready Python",
-      projects: [
-        { name: "NumPy Data Processor", week: 1, tech: "Python, NumPy" },
-        { name: "ML Data Pipeline", week: 3, tech: "Python, Pandas, OOP" },
-        { name: "Kaggle EDA Notebook", week: 6, tech: "Pandas, Matplotlib, Seaborn" }
-      ],
+      description: "Master Python from scratch - the foundation of AI Engineering",
+      skillProgress: "Python 0/10 → 7/10",
+
       weeks_detail: [
         {
           weekNum: 1,
-          title: "Python Essentials for AI",
-          goal: "Core Python syntax + data structures for ML",
-          hoursThisWeek: 30,
-          summary: "Variables, data types, control flow, functions, NumPy basics. Weekend: Build NumPy Array Processor.",
-          weekendProject: {
-            name: "NumPy Array Processor",
-            duration: "8 hours",
-            techStack: "Python, NumPy, typing",
-            requirements: [
-              "Load data from CSV using NumPy",
-              "Perform vectorized operations (mean, std, normalization)",
-              "Matrix operations for ML (dot product, transpose)",
-              "Save processed data",
-              "Command-line interface"
-            ],
-            evaluation: "Can process 10,000 records in <1 second",
-            portfolioValue: "Shows: Python basics + NumPy + performance optimization"
-          },
+          title: "Python Basics",
+          goal: "Learn Python syntax, variables, data types, and control flow",
+          hoursThisWeek: 25,
           days: [
             {
-              day: "Monday",
-              dailyGoal: "Setup environment + Python basics for data manipulation",
-              morning: {
-                timeSlot: "8:30-11:00 (2.5hrs)",
-                focus: "Active Learning + Coding",
-                tasks: [
-                  {
-                    id: "p1w1d1m1",
-                    time: "8:30-9:00",
-                    title: "🔧 AI Engineering Environment Setup",
-                    description: "Install Python 3.11, VS Code with AI extensions, Git, create virtual environment",
-                    resources: [
-                      { name: "Python 3.11 Download", url: "https://www.python.org/downloads/", type: "primary" },
-                      { name: "VS Code + Python Extension", url: "https://code.visualstudio.com/docs/python/python-tutorial", type: "primary" }
-                    ],
-                    action: "Install everything, test with: python --version, pip --version, git --version. Create first venv.",
-                    output: "Screenshot of versions + venv activated",
-                    aiRelevance: "Every AI project needs isolated environments (venv) for dependencies",
-                    xp: 25,
-                    estimatedHours: 0.5
-                  },
-                  {
-                    id: "p1w1d1m2",
-                    time: "9:00-10:15",
-                    title: "📊 Python Data Types for ML",
-                    description: "Focus ONLY on data types used in AI: int, float, list, dict, numpy arrays",
-                    resources: [
-                      { name: "Python Data Types Tutorial", url: "https://realpython.com/python-data-types/", type: "primary" }
-                    ],
-                    action: "Learn and code examples with lists and dicts (used everywhere in ML).",
-                    output: "data_types.py with 15 examples",
-                    aiRelevance: "ML models work with: lists (features), dicts (hyperparameters), floats (weights)",
-                    xp: 40,
-                    estimatedHours: 1.25
-                  },
-                  {
-                    id: "p1w1d1m3",
-                    time: "10:15-10:30",
-                    title: "☕ Break",
-                    description: "Stand up, stretch, water - NO PHONE!",
-                    xp: 5,
-                    estimatedHours: 0.25
-                  },
-                  {
-                    id: "p1w1d1m4",
-                    time: "10:30-11:00",
-                    title: "💻 Build: Data Manipulation Script",
-                    description: "Write script that processes lists of numbers (like ML features)",
-                    action: "Create features_processor.py: Take list of numbers, calculate mean, find max/min, normalize (0-1 range)",
-                    output: "Working script that processes [1,2,3,4,5] → calculates stats → outputs normalized values",
-                    aiRelevance: "This is EXACTLY what you do in ML preprocessing",
-                    xp: 50,
-                    estimatedHours: 0.5
-                  }
-                ]
+              day: "🏎️ Boys: That BMW M5's engine runs on 600+ lines of code. You'll need 60,000+ to afford it. Start with print('Hello World')",
+              dailyGoal: "Setup environment and understand Python basics",
+              concepts: [
+                {
+                  id: "m1w1d1c1",
+                  title: "What is Python? Why Python for AI?",
+                  videoUrl: "https://www.youtube.com/watch?v=Y8Tko2YC5hA",
+                  channel: "Krish Naik",
+                  duration: "15 min",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d1c2",
+                  title: "Installing Python & VS Code Setup",
+                  videoUrl: "https://www.youtube.com/watch?v=bCY4akMn5vU",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 20
+                },
+                {
+                  id: "m1w1d1c3",
+                  title: "Variables and Data Types",
+                  videoUrl: "https://www.youtube.com/watch?v=ORCuz7s5cCY",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w1d1h1",
+                  title: "Print 'Hello World' variations",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/523b4ff7adca849afe000035",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d1h2",
+                  title: "String to Integer conversion",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/544675c6f971f7399a000e79",
+                  difficulty: "easy",
+                  xp: 15
+                }
+              ],
+              totalXP: 90
+            },
+            {
+              day: "👑 Girls: Your code should be as elegant as your standards. Lists, strings, tuples - organized like a queen's priorities",
+              dailyGoal: "Master Python data types in depth",
+              concepts: [
+                {
+                  id: "m1w1d2c1",
+                  title: "Strings in Python",
+                  videoUrl: "https://www.youtube.com/watch?v=lSItwlnF0eU",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 20
+                },
+                {
+                  id: "m1w1d2c2",
+                  title: "Lists and Tuples",
+                  videoUrl: "https://www.youtube.com/watch?v=Eaz5e6M8tL4",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w1d2c3",
+                  title: "Dictionaries and Sets",
+                  videoUrl: "https://www.youtube.com/watch?v=XCcpzWs-CI4",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w1d2h1",
+                  title: "Reverse a String",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/5168bb5dfe9a00b126000018",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d2h2",
+                  title: "Find the smallest integer in array",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/55a2d7ebe362f0d69800007f",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d2h3",
+                  title: "Count characters in string",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/52efefcbcdf57161d4000091",
+                  difficulty: "easy",
+                  xp: 15
+                }
+              ],
+              totalXP: 115
+            },
+            {
+              day: "🚗 Boys: Lamborghini engineers don't guess operators, they KNOW them. +, -, *, / - precision is power",
+              dailyGoal: "Learn operators and expressions",
+              concepts: [
+                {
+                  id: "m1w1d3c1",
+                  title: "Arithmetic and Comparison Operators",
+                  videoUrl: "https://www.youtube.com/watch?v=v5MR5JnKcZI",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 20
+                },
+                {
+                  id: "m1w1d3c2",
+                  title: "Logical and Bitwise Operators",
+                  videoUrl: "https://www.youtube.com/watch?v=PgAu4MfVwWw",
+                  channel: "Corey Schafer",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w1d3h1",
+                  title: "Basic Calculator Operations",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/57356c55867b9b7a60000bd7",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d3h2",
+                  title: "Even or Odd",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/53da3dbb4a5168369a0000fe",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d3h3",
+                  title: "Multiply numbers",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/50654ddff44f800200000004",
+                  difficulty: "easy",
+                  xp: 15
+                }
+              ],
+              totalXP: 85
+            },
+            {
+              day: "💎 Girls: If-else is life. If he's worthy, keep him. Else, delete him from memory. Same logic applies to bugs",
+              dailyGoal: "Master control flow - if/else statements",
+              concepts: [
+                {
+                  id: "m1w1d4c1",
+                  title: "If-Else Statements",
+                  videoUrl: "https://www.youtube.com/watch?v=f4KOjWS_KZs",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w1d4c2",
+                  title: "Nested Conditions and elif",
+                  videoUrl: "https://www.youtube.com/watch?v=IBOHc87yFYw",
+                  channel: "Corey Schafer",
+                  duration: "25 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w1d4h1",
+                  title: "Positive, Negative or Zero",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/5a76b36f8038ad0f920001a0",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d4h2",
+                  title: "Grade Calculator",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/55cbd4ba903825f7970000f5",
+                  difficulty: "easy",
+                  xp: 20
+                },
+                {
+                  id: "m1w1d4h3",
+                  title: "Leap Year Checker",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/526c7b931962fe43c80001fc",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 100
+            },
+            {
+              day: "🏁 Boys: RCB lost 7 finals because they didn't loop through their mistakes. For-while mastery = no repeat failures",
+              dailyGoal: "Learn loops - for and while",
+              concepts: [
+                {
+                  id: "m1w1d5c1",
+                  title: "For Loops in Python",
+                  videoUrl: "https://www.youtube.com/watch?v=0ZvaDa8eT5s",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w1d5c2",
+                  title: "While Loops and Loop Control",
+                  videoUrl: "https://www.youtube.com/watch?v=HZARImviDxg",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w1d5h1",
+                  title: "Sum of Numbers 1 to N",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/57f780909f7e8e5b790005ea",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d5h2",
+                  title: "Factorial Calculator",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/57a049e253ba33ac5e000212",
+                  difficulty: "easy",
+                  xp: 20
+                },
+                {
+                  id: "m1w1d5h3",
+                  title: "FizzBuzz",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/5300901726d12b80e8000498",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 100
+            },
+            {
+              day: "🌟 Girls: Functions are self-respect in code form. Define them once, call them when YOU decide. Know your worth",
+              dailyGoal: "Functions in Python",
+              concepts: [
+                {
+                  id: "m1w1d6c1",
+                  title: "Defining Functions",
+                  videoUrl: "https://www.youtube.com/watch?v=u-OmVr_fT4s",
+                  channel: "Krish Naik",
+                  duration: "35 min",
+                  xp: 30
+                },
+                {
+                  id: "m1w1d6c2",
+                  title: "Parameters, Arguments, Return Values",
+                  videoUrl: "https://www.youtube.com/watch?v=9Os0o3wzS_I",
+                  channel: "Corey Schafer",
+                  duration: "30 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w1d6c3",
+                  title: "*args and **kwargs",
+                  videoUrl: "https://www.youtube.com/watch?v=4jBJhCaNrWU",
+                  channel: "Corey Schafer",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w1d6h1",
+                  title: "Create greeting function",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/55225023e1be1ec8bc000390",
+                  difficulty: "easy",
+                  xp: 15
+                },
+                {
+                  id: "m1w1d6h2",
+                  title: "Sum function with variable args",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/5168b125faced29f66000005",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 110
+            },
+            {
+              day: "🔥 Weekend Project: The temperature converter you build today is like your standards - precise and non-negotiable",
+              dailyGoal: "Weekend Project - Build Temperature Converter",
+              concepts: [],
+              weekendProject: {
+                id: "m1w1proj",
+                name: "Temperature Converter",
+                description: "Build a CLI app that converts between Celsius, Fahrenheit, and Kelvin",
+                requirements: [
+                  "Accept user input for temperature value",
+                  "Menu to select conversion type",
+                  "Use functions for each conversion",
+                  "Handle invalid inputs gracefully",
+                  "Allow multiple conversions in one session"
+                ],
+                xp: 100,
+                estimatedHours: 3
               },
-              night: {
-                timeSlot: "10:30-11:30 (1hr)",
-                focus: "Passive Learning",
-                tasks: [
-                  {
-                    id: "p1w1d1n1",
-                    time: "10:30-11:15",
-                    title: "📺 Watch: Python for Data Science",
-                    description: "Passive watching - understand the bigger picture",
-                    resources: [
-                      { name: "Corey Schafer - Python Tutorial", url: "https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7", type: "primary" }
-                    ],
-                    xp: 20,
-                    estimatedHours: 0.75
-                  },
-                  {
-                    id: "p1w1d1n2",
-                    time: "11:15-11:30",
-                    title: "📝 Daily Reflection",
-                    description: "What worked? What was hard? How does this apply to your TCS work?",
-                    xp: 10,
-                    estimatedHours: 0.25
-                  }
-                ]
-              },
-              checkpoint: "Can you create lists, dicts, and calculate basic statistics?",
-              totalXP: 150,
-              totalHours: 3.5
+              totalXP: 100
             }
           ]
         },
         {
           weekNum: 2,
-          title: "OOP for ML Architectures",
-          goal: "Design reusable ML components with classes",
-          hoursThisWeek: 30,
-          summary: "Classes, inheritance, design patterns for ML pipelines. Build ML Pipeline library (OOP-based). Weekend: Build Sklearn-style estimator class.",
-          resources: [
-            { name: "Python OOP Tutorial - Corey Schafer", url: "https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc", type: "video" },
-            { name: "Real Python - OOP Guide", url: "https://realpython.com/python3-object-oriented-programming/", type: "article" },
-            { name: "Scikit-learn BaseEstimator", url: "https://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html", type: "docs" },
-            { name: "Design Patterns for ML", url: "https://www.oreilly.com/library/view/building-machine-learning/9781492053187/", type: "book" },
-            { name: "OOP Design Patterns - TechWithTim", url: "https://www.youtube.com/watch?v=v_DaycSOcRc", type: "video" },
-            { name: "Building ML Classes - Sentdex", url: "https://www.youtube.com/watch?v=OGxgnH8y2NM&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v", type: "video" }
-          ],
-          logicBuilding: {
-            description: "Master OOP problem-solving patterns before building ML components",
-            videoResources: [
-              { name: "OOP Design Thinking - Tech With Tim", url: "https://www.youtube.com/watch?v=pTB0EiLXUC8", type: "video", duration: "25 min" },
-              { name: "Class Design Patterns", url: "https://www.youtube.com/watch?v=tv-_1er1mWI", type: "video", duration: "30 min" },
-              { name: "Object-Oriented Problem Solving", url: "https://www.youtube.com/watch?v=m_MQYyJpIjg", type: "video", duration: "40 min" }
-            ],
-            platforms: [
-              { name: "LeetCode - OOP Problems", url: "https://leetcode.com/problemset/all/?topicSlugs=object-oriented-design", type: "practice" },
-              { name: "HackerRank - OOP Track", url: "https://www.hackerrank.com/domains/python?filters%5Bsubdomains%5D%5B%5D=py-classes", type: "practice" }
-            ],
-            topics: [
-              {
-                topic: "Classes & Objects",
-                patterns: ["Encapsulation", "Data hiding", "Method design"],
-                problems: [
-                  { difficulty: "easy", problem: "Create a 'BankAccount' class with deposit(), withdraw(), check_balance() methods", platform: "HackerRank", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Build a 'Student' class with name, grades list, calculate_average() method", platform: "Custom", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Design 'Rectangle' class with area(), perimeter(), and is_square() methods", platform: "LeetCode", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Create 'ShoppingCart' class: add_item(), remove_item(), total_price() with discounts", platform: "Custom", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Build 'Library' class managing multiple Book objects with search(), borrow()", platform: "Project", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Design 'Temperature' class converting between C/F/K with validation", platform: "HackerRank", estimatedTime: "20 min" },
-                  { difficulty: "hard", problem: "Implement 'TaskManager' with priority queue, add(), remove(), get_next()", platform: "LeetCode", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Create 'Inventory' system with stock tracking, reorder alerts, transactions", platform: "Project", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Build 'DatabaseConnection' class with connection pooling and retry logic", platform: "Advanced", estimatedTime: "50 min" }
-                ]
-              },
-              {
-                topic: "Inheritance",
-                patterns: ["Parent-child relationships", "super()", "Method overriding"],
-                problems: [
-                  { difficulty: "easy", problem: "Create 'Animal' base class, derive 'Dog' and 'Cat' with speak() method", platform: "HackerRank", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Build 'Shape' parent, derive 'Circle' and 'Square' with area() override", platform: "LeetCode", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "Design 'Employee' base, derive 'Manager' and 'Developer' with salary calculation", platform: "Custom", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Create 'Vehicle' hierarchy: Car, Bike, Truck with fuel_efficiency()", platform: "HackerRank", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Build 'Account' base, derive 'SavingsAccount', 'CheckingAccount' with interest logic", platform: "Project", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Implement 'Transformer' base class, derive scalers with fit()/transform()", platform: "ML-focused", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Design multi-level inheritance: Person → Student → GraduateStudent with super()", platform: "Advanced", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Build ML model hierarchy: BaseModel → LinearModel → Ridge/Lasso", platform: "ML Project", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Create payment system: Payment → CreditCard/PayPal/Crypto with validation", platform: "Project", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "Encapsulation & Properties",
-                patterns: ["Private attributes", "@property", "Data validation"],
-                problems: [
-                  { difficulty: "easy", problem: "Create class with private _balance, use @property for read-only access", platform: "HackerRank", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Build 'Person' with _age, validate (0-150) in setter", platform: "Custom", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Design 'Product' with _price, ensure price >= 0 in setter", platform: "LeetCode", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Create 'User' with _password (hashed), _email (validated format)", platform: "Project", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Build 'Matrix' class with private _data, validate dimensions in operations", platform: "ML-focused", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Design 'Config' singleton with private constructor, get_instance() method", platform: "Advanced", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Implement 'Model' with _weights (private), property returns copy not reference", platform: "ML Project", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Create 'SecureVault' with encryption on write, decryption on read using properties", platform: "Advanced", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Build 'Dataset' with lazy loading: _data loads only when accessed via property", platform: "ML Advanced", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "Polymorphism",
-                patterns: ["Interface-like design", "Duck typing", "Method overloading"],
-                problems: [
-                  { difficulty: "easy", problem: "Create 'draw()' method in Circle, Square, Triangle - call polymorphically", platform: "HackerRank", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "Build 'Serializer': JSON, XML, YAML classes with serialize() method", platform: "Custom", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "Design 'Logger': Console, File, Database loggers with log() method", platform: "Project", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Implement 'Sorter' interface: BubbleSort, QuickSort, MergeSort with sort()", platform: "LeetCode", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Create 'Notifier': Email, SMS, Push with send() - use in notification system", platform: "Project", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Build 'DataLoader': CSV, JSON, SQL loaders with load() - polymorphic usage", platform: "ML-focused", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Design 'Strategy' pattern: Different pricing strategies applied polymorphically", platform: "Advanced", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Implement 'Optimizer': SGD, Adam, RMSprop with update() - plug into training loop", platform: "ML Project", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Create 'Middleware' pipeline: Auth, Logging, Caching - chainable polymorphic calls", platform: "Advanced", estimatedTime: "50 min" }
-                ]
-              }
-            ],
-            dailyPractice: {
-              description: "5 OOP problems daily to master class design for ML systems",
-              schedule: [
+          title: "OOP & Python Libraries",
+          goal: "Learn Object-Oriented Programming and essential libraries",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: A Maserati is a CLASS. Each Maserati Quattroporte is an OBJECT. OOP isn't just code, it's how kings think",
+              dailyGoal: "Introduction to OOP concepts",
+              concepts: [
                 {
-                  day: "Day 1",
-                  problems: [
-                    { id: "w2d1p1", problem: "BankAccount class", difficulty: "easy", topic: "Classes", time: "15 min" },
-                    { id: "w2d1p2", problem: "Student class with grades", difficulty: "easy", topic: "Classes", time: "15 min" },
-                    { id: "w2d1p3", problem: "Rectangle class", difficulty: "easy", topic: "Classes", time: "15 min" },
-                    { id: "w2d1p4", problem: "Animal inheritance", difficulty: "easy", topic: "Inheritance", time: "15 min" },
-                    { id: "w2d1p5", problem: "Shape hierarchy", difficulty: "easy", topic: "Inheritance", time: "20 min" }
-                  ]
+                  id: "m1w2d1c1",
+                  title: "Classes and Objects",
+                  videoUrl: "https://www.youtube.com/watch?v=ZDa-Z5JzLYM",
+                  channel: "Corey Schafer",
+                  duration: "35 min",
+                  xp: 30
                 },
                 {
-                  day: "Day 2",
-                  problems: [
-                    { id: "w2d2p1", problem: "ShoppingCart class", difficulty: "medium", topic: "Classes", time: "25 min" },
-                    { id: "w2d2p2", problem: "Employee hierarchy", difficulty: "easy", topic: "Inheritance", time: "20 min" },
-                    { id: "w2d2p3", problem: "Private balance property", difficulty: "easy", topic: "Encapsulation", time: "15 min" },
-                    { id: "w2d2p4", problem: "Person with age validation", difficulty: "easy", topic: "Encapsulation", time: "15 min" },
-                    { id: "w2d2p5", problem: "Polymorphic draw method", difficulty: "easy", topic: "Polymorphism", time: "20 min" }
-                  ]
-                },
-                {
-                  day: "Day 3",
-                  problems: [
-                    { id: "w2d3p1", problem: "Library management system", difficulty: "medium", topic: "Classes", time: "30 min" },
-                    { id: "w2d3p2", problem: "Vehicle hierarchy with fuel", difficulty: "medium", topic: "Inheritance", time: "30 min" },
-                    { id: "w2d3p3", problem: "Product price validation", difficulty: "easy", topic: "Encapsulation", time: "15 min" },
-                    { id: "w2d3p4", problem: "Serializer polymorphism", difficulty: "easy", topic: "Polymorphism", time: "20 min" },
-                    { id: "w2d3p5", problem: "Account types with interest", difficulty: "medium", topic: "Inheritance", time: "35 min" }
-                  ]
-                },
-                {
-                  day: "Day 4",
-                  problems: [
-                    { id: "w2d4p1", problem: "TaskManager with priority", difficulty: "hard", topic: "Classes", time: "40 min" },
-                    { id: "w2d4p2", problem: "Transformer base class", difficulty: "medium", topic: "Inheritance", time: "30 min" },
-                    { id: "w2d4p3", problem: "User with password hashing", difficulty: "medium", topic: "Encapsulation", time: "30 min" },
-                    { id: "w2d4p4", problem: "Logger polymorphism", difficulty: "easy", topic: "Polymorphism", time: "25 min" },
-                    { id: "w2d4p5", problem: "Temperature class convertor", difficulty: "medium", topic: "Classes", time: "20 min" }
-                  ]
-                },
-                {
-                  day: "Day 5",
-                  problems: [
-                    { id: "w2d5p1", problem: "Multi-level Student inheritance", difficulty: "hard", topic: "Inheritance", time: "40 min" },
-                    { id: "w2d5p2", problem: "Matrix with dimension validation", difficulty: "medium", topic: "Encapsulation", time: "35 min" },
-                    { id: "w2d5p3", problem: "Sorter strategy pattern", difficulty: "medium", topic: "Polymorphism", time: "35 min" },
-                    { id: "w2d5p4", problem: "Inventory system", difficulty: "hard", topic: "Classes", time: "45 min" },
-                    { id: "w2d5p5", problem: "Config singleton pattern", difficulty: "medium", topic: "Encapsulation", time: "30 min" }
-                  ]
-                },
-                {
-                  day: "Day 6",
-                  problems: [
-                    { id: "w2d6p1", problem: "ML model hierarchy", difficulty: "hard", topic: "Inheritance", time: "50 min" },
-                    { id: "w2d6p2", problem: "Notifier polymorphic system", difficulty: "medium", topic: "Polymorphism", time: "30 min" },
-                    { id: "w2d6p3", problem: "Model with private weights", difficulty: "hard", topic: "Encapsulation", time: "40 min" },
-                    { id: "w2d6p4", problem: "DataLoader polymorphism", difficulty: "medium", topic: "Polymorphism", time: "35 min" },
-                    { id: "w2d6p5", problem: "DatabaseConnection pool", difficulty: "hard", topic: "Classes", time: "50 min" }
-                  ]
-                },
-                {
-                  day: "Day 7",
-                  problems: [
-                    { id: "w2d7p1", problem: "Payment system hierarchy", difficulty: "hard", topic: "Inheritance", time: "45 min" },
-                    { id: "w2d7p2", problem: "Strategy pattern for pricing", difficulty: "hard", topic: "Polymorphism", time: "40 min" },
-                    { id: "w2d7p3", problem: "SecureVault with encryption", difficulty: "hard", topic: "Encapsulation", time: "50 min" },
-                    { id: "w2d7p4", problem: "Optimizer implementations (SGD/Adam)", difficulty: "hard", topic: "Polymorphism", time: "50 min" },
-                    { id: "w2d7p5", problem: "Dataset with lazy loading", difficulty: "hard", topic: "Encapsulation", time: "45 min" }
-                  ]
+                  id: "m1w2d1c2",
+                  title: "Constructors and __init__",
+                  videoUrl: "https://www.youtube.com/watch?v=RSl87lqOXDE",
+                  channel: "Corey Schafer",
+                  duration: "25 min",
+                  xp: 25
                 }
-              ]
-            },
-            pseudocodeExercises: [
-              { task: "Design class hierarchy for a zoo management system (animals, cages, staff)", estimatedTime: "25 min" },
-              { task: "Flowchart: Object creation and method call sequence for inherited classes", estimatedTime: "20 min" },
-              { task: "Pseudocode: Implement a polymorphic payment processing system", estimatedTime: "30 min" }
-            ]
-          },
-          handsOn: [
-            {
-              rootTopic: "Python OOP Fundamentals",
-              subTopics: ["Classes", "Methods", "Attributes", "__init__"],
-              exercises: [
-                { difficulty: "easy", task: "Create a 'DataPoint' class with features (list) and label (int). Add methods: normalize(), scale(), to_dict()", xp: 30, estimatedHours: 0.5 },
-                { difficulty: "easy", task: "Build 'Dataset' class that holds multiple DataPoint objects. Add: add(), remove(), get_by_index(), __len__()", xp: 40, estimatedHours: 1 },
-                { difficulty: "medium", task: "Create 'FeatureTransformer' base class with fit() and transform() methods (abstract). Don't implement logic yet.", xp: 35, estimatedHours: 0.75 }
-              ]
+              ],
+              handson: [
+                {
+                  id: "m1w2d1h1",
+                  title: "Create a Student class",
+                  platform: "Codewars",
+                  url: "https://www.codewars.com/kata/5a03af9606d5b65ff7000009",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 75
             },
             {
-              rootTopic: "Inheritance & Polymorphism",
-              subTopics: ["Parent/Child classes", "super()", "Method overriding"],
-              exercises: [
-                { difficulty: "medium", task: "Create 'StandardScaler' that inherits FeatureTransformer. Implement fit() to calculate mean/std, transform() to standardize", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Create 'MinMaxScaler' that also inherits FeatureTransformer. Implement fit() for min/max, transform() to scale 0-1", xp: 50, estimatedHours: 1 },
-                { difficulty: "hard", task: "Build 'PCA' transformer (just structure, not math) with fit() that 'learns' components, transform() that 'projects' data", xp: 60, estimatedHours: 2 }
-              ]
+              day: "👑 Girls: Inheritance is like self-worth - passed down but YOU decide how to use it. Override bad patterns, keep the crown",
+              dailyGoal: "Inheritance and Polymorphism",
+              concepts: [
+                {
+                  id: "m1w2d2c1",
+                  title: "Inheritance in Python",
+                  videoUrl: "https://www.youtube.com/watch?v=Cn7AkDb4pIU",
+                  channel: "Corey Schafer",
+                  duration: "30 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w2d2c2",
+                  title: "Polymorphism and Method Overriding",
+                  videoUrl: "https://www.youtube.com/watch?v=d8kCdLCi6Lk",
+                  channel: "Corey Schafer",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w2d2h1",
+                  title: "Create Animal hierarchy",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 75
             },
             {
-              rootTopic: "Encapsulation & Properties",
-              subTopics: ["Private attributes", "@property", "Getters/Setters"],
-              exercises: [
-                { difficulty: "easy", task: "Add @property to Dataset class: 'size' (read-only), 'features' (read-only), '_data' (private)", xp: 30, estimatedHours: 0.5 },
-                { difficulty: "medium", task: "Create 'Model' class with private _weights, _bias. Use @property for read, @setter for validation (weights must be list)", xp: 40, estimatedHours: 1 }
-              ]
+              day: "🚗 Boys: Encapsulation is why BMW keeps their engine secrets private. Your code, your rules, your empire",
+              dailyGoal: "Introduction to NumPy",
+              concepts: [
+                {
+                  id: "m1w2d3c1",
+                  title: "NumPy Arrays Basics",
+                  videoUrl: "https://www.youtube.com/watch?v=QUT1VHiLmmI",
+                  channel: "freeCodeCamp",
+                  duration: "60 min",
+                  xp: 40
+                },
+                {
+                  id: "m1w2d3c2",
+                  title: "Array Operations and Indexing",
+                  videoUrl: "https://www.youtube.com/watch?v=GB9ByFAIAH4",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w2d3h1",
+                  title: "Array manipulation exercises",
+                  platform: "HackerRank",
+                  url: "https://www.hackerrank.com/domains/python?filters%5Bsubdomains%5D%5B%5D=numpy",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 85
             },
             {
-              rootTopic: "Composition & Design Patterns",
-              subTopics: ["Has-a relationships", "Pipeline pattern", "Strategy pattern"],
-              exercises: [
-                { difficulty: "hard", task: "Build 'Pipeline' class that chains transformers: Pipeline([scaler, pca]). Implement fit() that fits each, transform() that applies all", xp: 70, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Create 'MLModel' base class with fit(X,y), predict(X). Make 'LinearRegression' and 'LogisticRegression' subclasses (stub methods)", xp: 60, estimatedHours: 2 },
-                { difficulty: "expert", task: "Build complete 'Estimator' following sklearn API: fit(), predict(), score(), get_params(), set_params(). Use **kwargs", xp: 100, estimatedHours: 4 }
-              ]
+              day: "💎 Girls: File handling is like managing emotions - open when ready, read carefully, close when done. Handle with grace",
+              dailyGoal: "NumPy for Mathematical Operations",
+              concepts: [
+                {
+                  id: "m1w2d4c1",
+                  title: "Matrix Operations in NumPy",
+                  videoUrl: "https://www.youtube.com/watch?v=8ndsDXohLMQ",
+                  channel: "Krish Naik",
+                  duration: "35 min",
+                  xp: 30
+                },
+                {
+                  id: "m1w2d4c2",
+                  title: "Broadcasting and Vectorization",
+                  videoUrl: "https://www.youtube.com/watch?v=4Xdm-bK8JHE",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w2d4h1",
+                  title: "Matrix multiplication practice",
+                  platform: "HackerRank",
+                  url: "https://www.hackerrank.com/challenges/np-dot-and-cross",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 75
+            },
+            {
+              day: "🏁 Boys: Every RCB player uses debugging to analyze their shots. print() statements are your instant replay",
+              dailyGoal: "Introduction to Pandas",
+              concepts: [
+                {
+                  id: "m1w2d5c1",
+                  title: "Pandas DataFrames",
+                  videoUrl: "https://www.youtube.com/watch?v=vmEHCJofslg",
+                  channel: "Keith Galli",
+                  duration: "60 min",
+                  xp: 40
+                },
+                {
+                  id: "m1w2d5c2",
+                  title: "Reading and Writing CSV files",
+                  videoUrl: "https://www.youtube.com/watch?v=yzIMircGU5I",
+                  channel: "Data School",
+                  duration: "25 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w2d5h1",
+                  title: "Kaggle Pandas exercises",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/learn/pandas",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 85
+            },
+            {
+              day: "🌟 Girls: Exception handling is boundaries in code. Try to hurt me? Except: I'll handle it. Finally: I move on stronger",
+              dailyGoal: "Data Manipulation with Pandas",
+              concepts: [
+                {
+                  id: "m1w2d6c1",
+                  title: "Filtering and Selecting Data",
+                  videoUrl: "https://www.youtube.com/watch?v=ZyhVh-qRZPA",
+                  channel: "Corey Schafer",
+                  duration: "30 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w2d6c2",
+                  title: "GroupBy and Aggregations",
+                  videoUrl: "https://www.youtube.com/watch?v=txMdrV1Ut64",
+                  channel: "Corey Schafer",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w2d6h1",
+                  title: "Data analysis mini-project",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 80
+            },
+            {
+              day: "🔥 Weekend Project: Build that contact book like you'd curate your circle - only quality entries allowed",
+              dailyGoal: "Weekend Project - Data Analysis Script",
+              concepts: [],
+              weekendProject: {
+                id: "m1w2proj",
+                name: "Weather Data Analyzer",
+                description: "Load a CSV of weather data and compute statistics",
+                requirements: [
+                  "Load CSV file using Pandas",
+                  "Compute mean, median, max, min temperatures",
+                  "Find hottest and coldest days",
+                  "Group data by month",
+                  "Export summary to new CSV"
+                ],
+                xp: 100,
+                estimatedHours: 4
+              },
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "Sklearn-Style ML Library",
-            duration: "8 hours",
-            description: "Build a mini sklearn library with BaseEstimator, transformers, and models",
-            requirements: [
-              "BaseEstimator class with fit(), predict(), score()",
-              "3 Transformers: StandardScaler, MinMaxScaler, PCA (structure only)",
-              "2 Models: LinearRegression, KNN (can use sklearn internally for math)",
-              "Pipeline class that chains transformers + model",
-              "All classes follow sklearn API: fit(X,y), transform(X), predict(X)",
-              "Unit tests for each class using pytest",
-              "Type hints for all methods"
-            ],
-            techStack: "Python, NumPy, typing, pytest",
-            evaluation: "Can chain: Pipeline([StandardScaler(), PCA(), LinearRegression()]).fit(X,y).predict(X_test)",
-            portfolioValue: "Shows: OOP mastery, design patterns, API design, testing"
-          }
+          ]
         },
         {
           weekNum: 3,
-          title: "Pandas for Data Wrangling",
-          goal: "Master data manipulation for ML datasets",
-          hoursThisWeek: 32,
-          summary: "DataFrames, groupby, merging - all data preprocessing for ML. Weekend: Complete Kaggle EDA notebook (Titanic or House Prices).",
-          resources: [
-            { name: "Pandas Official Tutorial", url: "https://pandas.pydata.org/docs/user_guide/10min.html", type: "docs" },
-            { name: "Kaggle Learn - Pandas", url: "https://www.kaggle.com/learn/pandas", type: "interactive" },
-            { name: "Data School - Pandas Playlist", url: "https://www.youtube.com/watch?v=yzIMircGU5I&list=PL5-da3qGB5ICCsgW1MxlZ0Hq8LL5U3u9y", type: "video" },
-            { name: "Titanic Dataset", url: "https://www.kaggle.com/c/titanic", type: "dataset" },
-            { name: "Pandas Complete Tutorial - Keith Galli", url: "https://www.youtube.com/watch?v=vmEHCJofslg", type: "video" },
-            { name: "Data Cleaning with Pandas - Corey Schafer", url: "https://www.youtube.com/watch?v=bDhvCp3_lYw", type: "video" }
-          ],
-          logicBuilding: {
-            description: "Build data manipulation and transformation logic before working with real ML datasets",
-            videoResources: [
-              { name: "Data Wrangling Logic - Corey Schafer", url: "https://www.youtube.com/watch?v=ZyhVh-qRZPA", type: "video", duration: "30 min" },
-              { name: "Thinking in Arrays - NumPy Logic", url: "https://www.youtube.com/watch?v=DcfYgePyedM", type: "video", duration: "35 min" },
-              { name: "DataFrame Operations Patterns", url: "https://www.youtube.com/watch?v=tcRGa2soc-c", type: "video", duration: "25 min" }
-            ],
-            platforms: [
-              { name: "Kaggle - Pandas Exercises", url: "https://www.kaggle.com/learn/pandas", type: "practice" },
-              { name: "HackerRank - NumPy", url: "https://www.hackerrank.com/domains/python?filters%5Bsubdomains%5D%5B%5D=numpy", type: "practice" },
-              { name: "LeetCode - Array Manipulation", url: "https://leetcode.com/tag/array/", type: "practice" }
-            ],
-            topics: [
-              {
-                topic: "Array Manipulation Logic",
-                patterns: ["Indexing", "Slicing", "Reshaping", "Broadcasting"],
-                problems: [
-                  { difficulty: "easy", problem: "Extract every 3rd element from array [0,1,2,...,99]", platform: "HackerRank", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Reshape 1D array of 12 elements into 3x4 and 4x3 matrices", platform: "NumPy", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Reverse array rows and columns separately using slicing", platform: "Custom", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Extract diagonal, anti-diagonal, and border elements from 5x5 matrix", platform: "LeetCode", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Use broadcasting to add 1D array to each row of 2D array without loops", platform: "NumPy", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Implement sliding window on array (window size 3, stride 1)", platform: "Custom", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Rotate 2D array 90 degrees using advanced indexing (no transpose)", platform: "LeetCode", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Implement fancy indexing: Extract elements at positions [[0,1], [2,3]] from 4x4 matrix", platform: "Advanced", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Vectorize nested loops: Calculate pairwise distances between all points", platform: "ML-focused", estimatedTime: "40 min" }
-                ]
+          title: "Mathematics for AI - Linear Algebra & Calculus",
+          goal: "Understand the math foundations for machine learning",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: NumPy arrays are Lamborghini's gearbox - fast, efficient, engineered for performance. No room for slow lists",
+              dailyGoal: "Vectors and Scalars",
+              concepts: [
+                {
+                  id: "m1w3d1c1",
+                  title: "Introduction to Linear Algebra",
+                  videoUrl: "https://www.youtube.com/watch?v=fNk_zzaMoSs",
+                  channel: "3Blue1Brown",
+                  duration: "16 min",
+                  xp: 20
+                },
+                {
+                  id: "m1w3d1c2",
+                  title: "Vectors - What even are they?",
+                  videoUrl: "https://www.youtube.com/watch?v=fNk_zzaMoSs",
+                  channel: "3Blue1Brown",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w3d1h1",
+                  title: "Vector operations in Python",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "👑 Girls: Vectors have direction AND magnitude. Like your ambitions - know where you're going AND how powerful you are",
+              dailyGoal: "Matrix Operations",
+              concepts: [
+                {
+                  id: "m1w3d2c1",
+                  title: "Matrix Multiplication",
+                  videoUrl: "https://www.youtube.com/watch?v=XkY2DOUCWMU",
+                  channel: "3Blue1Brown",
+                  duration: "25 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w3d2c2",
+                  title: "Linear Transformations",
+                  videoUrl: "https://www.youtube.com/watch?v=kYB8IZa5AuE",
+                  channel: "3Blue1Brown",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w3d2h1",
+                  title: "Implement matrix multiplication from scratch",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 80
+            },
+            {
+              day: "🚗 Boys: Matrix multiplication is how BMW calculates suspension physics. Linear algebra = engineering excellence",
+              dailyGoal: "Eigenvalues and Eigenvectors",
+              concepts: [
+                {
+                  id: "m1w3d3c1",
+                  title: "Eigenvalues and Eigenvectors",
+                  videoUrl: "https://www.youtube.com/watch?v=PFDu9oVAE-g",
+                  channel: "3Blue1Brown",
+                  duration: "25 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w3d3h1",
+                  title: "Compute eigenvalues using NumPy",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "💎 Girls: Dot products measure alignment. Make sure your efforts align with your worth. Orthogonal = zero compatibility",
+              dailyGoal: "Introduction to Calculus for AI",
+              concepts: [
+                {
+                  id: "m1w3d4c1",
+                  title: "Derivatives and Gradients",
+                  videoUrl: "https://www.youtube.com/watch?v=WUvTyaaNkzM",
+                  channel: "3Blue1Brown",
+                  duration: "20 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w3d4c2",
+                  title: "Chain Rule (Critical for Backpropagation)",
+                  videoUrl: "https://www.youtube.com/watch?v=YG15m2VwSjA",
+                  channel: "3Blue1Brown",
+                  duration: "18 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w3d4h1",
+                  title: "Implement gradient descent from scratch",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 85
+            },
+            {
+              day: "🏁 Boys: RCB uses statistics for player performance. mean(), std() - analytics separate champions from average",
+              dailyGoal: "Partial Derivatives and Optimization",
+              concepts: [
+                {
+                  id: "m1w3d5c1",
+                  title: "Partial Derivatives",
+                  videoUrl: "https://www.youtube.com/watch?v=AXqhWeUEtQU",
+                  channel: "Khan Academy",
+                  duration: "15 min",
+                  xp: 20
+                },
+                {
+                  id: "m1w3d5c2",
+                  title: "Gradient Descent Intuition",
+                  videoUrl: "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+                  channel: "3Blue1Brown",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w3d5h1",
+                  title: "Optimize a simple function",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "🌟 Girls: Probability is knowing your odds, but DECIDING your outcome. np.random is fate, your choice is destiny",
+              dailyGoal: "Math Review and Practice",
+              concepts: [
+                {
+                  id: "m1w3d6c1",
+                  title: "Linear Algebra for ML - Summary",
+                  videoUrl: "https://www.youtube.com/watch?v=ZumgfOei0Ak",
+                  channel: "StatQuest",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w3d6h1",
+                  title: "Math practice problems",
+                  platform: "Khan Academy",
+                  url: "https://www.khanacademy.org/math/linear-algebra",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🔥 Weekend Project: Calculate compound interest like you're building generational wealth - numbers don't lie",
+              dailyGoal: "Weekend Project - Matrix Operations Library",
+              concepts: [],
+              weekendProject: {
+                id: "m1w3proj",
+                name: "Matrix Operations Library",
+                description: "Build a Python library for basic matrix operations",
+                requirements: [
+                  "Matrix addition and subtraction",
+                  "Matrix multiplication",
+                  "Transpose",
+                  "Determinant calculation",
+                  "Use NumPy for verification"
+                ],
+                xp: 100,
+                estimatedHours: 4
               },
-              {
-                topic: "Data Filtering Patterns",
-                patterns: ["Boolean indexing", "Query conditions", "Missing data", "Duplicates"],
-                problems: [
-                  { difficulty: "easy", problem: "Filter DataFrame: Get all rows where Age > 30 and Fare < 50", platform: "Kaggle", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Find and count missing values in each column", platform: "Pandas", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Remove duplicate rows based on ['Name', 'Age'] columns", platform: "HackerRank", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Complex filter: (Age > 25 OR Fare > 100) AND Survived == 1", platform: "Custom", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Handle missing data: Fill Age with median, Cabin with 'Unknown', drop rows with >50% missing", platform: "Kaggle", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Filter outliers: Remove rows where value > mean + 3*std", platform: "ML-focused", estimatedTime: "25 min" },
-                  { difficulty: "hard", problem: "Conditional replacement: Replace values based on multiple column conditions", platform: "Advanced", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Forward-fill then back-fill missing data in time series", platform: "Pandas", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Smart duplicate detection: Consider fuzzy matching on text columns", platform: "Project", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "GroupBy & Aggregation Logic",
-                patterns: ["Split-Apply-Combine", "Custom aggregations", "Transform", "Multi-level grouping"],
-                problems: [
-                  { difficulty: "easy", problem: "Group by 'Pclass', calculate mean Age and Fare for each class", platform: "Kaggle", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Count survivors by Sex: Male vs Female survival rates", platform: "Pandas", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Find min, max, median Age for each Embarked location", platform: "HackerRank", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Multi-level groupby: Group by ['Pclass', 'Sex'], aggregate multiple columns", platform: "Custom", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Custom aggregation: Calculate IQR (75th - 25th percentile) per group", platform: "Advanced", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Transform: Normalize Age within each Pclass group (z-score)", platform: "ML-focused", estimatedTime: "25 min" },
-                  { difficulty: "hard", problem: "Rolling aggregation: 3-row moving average within each group", platform: "Time Series", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Custom agg function: Top 3 most common values per group", platform: "Project", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Pivot table with multiple aggregations and calculated fields", platform: "Advanced", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "Data Transformation Logic",
-                patterns: ["Apply/Map", "String operations", "Binning", "One-hot encoding"],
-                problems: [
-                  { difficulty: "easy", problem: "Extract title (Mr, Mrs, Miss) from 'Name' column using string split", platform: "Kaggle", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "Bin Age into categories: Child (0-12), Teen (13-19), Adult (20-60), Senior (60+)", platform: "Pandas", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Convert 'Sex' to numeric: Male=0, Female=1", platform: "HackerRank", estimatedTime: "10 min" },
-                  { difficulty: "medium", problem: "Apply custom function: Categorize Fare into 'Low', 'Medium', 'High' based on quantiles", platform: "Custom", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "String cleaning: Remove special chars, lowercase, strip whitespace from text column", platform: "NLP-prep", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "One-hot encode 'Embarked' column, handle missing values first", platform: "ML-focused", estimatedTime: "25 min" },
-                  { difficulty: "hard", problem: "Feature engineering: Create interaction features (Age*Pclass, Fare/Age ratio)", platform: "ML Advanced", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Datetime features: Extract year, month, day, weekday, is_weekend from timestamp", platform: "Time Series", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Vectorized string regex: Extract multiple patterns from text column in one pass", platform: "Advanced", estimatedTime: "45 min" }
-                ]
-              }
-            ],
-            dailyPractice: {
-              description: "5 data manipulation problems daily to master Pandas/NumPy for ML preprocessing",
-              schedule: [
-                { day: "Day 1", problems: [
-                  { id: "w3d1p1", problem: "Extract every 3rd element", difficulty: "easy", topic: "Arrays", time: "10 min" },
-                  { id: "w3d1p2", problem: "Reshape 12-element array", difficulty: "easy", topic: "Arrays", time: "15 min" },
-                  { id: "w3d1p3", problem: "Filter Age > 30, Fare < 50", difficulty: "easy", topic: "Filtering", time: "15 min" },
-                  { id: "w3d1p4", problem: "Count missing values", difficulty: "easy", topic: "Filtering", time: "10 min" },
-                  { id: "w3d1p5", problem: "Group by Pclass, mean Age", difficulty: "easy", topic: "GroupBy", time: "15 min" }
-                ]},
-                { day: "Day 2", problems: [
-                  { id: "w3d2p1", problem: "Reverse array rows/columns", difficulty: "easy", topic: "Arrays", time: "15 min" },
-                  { id: "w3d2p2", problem: "Remove duplicate rows", difficulty: "easy", topic: "Filtering", time: "15 min" },
-                  { id: "w3d2p3", problem: "Survival rate by Sex", difficulty: "easy", topic: "GroupBy", time: "10 min" },
-                  { id: "w3d2p4", problem: "Extract title from Name", difficulty: "easy", topic: "Transform", time: "20 min" },
-                  { id: "w3d2p5", problem: "Bin Age into categories", difficulty: "easy", topic: "Transform", time: "15 min" }
-                ]},
-                { day: "Day 3", problems: [
-                  { id: "w3d3p1", problem: "Extract matrix diagonal", difficulty: "medium", topic: "Arrays", time: "25 min" },
-                  { id: "w3d3p2", problem: "Complex boolean filter", difficulty: "medium", topic: "Filtering", time: "20 min" },
-                  { id: "w3d3p3", problem: "Multi-level groupby", difficulty: "medium", topic: "GroupBy", time: "25 min" },
-                  { id: "w3d3p4", problem: "Convert Sex to numeric", difficulty: "easy", topic: "Transform", time: "10 min" },
-                  { id: "w3d3p5", problem: "Broadcasting array addition", difficulty: "medium", topic: "Arrays", time: "20 min" }
-                ]},
-                { day: "Day 4", problems: [
-                  { id: "w3d4p1", problem: "Handle missing data strategy", difficulty: "medium", topic: "Filtering", time: "30 min" },
-                  { id: "w3d4p2", problem: "Custom IQR aggregation", difficulty: "medium", topic: "GroupBy", time: "30 min" },
-                  { id: "w3d4p3", problem: "Apply custom fare categorization", difficulty: "medium", topic: "Transform", time: "25 min" },
-                  { id: "w3d4p4", problem: "Sliding window implementation", difficulty: "medium", topic: "Arrays", time: "30 min" },
-                  { id: "w3d4p5", problem: "Filter outliers with std", difficulty: "medium", topic: "Filtering", time: "25 min" }
-                ]},
-                { day: "Day 5", problems: [
-                  { id: "w3d5p1", problem: "Normalize within groups", difficulty: "medium", topic: "GroupBy", time: "25 min" },
-                  { id: "w3d5p2", problem: "String cleaning pipeline", difficulty: "medium", topic: "Transform", time: "30 min" },
-                  { id: "w3d5p3", problem: "Rotate matrix 90 degrees", difficulty: "hard", topic: "Arrays", time: "35 min" },
-                  { id: "w3d5p4", problem: "Conditional replacement", difficulty: "hard", topic: "Filtering", time: "35 min" },
-                  { id: "w3d5p5", problem: "One-hot encode with missing", difficulty: "medium", topic: "Transform", time: "25 min" }
-                ]},
-                { day: "Day 6", problems: [
-                  { id: "w3d6p1", problem: "Rolling group aggregation", difficulty: "hard", topic: "GroupBy", time: "40 min" },
-                  { id: "w3d6p2", problem: "Feature interaction engineering", difficulty: "hard", topic: "Transform", time: "40 min" },
-                  { id: "w3d6p3", problem: "Fancy indexing extraction", difficulty: "hard", topic: "Arrays", time: "30 min" },
-                  { id: "w3d6p4", problem: "Forward-fill time series", difficulty: "hard", topic: "Filtering", time: "30 min" },
-                  { id: "w3d6p5", problem: "Top 3 values per group", difficulty: "hard", topic: "GroupBy", time: "35 min" }
-                ]},
-                { day: "Day 7", problems: [
-                  { id: "w3d7p1", problem: "Vectorize pairwise distances", difficulty: "hard", topic: "Arrays", time: "40 min" },
-                  { id: "w3d7p2", problem: "Smart duplicate fuzzy matching", difficulty: "hard", topic: "Filtering", time: "45 min" },
-                  { id: "w3d7p3", problem: "Pivot with calculated fields", difficulty: "hard", topic: "GroupBy", time: "45 min" },
-                  { id: "w3d7p4", problem: "Datetime feature extraction", difficulty: "hard", topic: "Transform", time: "35 min" },
-                  { id: "w3d7p5", problem: "Vectorized regex patterns", difficulty: "hard", topic: "Transform", time: "45 min" }
-                ]}
-              ]
-            },
-            pseudocodeExercises: [
-              { task: "Design data cleaning pipeline: Handle missing → Remove outliers → Normalize → Encode", estimatedTime: "25 min" },
-              { task: "Flowchart: GroupBy-Apply-Combine pattern for feature engineering", estimatedTime: "20 min" },
-              { task: "Pseudocode: Implement train-test split maintaining class distribution", estimatedTime: "30 min" }
-            ]
-          },
-          handsOn: [
-            {
-              rootTopic: "DataFrame Basics",
-              subTopics: ["Creating DataFrames", "Selecting columns/rows", "loc vs iloc", "Boolean indexing"],
-              exercises: [
-                { difficulty: "easy", task: "Load Titanic CSV. Display first 10 rows, last 5 rows, random 3 rows. Get shape, columns, dtypes, info()", xp: 25, estimatedHours: 0.5 },
-                { difficulty: "easy", task: "Select columns: ['Name', 'Age', 'Fare']. Then select passengers where Age > 30 using boolean indexing", xp: 30, estimatedHours: 0.5 },
-                { difficulty: "medium", task: "Use .loc to get rows 10-20 with columns 'Sex', 'Age', 'Survived'. Use .iloc for same with integer positions", xp: 35, estimatedHours: 0.75 },
-                { difficulty: "medium", task: "Find all passengers: Age between 20-40 AND Fare > 30 AND Sex == 'female'. Count how many survived", xp: 40, estimatedHours: 1 }
-              ]
-            },
-            {
-              rootTopic: "Data Cleaning & Missing Values",
-              subTopics: ["isnull()", "fillna()", "dropna()", "replace()"],
-              exercises: [
-                { difficulty: "easy", task: "Check missing values: df.isnull().sum(). Visualize with: df.isnull().sum().plot(kind='bar')", xp: 25, estimatedHours: 0.5 },
-                { difficulty: "medium", task: "Fill missing Age with median age. Fill missing Embarked with mode. Drop rows where Fare is null", xp: 45, estimatedHours: 1 },
-                { difficulty: "medium", task: "Create new column 'AgeGroup': fillna Age with median, then bin into: 'Child'(<18), 'Adult'(18-60), 'Senior'(>60)", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Smart imputation: Fill missing Age based on Pclass median (group by Pclass, fill with group median)", xp: 60, estimatedHours: 2 }
-              ]
-            },
-            {
-              rootTopic: "GroupBy & Aggregations",
-              subTopics: ["groupby()", "agg()", "transform()", "pivot_table()"],
-              exercises: [
-                { difficulty: "medium", task: "Group by 'Sex', calculate mean Age, Fare, Survived. Which gender had higher survival rate?", xp: 40, estimatedHours: 1 },
-                { difficulty: "medium", task: "Group by 'Pclass' and 'Sex', calculate survival rate. Create pivot table with Pclass as rows, Sex as columns", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Multi-aggregation: Group by Pclass, get {'Age': ['mean', 'std'], 'Fare': ['min', 'max', 'mean'], 'Survived': 'sum'}", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "Use transform() to create column 'AgeDiffFromClassMean' = passenger age - mean age of their Pclass", xp: 65, estimatedHours: 2 }
-              ]
-            },
-            {
-              rootTopic: "Merging & Joining",
-              subTopics: ["merge()", "join()", "concat()", "Inner/Outer/Left/Right joins"],
-              exercises: [
-                { difficulty: "medium", task: "Create df_prices with PassengerId and TicketPrice (random). Merge with Titanic on PassengerId using inner join", xp: 45, estimatedHours: 1 },
-                { difficulty: "medium", task: "Create df_family with PassengerId, FamilySize. Do left join with Titanic (keep all Titanic rows)", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Split Titanic into 3 chunks. Concatenate back using concat(). Then split into train/test and merge with cabin info", xp: 65, estimatedHours: 2.5 }
-              ]
-            },
-            {
-              rootTopic: "Feature Engineering",
-              subTopics: ["apply()", "map()", "lambda", "String methods", "Date parsing"],
-              exercises: [
-                { difficulty: "medium", task: "Extract title from Name column ('Mr', 'Mrs', 'Miss', 'Master'). Use .str.extract() and regex", xp: 55, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Create 'FamilySize' = SibSp + Parch + 1. Then create 'IsAlone' = 1 if FamilySize==1 else 0. Analyze survival by IsAlone", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "Create 'FarePerPerson' = Fare / FamilySize. Create 'CabinDeck' = first letter of Cabin (fill null with 'Unknown')", xp: 65, estimatedHours: 2 },
-                { difficulty: "expert", task: "Advanced feature: Create interaction features: Age*Pclass, Fare*Survived, Title*Sex. One-hot encode categorical variables", xp: 80, estimatedHours: 3 }
-              ]
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "Complete Kaggle EDA & Feature Engineering",
-            duration: "10 hours",
-            description: "Full exploratory data analysis on Titanic dataset with advanced feature engineering",
-            requirements: [
-              "Load and inspect data: shape, dtypes, missing values, statistics",
-              "Handle missing values: Smart imputation strategies",
-              "Univariate analysis: Histograms, box plots for Age, Fare, Pclass",
-              "Bivariate analysis: Survival vs Sex, Pclass, Age, Fare (use seaborn)",
-              "Feature engineering: Title extraction, FamilySize, IsAlone, FarePerPerson, AgeGroup",
-              "Correlation matrix heatmap of numeric features",
-              "Create 10+ derived features that could improve ML models",
-              "Export cleaned dataset as 'titanic_processed.csv'",
-              "Document findings in Jupyter notebook with markdown explanations"
-            ],
-            techStack: "Pandas, NumPy, Matplotlib, Seaborn, Jupyter",
-            evaluation: "Notebook has clear EDA insights, 10+ engineered features, ready for ML modeling",
-            portfolioValue: "Shows: Data wrangling, statistical thinking, feature engineering creativity"
-          }
+          ]
         },
         {
           weekNum: 4,
-          title: "Advanced Python for Production ML",
-          goal: "Write production-ready ML code",
-          hoursThisWeek: 35,
-          summary: "Decorators, generators, async, testing (pytest), type hints, logging. Weekend: Refactor all previous projects to production standards.",
-          resources: [
-            { name: "Real Python - Decorators", url: "https://realpython.com/primer-on-python-decorators/", type: "article" },
-            { name: "Pytest Documentation", url: "https://docs.pytest.org/en/stable/getting-started.html", type: "docs" },
-            { name: "Python Type Hints", url: "https://docs.python.org/3/library/typing.html", type: "docs" },
-            { name: "Effective Python Book", url: "https://effectivepython.com/", type: "book" },
-            { name: "Decorators Tutorial - Corey Schafer", url: "https://www.youtube.com/watch?v=FsAPt_9Bf3U", type: "video" },
-            { name: "Python Testing - Tech With Tim", url: "https://www.youtube.com/watch?v=6tNS--WetLI", type: "video" },
-            { name: "Async Python - ArjanCodes", url: "https://www.youtube.com/watch?v=2IW-ZEui4h4", type: "video" }
-          ],
-          logicBuilding: {
-            description: "Master advanced Python patterns and algorithms for production ML code",
-            videoResources: [
-              { name: "Recursion Thinking - CS Dojo", url: "https://www.youtube.com/watch?v=KEEKn7Me-ms", type: "video", duration: "20 min" },
-              { name: "Generator Patterns - mCoding", url: "https://www.youtube.com/watch?v=tmeKsb2Fras", type: "video", duration: "25 min" },
-              { name: "Algorithm Design Patterns", url: "https://www.youtube.com/watch?v=p65AHm9MX80", type: "video", duration: "40 min" }
-            ],
-            platforms: [
-              { name: "LeetCode - Recursion Problems", url: "https://leetcode.com/tag/recursion/", type: "practice" },
-              { name: "HackerRank - Algorithms", url: "https://www.hackerrank.com/domains/algorithms", type: "practice" },
-              { name: "Codewars - Advanced Python", url: "https://www.codewars.com/?language=python", type: "practice" }
-            ],
-            topics: [
-              {
-                topic: "Recursion Mastery",
-                patterns: ["Base case", "Recursive case", "Backtracking", "Memoization"],
-                problems: [
-                  { difficulty: "easy", problem: "Calculate factorial recursively with base case n=0", platform: "HackerRank", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Sum of digits: sum_digits(123) = 6 using recursion", platform: "Codewars", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Print numbers 1 to N recursively (no loops)", platform: "Custom", estimatedTime: "10 min" },
-                  { difficulty: "medium", problem: "Fibonacci with memoization (cache results in dict)", platform: "LeetCode", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Flatten nested list [[1,[2,3]],4] → [1,2,3,4] recursively", platform: "HackerRank", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Find all subsets of set [1,2,3] using backtracking", platform: "LeetCode", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Solve N-Queens problem with backtracking", platform: "LeetCode", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Generate all valid parentheses combinations for n pairs", platform: "LeetCode", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Word break with memoization: Can 'leetcode' be segmented?", platform: "LeetCode", estimatedTime: "50 min" }
-                ]
+          title: "Probability & Statistics for AI",
+          goal: "Master probability and statistics for ML algorithms",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: Pandas DataFrames are your Maserati's dashboard - all the data, perfectly organized, at your command",
+              dailyGoal: "Probability Basics",
+              concepts: [
+                {
+                  id: "m1w4d1c1",
+                  title: "Probability Distributions",
+                  videoUrl: "https://www.youtube.com/watch?v=oI3hZJqXJuc",
+                  channel: "StatQuest",
+                  duration: "25 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w4d1c2",
+                  title: "Normal Distribution",
+                  videoUrl: "https://www.youtube.com/watch?v=rzFX5NWojp0",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w4d1h1",
+                  title: "Generate distributions with Python",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "👑 Girls: Clean data is self-care. dropna() the toxicity, fillna() with positivity. Your dataset, your peace",
+              dailyGoal: "Bayes Theorem",
+              concepts: [
+                {
+                  id: "m1w4d2c1",
+                  title: "Bayes Theorem Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=HZGCoVF3YvM",
+                  channel: "3Blue1Brown",
+                  duration: "15 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w4d2c2",
+                  title: "Bayes in Machine Learning",
+                  videoUrl: "https://www.youtube.com/watch?v=O2L2Uv9pdDA",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w4d2h1",
+                  title: "Implement Bayes classifier",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 80
+            },
+            {
+              day: "🚗 Boys: groupby() is how Audi R8 owners organize their garage - by performance tier. Aggregate power",
+              dailyGoal: "Descriptive Statistics",
+              concepts: [
+                {
+                  id: "m1w4d3c1",
+                  title: "Mean, Median, Mode, Variance",
+                  videoUrl: "https://www.youtube.com/watch?v=SzZ6GpcfoQY",
+                  channel: "StatQuest",
+                  duration: "15 min",
+                  xp: 20
+                },
+                {
+                  id: "m1w4d3c2",
+                  title: "Standard Deviation",
+                  videoUrl: "https://www.youtube.com/watch?v=MRqtXL2WX2M",
+                  channel: "StatQuest",
+                  duration: "12 min",
+                  xp: 15
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w4d3h1",
+                  title: "Calculate stats from dataset",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "💎 Girls: Matplotlib visualizations tell your story. Make it colorful, meaningful, and impossible to ignore",
+              dailyGoal: "Hypothesis Testing",
+              concepts: [
+                {
+                  id: "m1w4d4c1",
+                  title: "Hypothesis Testing",
+                  videoUrl: "https://www.youtube.com/watch?v=0oc49DyA3hU",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                },
+                {
+                  id: "m1w4d4c2",
+                  title: "p-values Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=vemZtEM63GY",
+                  channel: "StatQuest",
+                  duration: "15 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w4d4h1",
+                  title: "Perform t-test in Python",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "🏁 Boys: merge() DataFrames like you merge business connections. Inner join = exclusive partnerships only",
+              dailyGoal: "Overfitting and Bias-Variance Tradeoff",
+              concepts: [
+                {
+                  id: "m1w4d5c1",
+                  title: "Bias-Variance Tradeoff",
+                  videoUrl: "https://www.youtube.com/watch?v=EuBBz3bI-aA",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w4d5h1",
+                  title: "Visualize bias-variance",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🌟 Girls: pivot_table() is restructuring reality. Reshape data like you reshape narratives in your favor",
+              dailyGoal: "Data Visualization with Matplotlib",
+              concepts: [
+                {
+                  id: "m1w4d6c1",
+                  title: "Matplotlib Tutorial",
+                  videoUrl: "https://www.youtube.com/watch?v=UO98lJQ3QGI",
+                  channel: "Corey Schafer",
+                  duration: "35 min",
+                  xp: 30
+                },
+                {
+                  id: "m1w4d6c2",
+                  title: "Seaborn for Statistical Plots",
+                  videoUrl: "https://www.youtube.com/watch?v=6GUZXDef2U0",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m1w4d6h1",
+                  title: "Create statistical visualizations",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 75
+            },
+            {
+              day: "🔥 Weekend Project: Analyze your future salary growth - because knowing your worth starts with data",
+              dailyGoal: "Weekend Project - Coin Flip Simulator",
+              concepts: [],
+              weekendProject: {
+                id: "m1w4proj",
+                name: "Coin Flip Probability Analyzer",
+                description: "Create a simulation that demonstrates probability concepts",
+                requirements: [
+                  "Simulate 1000+ coin flips",
+                  "Calculate empirical probability",
+                  "Visualize with histogram",
+                  "Compute mean, variance, std deviation",
+                  "Compare with theoretical values"
+                ],
+                xp: 100,
+                estimatedHours: 3
               },
-              {
-                topic: "Generator Patterns",
-                patterns: ["yield", "Lazy evaluation", "Pipeline", "Infinite sequences"],
-                problems: [
-                  { difficulty: "easy", problem: "Create generator for Fibonacci sequence (infinite)", platform: "Custom", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Generator that yields squares of numbers 1 to N", platform: "HackerRank", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Read large file line by line using generator (memory efficient)", platform: "Real-world", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Build data processing pipeline: load → filter → transform → aggregate using generators", platform: "ML-focused", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Generator for batch processing: yield chunks of size N from dataset", platform: "ML Pipeline", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Prime number generator with Sieve of Eratosthenes (lazy)", platform: "Codewars", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Implement itertools.combinations using generators", platform: "Advanced", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Generator-based tree traversal (BFS and DFS)", platform: "LeetCode", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Streaming data aggregation: Calculate rolling statistics with generators", platform: "ML Project", estimatedTime: "50 min" }
-                ]
-              },
-              {
-                topic: "Algorithm Design",
-                patterns: ["Two pointers", "Sliding window", "Binary search", "Divide & conquer"],
-                problems: [
-                  { difficulty: "easy", problem: "Two-pointer: Find pair in sorted array that sums to target", platform: "LeetCode", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "Binary search: Find element in sorted array (recursive & iterative)", platform: "HackerRank", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Sliding window: Max sum of subarray of size K", platform: "LeetCode", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Two pointers: Remove duplicates from sorted array in-place", platform: "LeetCode", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Sliding window: Longest substring without repeating characters", platform: "LeetCode", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Binary search: Find first/last occurrence in sorted array with duplicates", platform: "Custom", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Merge K sorted arrays using divide & conquer", platform: "LeetCode", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Sliding window: Min window substring containing all characters", platform: "LeetCode", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Two pointers: Trapping rain water problem", platform: "LeetCode", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "Dynamic Programming",
-                patterns: ["Memoization (top-down)", "Tabulation (bottom-up)", "State transition", "Optimization"],
-                problems: [
-                  { difficulty: "easy", problem: "Climbing stairs: n steps, can climb 1 or 2 at a time. How many ways?", platform: "LeetCode", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "House robber: Max money without robbing adjacent houses", platform: "LeetCode", estimatedTime: "25 min" },
-                  { difficulty: "easy", problem: "Min cost climbing stairs (each step has cost)", platform: "LeetCode", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Longest increasing subsequence using DP", platform: "LeetCode", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Coin change: Min coins needed to make amount (unbounded knapsack)", platform: "LeetCode", estimatedTime: "40 min" },
-                  { difficulty: "medium", problem: "Longest common subsequence between two strings", platform: "HackerRank", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "0/1 Knapsack problem: Max value with weight constraint", platform: "LeetCode", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Edit distance: Min operations to convert string A to B", platform: "LeetCode", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Maximize profit with K transactions (stock buying)", platform: "LeetCode", estimatedTime: "60 min" }
-                ]
-              }
-            ],
-            dailyPractice: {
-              description: "5 algorithm problems daily to master recursion, generators, and optimization patterns",
-              schedule: [
-                { day: "Day 1", problems: [
-                  { id: "w4d1p1", problem: "Recursive factorial", difficulty: "easy", topic: "Recursion", time: "10 min" },
-                  { id: "w4d1p2", problem: "Sum of digits recursively", difficulty: "easy", topic: "Recursion", time: "15 min" },
-                  { id: "w4d1p3", problem: "Fibonacci generator", difficulty: "easy", topic: "Generators", time: "15 min" },
-                  { id: "w4d1p4", problem: "Two-pointer pair sum", difficulty: "easy", topic: "Algorithms", time: "20 min" },
-                  { id: "w4d1p5", problem: "Climbing stairs DP", difficulty: "easy", topic: "DP", time: "20 min" }
-                ]},
-                { day: "Day 2", problems: [
-                  { id: "w4d2p1", problem: "Print 1 to N recursively", difficulty: "easy", topic: "Recursion", time: "10 min" },
-                  { id: "w4d2p2", problem: "Squares generator", difficulty: "easy", topic: "Generators", time: "10 min" },
-                  { id: "w4d2p3", problem: "Binary search iterative", difficulty: "easy", topic: "Algorithms", time: "15 min" },
-                  { id: "w4d2p4", problem: "House robber DP", difficulty: "easy", topic: "DP", time: "25 min" },
-                  { id: "w4d2p5", problem: "Max subarray sum sliding window", difficulty: "easy", topic: "Algorithms", time: "20 min" }
-                ]},
-                { day: "Day 3", problems: [
-                  { id: "w4d3p1", problem: "Fibonacci with memoization", difficulty: "medium", topic: "Recursion", time: "25 min" },
-                  { id: "w4d3p2", problem: "File reader generator", difficulty: "easy", topic: "Generators", time: "20 min" },
-                  { id: "w4d3p3", problem: "Remove duplicates two-pointer", difficulty: "medium", topic: "Algorithms", time: "25 min" },
-                  { id: "w4d3p4", problem: "Min cost climbing stairs", difficulty: "easy", topic: "DP", time: "20 min" },
-                  { id: "w4d3p5", problem: "Flatten nested list recursion", difficulty: "medium", topic: "Recursion", time: "30 min" }
-                ]},
-                { day: "Day 4", problems: [
-                  { id: "w4d4p1", problem: "All subsets backtracking", difficulty: "medium", topic: "Recursion", time: "35 min" },
-                  { id: "w4d4p2", problem: "Data pipeline generators", difficulty: "medium", topic: "Generators", time: "35 min" },
-                  { id: "w4d4p3", problem: "Longest substring sliding window", difficulty: "medium", topic: "Algorithms", time: "35 min" },
-                  { id: "w4d4p4", problem: "Longest increasing subsequence", difficulty: "medium", topic: "DP", time: "35 min" },
-                  { id: "w4d4p5", problem: "Binary search with duplicates", difficulty: "medium", topic: "Algorithms", time: "30 min" }
-                ]},
-                { day: "Day 5", problems: [
-                  { id: "w4d5p1", problem: "Batch generator for ML", difficulty: "medium", topic: "Generators", time: "30 min" },
-                  { id: "w4d5p2", problem: "Coin change DP", difficulty: "medium", topic: "DP", time: "40 min" },
-                  { id: "w4d5p3", problem: "Prime generator Sieve", difficulty: "medium", topic: "Generators", time: "30 min" },
-                  { id: "w4d5p4", problem: "Longest common subsequence", difficulty: "medium", topic: "DP", time: "35 min" },
-                  { id: "w4d5p5", problem: "N-Queens backtracking", difficulty: "hard", topic: "Recursion", time: "50 min" }
-                ]},
-                { day: "Day 6", problems: [
-                  { id: "w4d6p1", problem: "Valid parentheses generation", difficulty: "hard", topic: "Recursion", time: "45 min" },
-                  { id: "w4d6p2", problem: "Merge K sorted arrays", difficulty: "hard", topic: "Algorithms", time: "45 min" },
-                  { id: "w4d6p3", problem: "0/1 Knapsack DP", difficulty: "hard", topic: "DP", time: "50 min" },
-                  { id: "w4d6p4", problem: "Combinations generator", difficulty: "hard", topic: "Generators", time: "40 min" },
-                  { id: "w4d6p5", problem: "Min window substring", difficulty: "hard", topic: "Algorithms", time: "50 min" }
-                ]},
-                { day: "Day 7", problems: [
-                  { id: "w4d7p1", problem: "Word break memoization", difficulty: "hard", topic: "Recursion", time: "50 min" },
-                  { id: "w4d7p2", problem: "Tree traversal generator", difficulty: "hard", topic: "Generators", time: "45 min" },
-                  { id: "w4d7p3", problem: "Trapping rain water", difficulty: "hard", topic: "Algorithms", time: "45 min" },
-                  { id: "w4d7p4", problem: "Edit distance DP", difficulty: "hard", topic: "DP", time: "50 min" },
-                  { id: "w4d7p5", problem: "Streaming aggregation generator", difficulty: "hard", topic: "Generators", time: "50 min" }
-                ]}
-              ]
-            },
-            pseudocodeExercises: [
-              { task: "Design recursive solution for permutations with base case identification", estimatedTime: "25 min" },
-              { task: "Flowchart: DP state transition from problem statement to solution", estimatedTime: "30 min" },
-              { task: "Pseudocode: Memory-efficient data pipeline using generator composition", estimatedTime: "25 min" }
-            ]
-          },
-          handsOn: [
-            {
-              rootTopic: "Decorators",
-              subTopics: ["Function decorators", "@wraps", "Decorator with arguments", "Class decorators"],
-              exercises: [
-                { difficulty: "medium", task: "Create @timer decorator that measures function execution time. Test on data processing function", xp: 45, estimatedHours: 1 },
-                { difficulty: "medium", task: "Build @validate_types decorator that checks if function arguments match type hints. Raise TypeError if not", xp: 55, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Create @cache decorator that memoizes function results (dict cache). Test on expensive computation like fibonacci", xp: 65, estimatedHours: 2 },
-                { difficulty: "hard", task: "Build @retry decorator with parameters: @retry(max_attempts=3, delay=1). Retries function on exception", xp: 70, estimatedHours: 2.5 }
-              ]
-            },
-            {
-              rootTopic: "Generators & Iterators",
-              subTopics: ["yield", "next()", "Generator expressions", "itertools"],
-              exercises: [
-                { difficulty: "medium", task: "Create generator function read_large_csv() that yields one row at a time (memory efficient). Test on 1M row file", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Build batch_generator(data, batch_size) that yields batches for ML training. Handle remainder at end", xp: 55, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Create infinite_data_augmentation() generator that yields augmented images forever (rotation, flip, crop)", xp: 70, estimatedHours: 2.5 }
-              ]
-            },
-            {
-              rootTopic: "Type Hints & Static Typing",
-              subTopics: ["Basic types", "List[int]", "Optional", "Union", "TypeVar", "Protocol"],
-              exercises: [
-                { difficulty: "easy", task: "Add type hints to all functions in Week 2 OOP project. Use List, Dict, Optional, Tuple", xp: 40, estimatedHours: 1 },
-                { difficulty: "medium", task: "Create type aliases: FeatureVector = List[float], Dataset = List[FeatureVector]. Use in function signatures", xp: 45, estimatedHours: 1 },
-                { difficulty: "hard", task: "Use Generic types: create DataLoader[T] class that works with any type. Implement __iter__, __next__ with proper typing", xp: 65, estimatedHours: 2.5 }
-              ]
-            },
-            {
-              rootTopic: "Testing with Pytest",
-              subTopics: ["Test functions", "Fixtures", "Parametrize", "Mocking", "Coverage"],
-              exercises: [
-                { difficulty: "medium", task: "Write 10 tests for StandardScaler class: test_fit(), test_transform(), test_inverse_transform(), test_edge_cases()", xp: 60, estimatedHours: 2 },
-                { difficulty: "medium", task: "Create fixture @pytest.fixture that provides sample dataset. Use it in multiple tests", xp: 45, estimatedHours: 1 },
-                { difficulty: "hard", task: "Use @pytest.mark.parametrize to test scaler with different inputs: empty, single value, all zeros, negative values", xp: 70, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Test Pipeline class: Mock transformer.fit(), verify it's called with correct args. Test error handling", xp: 75, estimatedHours: 3 }
-              ]
-            },
-            {
-              rootTopic: "Logging & Error Handling",
-              subTopics: ["logging module", "log levels", "try/except", "Custom exceptions"],
-              exercises: [
-                { difficulty: "medium", task: "Add logging to ML pipeline: INFO for fit/transform start, DEBUG for intermediate values, ERROR for failures", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Create custom exceptions: DataValidationError, ModelNotFittedError, InvalidParameterError. Use in classes", xp: 55, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Build context manager 'with model_training_logger(model_name):' that logs start, end, duration, errors", xp: 70, estimatedHours: 2.5 }
-              ]
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "Refactor All Projects to Production Standards",
-            duration: "12 hours",
-            description: "Take Weeks 1-3 projects and make them production-ready with tests, types, logging",
-            requirements: [
-              "Add type hints to ALL functions and methods (use mypy to validate)",
-              "Write pytest tests with 80%+ coverage for all classes",
-              "Add logging throughout: INFO for operations, DEBUG for data, ERROR for exceptions",
-              "Create decorators: @timer, @validate_inputs, @cache for expensive operations",
-              "Use generators for large data processing (not loading all in memory)",
-              "Add docstrings (Google style) for all functions/classes",
-              "Create requirements.txt with pinned versions",
-              "Add pre-commit hooks: black formatter, flake8 linter, mypy type checker",
-              "Write README.md for each project with usage examples"
-            ],
-            techStack: "Python 3.11, pytest, mypy, black, flake8, logging",
-            evaluation: "All tests pass, mypy reports no errors, code is formatted, 80%+ coverage",
-            portfolioValue: "Shows: Production code quality, testing discipline, professional software engineering"
-          }
-        },
-        {
-          weekNum: 5,
-          title: "Python Performance for ML",
-          goal: "Optimize code for large datasets",
-          hoursThisWeek: 30,
-          summary: "Profiling, vectorization, memory management. Weekend: Build high-performance data pipeline (1M records).",
-          resources: [
-            { name: "NumPy Vectorization Guide", url: "https://numpy.org/doc/stable/user/basics.broadcasting.html", type: "docs" },
-            { name: "Python Profiling", url: "https://docs.python.org/3/library/profile.html", type: "docs" },
-            { name: "High Performance Python Book", url: "https://www.oreilly.com/library/view/high-performance-python/9781492055013/", type: "book" },
-            { name: "Memory Profiler", url: "https://pypi.org/project/memory-profiler/", type: "tool" },
-            { name: "Python Performance Tips - mCoding", url: "https://www.youtube.com/watch?v=YY7yJHo0M5I", type: "video" },
-            { name: "NumPy Performance - Enthought", url: "https://www.youtube.com/watch?v=EEUXKG97YRw", type: "video" }
-          ],
-          logicBuilding: {
-            description: "Master performance optimization and complexity analysis for production ML systems",
-            videoResources: [
-              { name: "Big-O Notation Explained - CS Dojo", url: "https://www.youtube.com/watch?v=__vX2sjlpXU", type: "video", duration: "30 min" },
-              { name: "Optimization Thinking - MIT", url: "https://www.youtube.com/watch?v=ybOttvTKKGQ", type: "video", duration: "45 min" },
-              { name: "Vectorization Patterns - SciPy", url: "https://www.youtube.com/watch?v=EERSD-oukFQ", type: "video", duration: "35 min" }
-            ],
-            platforms: [
-              { name: "LeetCode - Time Complexity", url: "https://leetcode.com/explore/learn/card/recursion-i/256/complexity-analysis/", type: "practice" },
-              { name: "HackerRank - Optimization", url: "https://www.hackerrank.com/domains/algorithms?filters%5Bsubdomains%5D%5B%5D=strings", type: "practice" },
-              { name: "Project Euler - Math Problems", url: "https://projecteuler.net/", type: "practice" }
-            ],
-            topics: [
-              {
-                topic: "Time Complexity Analysis",
-                patterns: ["Big-O notation", "Best/Average/Worst case", "Amortized analysis", "Space-time tradeoffs"],
-                problems: [
-                  { difficulty: "easy", problem: "Identify O(n), O(n²), O(log n) in 5 code snippets", platform: "Custom", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Calculate operations: nested loops with different ranges", platform: "Complexity", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Compare: Linear search O(n) vs Binary search O(log n) on 1M items", platform: "Analysis", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Analyze recursive Fibonacci: Prove it's O(2^n) without memoization", platform: "LeetCode", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Space complexity: Iterative vs Recursive tree traversal comparison", platform: "Analysis", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Amortized analysis: Dynamic array resize operations", platform: "Theory", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Optimize O(n²) to O(n log n): Sort then binary search pattern", platform: "LeetCode", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Master Theorem: Analyze divide-and-conquer recurrences T(n) = aT(n/b) + f(n)", platform: "Advanced", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Prove quicksort average O(n log n), worst O(n²) with pivot analysis", platform: "Theory", estimatedTime: "50 min" }
-                ]
-              },
-              {
-                topic: "Code Optimization Patterns",
-                patterns: ["Loop optimization", "Cache locality", "Lazy evaluation", "Early termination"],
-                problems: [
-                  { difficulty: "easy", problem: "Move invariant code outside loop: Optimize sum calculation", platform: "Custom", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Use list comprehension instead of append in loop (performance test)", platform: "Python", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "Early return: Stop searching once target found", platform: "Pattern", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Cache results: Implement LRU cache decorator for expensive function", platform: "Real-world", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Optimize nested loops: Row-major vs column-major array access", platform: "NumPy", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Lazy evaluation: Use generator instead of list for memory efficiency", platform: "ML Pipeline", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "String concatenation: Optimize ''.join() vs += in loop (benchmark)", platform: "Performance", estimatedTime: "40 min" },
-                  { difficulty: "hard", problem: "Cache locality: Optimize matrix multiplication memory access pattern", platform: "NumPy", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Memoization table: 2D DP with space optimization O(n²) → O(n)", platform: "Advanced", estimatedTime: "50 min" }
-                ]
-              },
-              {
-                topic: "Vectorization Logic",
-                patterns: ["Broadcasting", "Eliminate loops", "NumPy operations", "Boolean masking"],
-                problems: [
-                  { difficulty: "easy", problem: "Replace loop: arr[i] = arr[i] * 2 with NumPy vectorization", platform: "NumPy", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Boolean mask: Filter array elements > threshold without loop", platform: "NumPy", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Broadcasting: Add row vector to each row of matrix", platform: "NumPy", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Vectorize nested loops: Distance matrix between all point pairs", platform: "ML-focused", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Conditional operations: np.where() instead of if-else in loop", platform: "NumPy", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Cumulative operations: Running sum with np.cumsum() vs loop", platform: "Time Series", estimatedTime: "25 min" },
-                  { difficulty: "hard", problem: "Matrix operations: Implement k-means distance calculation vectorized", platform: "ML Algorithm", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Sliding window: Vectorize convolution operation for image processing", platform: "Computer Vision", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Broadcasting logic: Softmax function fully vectorized (no loops)", platform: "Deep Learning", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "Memory Optimization",
-                patterns: ["In-place operations", "Memory views", "Data types", "Garbage collection"],
-                problems: [
-                  { difficulty: "easy", problem: "In-place sort vs creating new array: Memory comparison", platform: "Python", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Choose data type: int8 vs int64 for array of values 0-255", platform: "NumPy", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "List slicing: Understand copy vs view behavior", platform: "Python", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Memory view: Process large array in chunks without copying", platform: "NumPy", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Generator chain: Process 10GB file with constant memory", platform: "Big Data", estimatedTime: "35 min" },
-                  { difficulty: "medium", problem: "Object pooling: Reuse expensive objects instead of recreating", platform: "ML Training", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Memory profiling: Identify and fix memory leak in ML training loop", platform: "Production", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Sparse matrices: Optimize storage for 99% zero values", platform: "ML Advanced", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Streaming processing: Implement online algorithm for moving average", platform: "Real-time", estimatedTime: "50 min" }
-                ]
-              }
-            ],
-            dailyPractice: {
-              description: "5 optimization problems daily to master performance analysis and efficient code",
-              schedule: [
-                { day: "Day 1", problems: [
-                  { id: "w5d1p1", problem: "Identify Big-O in 5 snippets", difficulty: "easy", topic: "Complexity", time: "15 min" },
-                  { id: "w5d1p2", problem: "Calculate nested loop operations", difficulty: "easy", topic: "Complexity", time: "15 min" },
-                  { id: "w5d1p3", problem: "Move invariant code out of loop", difficulty: "easy", topic: "Optimization", time: "15 min" },
-                  { id: "w5d1p4", problem: "Vectorize array multiplication", difficulty: "easy", topic: "Vectorization", time: "10 min" },
-                  { id: "w5d1p5", problem: "In-place sort memory test", difficulty: "easy", topic: "Memory", time: "15 min" }
-                ]},
-                { day: "Day 2", problems: [
-                  { id: "w5d2p1", problem: "Linear vs binary search", difficulty: "easy", topic: "Complexity", time: "20 min" },
-                  { id: "w5d2p2", problem: "List comprehension optimization", difficulty: "easy", topic: "Optimization", time: "20 min" },
-                  { id: "w5d2p3", problem: "Boolean mask filtering", difficulty: "easy", topic: "Vectorization", time: "15 min" },
-                  { id: "w5d2p4", problem: "Choose int8 vs int64", difficulty: "easy", topic: "Memory", time: "20 min" },
-                  { id: "w5d2p5", problem: "Early return pattern", difficulty: "easy", topic: "Optimization", time: "15 min" }
-                ]},
-                { day: "Day 3", problems: [
-                  { id: "w5d3p1", problem: "Recursive Fibonacci O(2^n)", difficulty: "medium", topic: "Complexity", time: "25 min" },
-                  { id: "w5d3p2", problem: "LRU cache decorator", difficulty: "medium", topic: "Optimization", time: "35 min" },
-                  { id: "w5d3p3", problem: "Broadcasting row vector", difficulty: "easy", topic: "Vectorization", time: "20 min" },
-                  { id: "w5d3p4", problem: "Copy vs view slicing", difficulty: "easy", topic: "Memory", time: "15 min" },
-                  { id: "w5d3p5", problem: "Space complexity recursion", difficulty: "medium", topic: "Complexity", time: "30 min" }
-                ]},
-                { day: "Day 4", problems: [
-                  { id: "w5d4p1", problem: "Amortized array resize", difficulty: "medium", topic: "Complexity", time: "30 min" },
-                  { id: "w5d4p2", problem: "Row-major vs column-major", difficulty: "medium", topic: "Optimization", time: "30 min" },
-                  { id: "w5d4p3", problem: "Vectorize distance matrix", difficulty: "medium", topic: "Vectorization", time: "35 min" },
-                  { id: "w5d4p4", problem: "Memory view chunking", difficulty: "medium", topic: "Memory", time: "30 min" },
-                  { id: "w5d4p5", problem: "Generator lazy evaluation", difficulty: "medium", topic: "Optimization", time: "30 min" }
-                ]},
-                { day: "Day 5", problems: [
-                  { id: "w5d5p1", problem: "np.where conditional ops", difficulty: "medium", topic: "Vectorization", time: "25 min" },
-                  { id: "w5d5p2", problem: "Generator chain 10GB file", difficulty: "medium", topic: "Memory", time: "35 min" },
-                  { id: "w5d5p3", problem: "Cumulative sum np.cumsum", difficulty: "medium", topic: "Vectorization", time: "25 min" },
-                  { id: "w5d5p4", problem: "Optimize O(n²) to O(n log n)", difficulty: "hard", topic: "Complexity", time: "40 min" },
-                  { id: "w5d5p5", problem: "String join vs += benchmark", difficulty: "hard", topic: "Optimization", time: "40 min" }
-                ]},
-                { day: "Day 6", problems: [
-                  { id: "w5d6p1", problem: "Master Theorem recurrences", difficulty: "hard", topic: "Complexity", time: "45 min" },
-                  { id: "w5d6p2", problem: "Cache locality matrix mult", difficulty: "hard", topic: "Optimization", time: "50 min" },
-                  { id: "w5d6p3", problem: "K-means distance vectorized", difficulty: "hard", topic: "Vectorization", time: "50 min" },
-                  { id: "w5d6p4", problem: "Object pooling ML training", difficulty: "medium", topic: "Memory", time: "30 min" },
-                  { id: "w5d6p5", problem: "2D DP space O(n²) → O(n)", difficulty: "hard", topic: "Optimization", time: "50 min" }
-                ]},
-                { day: "Day 7", problems: [
-                  { id: "w5d7p1", problem: "Quicksort complexity proof", difficulty: "hard", topic: "Complexity", time: "50 min" },
-                  { id: "w5d7p2", problem: "Vectorize convolution", difficulty: "hard", topic: "Vectorization", time: "50 min" },
-                  { id: "w5d7p3", problem: "Memory leak profiling", difficulty: "hard", topic: "Memory", time: "50 min" },
-                  { id: "w5d7p4", problem: "Softmax fully vectorized", difficulty: "hard", topic: "Vectorization", time: "45 min" },
-                  { id: "w5d7p5", problem: "Sparse matrix optimization", difficulty: "hard", topic: "Memory", time: "45 min" }
-                ]}
-              ]
-            },
-            pseudocodeExercises: [
-              { task: "Analyze algorithm: Identify bottlenecks, calculate Big-O, propose O(n) solution", estimatedTime: "30 min" },
-              { task: "Design optimization strategy: Loop → Vectorization → Caching flow diagram", estimatedTime: "25 min" },
-              { task: "Pseudocode: Memory-efficient online learning algorithm for streaming data", estimatedTime: "35 min" }
-            ]
-          },
-          handsOn: [
-            {
-              rootTopic: "Profiling & Benchmarking",
-              subTopics: ["cProfile", "line_profiler", "timeit", "memory_profiler"],
-              exercises: [
-                { difficulty: "medium", task: "Profile your StandardScaler.fit() using cProfile. Identify top 5 slowest functions. Generate visualization with snakeviz", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Use @profile decorator (line_profiler) on data loading function. Find which lines take most time. Optimize them", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Benchmark 3 implementations of same function: loop, list comprehension, NumPy vectorized. Plot performance vs data size", xp: 65, estimatedHours: 2.5 }
-              ]
-            },
-            {
-              rootTopic: "Vectorization with NumPy",
-              subTopics: ["Broadcasting", "Universal functions", "Boolean masking", "np.where"],
-              exercises: [
-                { difficulty: "medium", task: "Rewrite loop-based normalization: for i in range(len(arr)): arr[i] = (arr[i] - mean) / std → Use NumPy vectorization", xp: 50, estimatedHours: 1 },
-                { difficulty: "medium", task: "Replace nested loops for distance matrix calculation with np.subtract.outer() and broadcasting. Test on 1000 points", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "Implement KNN predict() using pure NumPy (no loops). Use broadcasting for distances, np.argsort for k-nearest", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Vectorize entire decision tree split finding: Calculate all possible splits across all features in one vectorized operation", xp: 90, estimatedHours: 4 }
-              ]
-            },
-            {
-              rootTopic: "Memory Optimization",
-              subTopics: ["dtypes", "Chunking", "Generators", "del and gc", "__slots__"],
-              exercises: [
-                { difficulty: "medium", task: "Load 1GB CSV: Change dtypes from float64→float32, int64→int32. Measure memory savings with memory_profiler", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Process 10M row CSV in chunks (100K rows/chunk). Calculate global statistics without loading all data", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "Add __slots__ to DataPoint class. Compare memory usage of 1M objects with/without slots. Document savings", xp: 65, estimatedHours: 2 },
-                { difficulty: "hard", task: "Build memory-efficient data loader: Yield batches from disk using mmap, keep only 2 batches in RAM at a time", xp: 75, estimatedHours: 3 }
-              ]
-            },
-            {
-              rootTopic: "Parallel Processing",
-              subTopics: ["multiprocessing", "ProcessPoolExecutor", "joblib", "numba"],
-              exercises: [
-                { difficulty: "hard", task: "Parallelize feature engineering: Use ProcessPoolExecutor to process 4 feature groups in parallel on 4 cores", xp: 70, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Use joblib to parallelize cross-validation: 5-fold CV runs in parallel instead of sequentially. Measure speedup", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Add @numba.jit decorator to distance calculation function. Compare speed: pure Python vs NumPy vs Numba", xp: 85, estimatedHours: 3.5 }
-              ]
-            },
-            {
-              rootTopic: "Algorithm Optimization",
-              subTopics: ["Time complexity", "Space complexity", "Data structures", "Caching"],
-              exercises: [
-                { difficulty: "medium", task: "Replace list search (O(n)) with dict lookup (O(1)) in feature name mapping. Benchmark on 10K lookups", xp: 45, estimatedHours: 1 },
-                { difficulty: "hard", task: "Optimize duplicate detection: Replace nested loop O(n²) with set-based approach O(n). Test on 100K records", xp: 65, estimatedHours: 2 },
-                { difficulty: "hard", task: "Implement LRU cache for expensive feature transformations. Show 10x speedup on repeated calls", xp: 70, estimatedHours: 2.5 }
-              ]
-            }
-          ],
-          weekendProject: {
-            name: "High-Performance ETL Pipeline",
-            duration: "10 hours",
-            description: "Build production-grade pipeline processing 1M records with <5 second runtime",
-            requirements: [
-              "Load 1M row CSV in chunks (memory efficient, <500MB RAM usage)",
-              "Apply 10 feature transformations using vectorized NumPy operations",
-              "Parallel processing: 4 worker processes for feature engineering",
-              "Write optimized output: Use pyarrow/parquet instead of CSV",
-              "Profile entire pipeline: Identify and fix bottlenecks",
-              "Achieve <5 second total runtime (load → transform → save)",
-              "Memory profiling: Show peak memory <500MB for 1M rows",
-              "Benchmarking report: Compare original vs optimized (time & memory)",
-              "Type hints, tests, logging, documentation"
-            ],
-            techStack: "Python, NumPy, Pandas, multiprocessing, pyarrow, cProfile, memory_profiler",
-            evaluation: "Processes 1M rows in <5 seconds, uses <500MB RAM, all tests pass",
-            portfolioValue: "Shows: Performance optimization, profiling, parallel processing, production engineering"
-          }
-        },
-        {
-          weekNum: 6,
-          title: "Complete Data Science Stack",
-          goal: "Matplotlib, Seaborn, exploratory analysis",
-          hoursThisWeek: 30,
-          summary: "Data visualization, statistical analysis. Weekend: **CAPSTONE**: Complete Kaggle competition entry with full pipeline.",
-          resources: [
-            { name: "Matplotlib Official Guide", url: "https://matplotlib.org/stable/tutorials/index.html", type: "docs" },
-            { name: "Seaborn Tutorial", url: "https://seaborn.pydata.org/tutorial.html", type: "docs" },
-            { name: "Kaggle Data Visualization", url: "https://www.kaggle.com/learn/data-visualization", type: "interactive" },
-            { name: "Python Graph Gallery", url: "https://www.python-graph-gallery.com/", type: "reference" },
-            { name: "Matplotlib Complete Tutorial - Corey Schafer", url: "https://www.youtube.com/watch?v=UO98lJQ3QGI&list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_", type: "video" },
-            { name: "Seaborn Tutorial - Keith Galli", url: "https://www.youtube.com/watch?v=6GUZXDef2U0", type: "video" }
-          ],
-          logicBuilding: {
-            description: "Master chart selection, statistical interpretation, and visualization design patterns",
-            videoResources: [
-              { name: "Chart Selection Logic - Storytelling with Data", url: "https://www.youtube.com/watch?v=8EMW7io4rSI", type: "video", duration: "30 min" },
-              { name: "Statistical Thinking - StatQuest", url: "https://www.youtube.com/watch?v=qBigTkBLU6g", type: "video", duration: "35 min" },
-              { name: "Design Principles for Data Viz", url: "https://www.youtube.com/watch?v=vTingdk_pVM", type: "video", duration: "25 min" }
-            ],
-            platforms: [
-              { name: "Kaggle - Visualization Kernels", url: "https://www.kaggle.com/learn/data-visualization", type: "practice" },
-              { name: "Makeover Monday", url: "https://www.makeovermonday.co.uk/", type: "practice" },
-              { name: "Data Viz Challenges", url: "https://www.reddit.com/r/dataisbeautiful/", type: "inspiration" }
-            ],
-            topics: [
-              {
-                topic: "Chart Selection Logic",
-                patterns: ["Distribution", "Comparison", "Relationship", "Composition"],
-                problems: [
-                  { difficulty: "easy", problem: "Choose chart: Single variable distribution (Age of 1000 people)", platform: "Theory", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Choose chart: Compare sales across 5 regions", platform: "Business", estimatedTime: "10 min" },
-                  { difficulty: "easy", problem: "Choose chart: Show relationship between study hours and exam scores", platform: "Education", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Multi-variable: Age distribution by gender (2 variables)", platform: "Demographics", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Time series: Stock price over 1 year with volume", platform: "Finance", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Composition: Market share of 10 products over 4 quarters", platform: "Business", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Multi-dimensional: Sales by Region, Product, Quarter (3D data)", platform: "Advanced", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Choose visualization: Network of social connections (graph data)", platform: "Network", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Geographic: COVID cases by country on world map with time slider", platform: "Geospatial", estimatedTime: "40 min" }
-                ]
-              },
-              {
-                topic: "Statistical Interpretation",
-                patterns: ["Central tendency", "Spread", "Outliers", "Correlation"],
-                problems: [
-                  { difficulty: "easy", problem: "Interpret boxplot: Identify median, Q1, Q3, outliers", platform: "Stats", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Read histogram: Determine if distribution is normal, skewed, or bimodal", platform: "Stats", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Scatter plot: Identify positive/negative/no correlation visually", platform: "Stats", estimatedTime: "10 min" },
-                  { difficulty: "medium", problem: "Violin plot: Compare distributions of 4 groups, identify differences", platform: "ML EDA", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Heatmap: Interpret correlation matrix (10 variables), find multicollinearity", platform: "ML Feature Selection", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Pair plot: Analyze relationships between 5 features, spot patterns", platform: "Seaborn", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Residual plot: Detect heteroscedasticity in regression model", platform: "ML Diagnostics", estimatedTime: "35 min" },
-                  { difficulty: "hard", problem: "Q-Q plot: Test normality assumption for multiple variables", platform: "Statistics", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "PCA biplot: Interpret principal components and variable loadings", platform: "Dimensionality Reduction", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "Design Patterns",
-                patterns: ["Color theory", "Layout", "Annotations", "Accessibility"],
-                problems: [
-                  { difficulty: "easy", problem: "Choose color palette: Sequential, diverging, or categorical for temperature data", platform: "Design", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Add title, axis labels, and legend to basic line plot", platform: "Matplotlib", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Highlight specific data point with annotation arrow", platform: "Matplotlib", estimatedTime: "20 min" },
-                  { difficulty: "medium", problem: "Subplot layout: 4 charts in 2x2 grid with shared axes", platform: "Dashboard", estimatedTime: "25 min" },
-                  { difficulty: "medium", problem: "Colorblind-friendly palette: Test with 3 types of color blindness", platform: "Accessibility", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Interactive elements: Add hover tooltips and zoom to plot", platform: "Plotly", estimatedTime: "30 min" },
-                  { difficulty: "hard", problem: "Dashboard design: 6-chart layout with consistent theme and hierarchy", platform: "Business Intelligence", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Storytelling viz: Guide viewer through 3-act narrative with annotations", platform: "Presentation", estimatedTime: "50 min" },
-                  { difficulty: "hard", problem: "Responsive design: Visualization adapts to mobile, tablet, desktop", platform: "Web", estimatedTime: "45 min" }
-                ]
-              },
-              {
-                topic: "EDA Workflows",
-                patterns: ["Univariate analysis", "Bivariate analysis", "Multivariate", "Feature insights"],
-                problems: [
-                  { difficulty: "easy", problem: "Create 5-number summary visualization for Age variable", platform: "Pandas", estimatedTime: "15 min" },
-                  { difficulty: "easy", problem: "Visualize missing data: Heatmap showing nulls by column", platform: "EDA", estimatedTime: "20 min" },
-                  { difficulty: "easy", problem: "Count plot: Frequency of categorical variable (Pclass)", platform: "Seaborn", estimatedTime: "15 min" },
-                  { difficulty: "medium", problem: "Bivariate: Survival rate by Age group (binned) with confidence intervals", platform: "Kaggle", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Facet grid: Compare distributions across multiple categories", platform: "Seaborn", estimatedTime: "30 min" },
-                  { difficulty: "medium", problem: "Feature importance: Visualize correlation with target variable", platform: "ML EDA", estimatedTime: "25 min" },
-                  { difficulty: "hard", problem: "Comprehensive EDA: 12-chart report for Titanic dataset", platform: "Project", estimatedTime: "60 min" },
-                  { difficulty: "hard", problem: "Interaction effects: 3-way relationship (Age, Fare, Survival by Sex)", platform: "Advanced EDA", estimatedTime: "45 min" },
-                  { difficulty: "hard", problem: "Time-series decomposition: Trend, seasonality, residuals visualization", platform: "Forecasting", estimatedTime: "50 min" }
-                ]
-              }
-            ],
-            dailyPractice: {
-              description: "5 visualization design problems daily to master chart selection and statistical interpretation",
-              schedule: [
-                { day: "Day 1", problems: [
-                  { id: "w6d1p1", problem: "Chart for Age distribution", difficulty: "easy", topic: "Selection", time: "10 min" },
-                  { id: "w6d1p2", problem: "Chart for sales comparison", difficulty: "easy", topic: "Selection", time: "10 min" },
-                  { id: "w6d1p3", problem: "Interpret boxplot", difficulty: "easy", topic: "Interpretation", time: "15 min" },
-                  { id: "w6d1p4", problem: "Color palette for temperature", difficulty: "easy", topic: "Design", time: "15 min" },
-                  { id: "w6d1p5", problem: "5-number summary viz", difficulty: "easy", topic: "EDA", time: "15 min" }
-                ]},
-                { day: "Day 2", problems: [
-                  { id: "w6d2p1", problem: "Chart for hours vs scores", difficulty: "easy", topic: "Selection", time: "15 min" },
-                  { id: "w6d2p2", problem: "Read histogram distribution", difficulty: "easy", topic: "Interpretation", time: "15 min" },
-                  { id: "w6d2p3", problem: "Add title, labels, legend", difficulty: "easy", topic: "Design", time: "15 min" },
-                  { id: "w6d2p4", problem: "Missing data heatmap", difficulty: "easy", topic: "EDA", time: "20 min" },
-                  { id: "w6d2p5", problem: "Scatter plot correlation", difficulty: "easy", topic: "Interpretation", time: "10 min" }
-                ]},
-                { day: "Day 3", problems: [
-                  { id: "w6d3p1", problem: "Age by gender chart", difficulty: "medium", topic: "Selection", time: "20 min" },
-                  { id: "w6d3p2", problem: "Violin plot comparison", difficulty: "medium", topic: "Interpretation", time: "25 min" },
-                  { id: "w6d3p3", problem: "Annotate data point", difficulty: "easy", topic: "Design", time: "20 min" },
-                  { id: "w6d3p4", problem: "Count plot Pclass", difficulty: "easy", topic: "EDA", time: "15 min" },
-                  { id: "w6d3p5", problem: "Stock price time series", difficulty: "medium", topic: "Selection", time: "25 min" }
-                ]},
-                { day: "Day 4", problems: [
-                  { id: "w6d4p1", problem: "Correlation heatmap analysis", difficulty: "medium", topic: "Interpretation", time: "30 min" },
-                  { id: "w6d4p2", problem: "2x2 subplot grid", difficulty: "medium", topic: "Design", time: "25 min" },
-                  { id: "w6d4p3", problem: "Survival by age group", difficulty: "medium", topic: "EDA", time: "30 min" },
-                  { id: "w6d4p4", problem: "Market share composition", difficulty: "medium", topic: "Selection", time: "30 min" },
-                  { id: "w6d4p5", problem: "Pair plot analysis", difficulty: "medium", topic: "Interpretation", time: "30 min" }
-                ]},
-                { day: "Day 5", problems: [
-                  { id: "w6d5p1", problem: "Colorblind-friendly test", difficulty: "medium", topic: "Design", time: "30 min" },
-                  { id: "w6d5p2", problem: "Facet grid distributions", difficulty: "medium", topic: "EDA", time: "30 min" },
-                  { id: "w6d5p3", problem: "3D data visualization", difficulty: "hard", topic: "Selection", time: "35 min" },
-                  { id: "w6d5p4", problem: "Residual plot analysis", difficulty: "hard", topic: "Interpretation", time: "35 min" },
-                  { id: "w6d5p5", problem: "Interactive hover tooltips", difficulty: "medium", topic: "Design", time: "30 min" }
-                ]},
-                { day: "Day 6", problems: [
-                  { id: "w6d6p1", problem: "Feature importance viz", difficulty: "medium", topic: "EDA", time: "25 min" },
-                  { id: "w6d6p2", problem: "Network graph connections", difficulty: "hard", topic: "Selection", time: "30 min" },
-                  { id: "w6d6p3", problem: "Q-Q plot normality", difficulty: "hard", topic: "Interpretation", time: "30 min" },
-                  { id: "w6d6p4", problem: "6-chart dashboard layout", difficulty: "hard", topic: "Design", time: "45 min" },
-                  { id: "w6d6p5", problem: "Comprehensive EDA report", difficulty: "hard", topic: "EDA", time: "60 min" }
-                ]},
-                { day: "Day 7", problems: [
-                  { id: "w6d7p1", problem: "Geographic COVID map", difficulty: "hard", topic: "Selection", time: "40 min" },
-                  { id: "w6d7p2", problem: "PCA biplot interpretation", difficulty: "hard", topic: "Interpretation", time: "45 min" },
-                  { id: "w6d7p3", problem: "3-act narrative storytelling", difficulty: "hard", topic: "Design", time: "50 min" },
-                  { id: "w6d7p4", problem: "3-way interaction effects", difficulty: "hard", topic: "EDA", time: "45 min" },
-                  { id: "w6d7p5", problem: "Time-series decomposition", difficulty: "hard", topic: "EDA", time: "50 min" }
-                ]}
-              ]
-            },
-            pseudocodeExercises: [
-              { task: "Decision tree: Choose chart type based on data characteristics (flow diagram)", estimatedTime: "25 min" },
-              { task: "Pseudocode: Automated EDA pipeline that generates 10 visualizations", estimatedTime: "30 min" },
-              { task: "Design system: Color palette, fonts, layout rules for dashboard consistency", estimatedTime: "25 min" }
-            ]
-          },
-          handsOn: [
-            {
-              rootTopic: "Matplotlib Fundamentals",
-              subTopics: ["Figure & Axes", "Line plots", "Scatter plots", "Bar charts", "Customization"],
-              exercises: [
-                { difficulty: "easy", task: "Create line plot: Plot Age distribution across Titanic passengers. Add title, xlabel, ylabel, grid, legend", xp: 30, estimatedHours: 0.5 },
-                { difficulty: "medium", task: "Create 2x2 subplot grid: Show 4 distributions (Age, Fare, Pclass, Survived) with different plot types", xp: 45, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Scatter plot with colors: Fare vs Age, color by Survived, size by Pclass, add colorbar and annotations", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Create custom visualization class that wraps matplotlib for consistent styling across all plots in project", xp: 65, estimatedHours: 2.5 }
-              ]
-            },
-            {
-              rootTopic: "Seaborn Statistical Plots",
-              subTopics: ["distplot/histplot", "boxplot", "violinplot", "pairplot", "heatmap"],
-              exercises: [
-                { difficulty: "easy", task: "Create histogram: Age distribution with KDE overlay. Separate by Survived (2 overlapping distributions)", xp: 35, estimatedHours: 1 },
-                { difficulty: "medium", task: "Box plots: Compare Fare across Pclass (3 boxes). Identify outliers. Add swarm plot overlay for individual points", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Pair plot: Show relationships between Age, Fare, SibSp, Parch. Color by Survived. Add regression lines", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Correlation heatmap: All numeric features, annotate with values, use diverging colormap, cluster rows/cols", xp: 60, estimatedHours: 2 }
-              ]
-            },
-            {
-              rootTopic: "Advanced Visualizations",
-              subTopics: ["FacetGrid", "catplot", "jointplot", "PairGrid", "Custom plots"],
-              exercises: [
-                { difficulty: "hard", task: "FacetGrid: Create 3x2 grid (Pclass x Sex), show Age histograms in each cell, color by Survived", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Joint plot: Age vs Fare with marginal distributions (histograms on sides), add regression line and confidence interval", xp: 60, estimatedHours: 2 },
-                { difficulty: "expert", task: "Custom dashboard: 6-plot layout showing complete EDA (distributions, correlations, survival rates, missing values)", xp: 80, estimatedHours: 3.5 }
-              ]
-            },
-            {
-              rootTopic: "Interactive Visualizations",
-              subTopics: ["Plotly", "Widgets", "Animations", "Dashboards"],
-              exercises: [
-                { difficulty: "medium", task: "Create interactive scatter plot with Plotly: Hover shows passenger details, click filters by class", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Build Plotly dashboard: 4 linked plots (click on one filters others). Show survival analysis from multiple angles", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Create animated visualization: Show how survival rate changes across Age bins, animate through Pclass levels", xp: 85, estimatedHours: 3.5 }
-              ]
-            },
-            {
-              rootTopic: "Statistical Analysis",
-              subTopics: ["scipy.stats", "Hypothesis testing", "Confidence intervals", "Effect sizes"],
-              exercises: [
-                { difficulty: "medium", task: "T-test: Compare mean Age between survivors and non-survivors. Calculate p-value, interpret results", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Chi-square test: Test independence between Sex and Survived. Create contingency table, visualize with heatmap", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "ANOVA: Compare Fare across 3 Pclass levels. Post-hoc tests if significant. Visualize with box plots + significance bars", xp: 70, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Bootstrap confidence intervals: Calculate 95% CI for survival rate in each Pclass. Plot with error bars", xp: 75, estimatedHours: 3 }
-              ]
-            }
-          ],
-          weekendProject: {
-            name: "Phase 1 Capstone: Complete Kaggle Competition Entry",
-            duration: "16 hours",
-            description: "Full ML pipeline from raw data to Kaggle submission with complete EDA and feature engineering",
-            requirements: [
-              "Choose competition: Titanic, House Prices, or Spaceship Titanic",
-              "Complete EDA notebook: 20+ visualizations showing insights",
-              "Feature engineering: Create 15+ derived features",
-              "Data preprocessing: Handle missing values, outliers, encode categoricals",
-              "Build Pipeline: Compose all transformers from Week 2 OOP project",
-              "Model training: Try 3+ algorithms (LogisticRegression, RandomForest, GradientBoosting)",
-              "Cross-validation: 5-fold CV with proper scoring metrics",
-              "Hyperparameter tuning: GridSearchCV or RandomizedSearchCV",
-              "Make predictions on test set, create submission.csv",
-              "Submit to Kaggle: Get score, compare with leaderboard",
-              "Production code: All code in .py modules (not just notebooks)",
-              "Tests: 80%+ coverage of all pipeline components",
-              "Documentation: README with approach, results, what worked/didn't",
-              "Git repo: Clean commit history showing iterative development"
-            ],
-            techStack: "Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Jupyter, Git",
-            evaluation: "Kaggle submission score in top 50%, production-ready code, comprehensive EDA",
-            portfolioValue: "Shows: Complete ML workflow, EDA skills, feature engineering, model selection, production code",
-            successMetrics: [
-              "Kaggle score: Top 50% of leaderboard",
-              "Code quality: Passes all tests, type hints, formatted",
-              "Documentation: Clear README, notebook with insights",
-              "Git: 20+ commits showing progress"
-            ]
-          }
+          ]
         }
       ]
     },
     {
       id: 2,
-      title: "ML Fundamentals",
+      title: "Machine Learning Fundamentals",
       weeks: 4,
-      hoursPerWeek: 35,
-      color: "from-purple-500 to-pink-500",
+      color: "from-green-500 to-emerald-500",
       icon: Brain,
-      description: "Classical ML + Neural Networks from scratch",
-      skillProgress: "ML Theory → Practical Implementation | Can build & deploy ML models",
-      projects: [
-        { name: "Linear Regression from Scratch", week: 7, tech: "Python, NumPy, Matplotlib" },
-        { name: "Scikit-learn Pipeline", week: 8, tech: "sklearn, pandas" },
-        { name: "Neural Network from Scratch", week: 9, tech: "NumPy (no frameworks)" },
-        { name: "Image Classifier", week: 10, tech: "PyTorch, CNNs" }
-      ],
+      description: "Learn core ML algorithms and build your first models",
+      skillProgress: "ML 0/10 → 6/10",
+
       weeks_detail: [
         {
+          weekNum: 5,
+          title: "Introduction to Machine Learning",
+          goal: "Understand ML fundamentals and linear regression",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: ML is how Tesla predicts your drive patterns. Supervised learning = navigating with certainty",
+              dailyGoal: "What is Machine Learning?",
+              concepts: [
+                {
+                  id: "m2w5d1c1",
+                  title: "What is Machine Learning?",
+                  videoUrl: "https://www.youtube.com/watch?v=ukzFI9rgwfU",
+                  channel: "Stanford CS229",
+                  duration: "60 min",
+                  xp: 40
+                },
+                {
+                  id: "m2w5d1c2",
+                  title: "Types of ML: Supervised vs Unsupervised",
+                  videoUrl: "https://www.youtube.com/watch?v=1FZ0A1QCMWc",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 65
+            },
+            {
+              day: "👑 Girls: Training data is past experience. But YOU validate what lessons to keep. Train wisely, reign supreme",
+              dailyGoal: "Train/Test Split and Model Evaluation",
+              concepts: [
+                {
+                  id: "m2w5d2c1",
+                  title: "Train, Validation, Test Split",
+                  videoUrl: "https://www.youtube.com/watch?v=fwY9Qv96DJY",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                },
+                {
+                  id: "m2w5d2c2",
+                  title: "Cross Validation",
+                  videoUrl: "https://www.youtube.com/watch?v=fSytzGwwBVw",
+                  channel: "StatQuest",
+                  duration: "15 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w5d2h1",
+                  title: "Sklearn train_test_split",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/learn/intro-to-machine-learning",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🚗 Boys: train_test_split is why BMW R&D tests prototypes before launch. Never ship untested models",
+              dailyGoal: "Linear Regression - Theory",
+              concepts: [
+                {
+                  id: "m2w5d3c1",
+                  title: "Linear Regression Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=nk2CQITm_eo",
+                  channel: "StatQuest",
+                  duration: "30 min",
+                  xp: 30
+                },
+                {
+                  id: "m2w5d3c2",
+                  title: "Cost Function and MSE",
+                  videoUrl: "https://www.youtube.com/watch?v=sDv4f4s2SB8",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 55
+            },
+            {
+              day: "💎 Girls: Feature scaling is equality in data. StandardScaler ensures nothing overshadows your other qualities",
+              dailyGoal: "Linear Regression - Implementation",
+              concepts: [
+                {
+                  id: "m2w5d4c1",
+                  title: "Gradient Descent for Linear Regression",
+                  videoUrl: "https://www.youtube.com/watch?v=sDv4f4s2SB8",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w5d4h1",
+                  title: "Implement Linear Regression with Sklearn",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/learn/intro-to-machine-learning",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🏁 Boys: Cross-validation is RCB analyzing all IPL seasons, not just one lucky match. Consistency over luck",
+              dailyGoal: "Evaluation Metrics for Regression",
+              concepts: [
+                {
+                  id: "m2w5d5c1",
+                  title: "R-squared and Adjusted R-squared",
+                  videoUrl: "https://www.youtube.com/watch?v=2AQKmw14mHM",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                },
+                {
+                  id: "m2w5d5c2",
+                  title: "MAE, MSE, RMSE",
+                  videoUrl: "https://www.youtube.com/watch?v=LDRbO9a6XPU",
+                  channel: "Krish Naik",
+                  duration: "15 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w5d5h1",
+                  title: "Evaluate model performance",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🌟 Girls: Overfitting is people-pleasing in code. Don't memorize their expectations, learn YOUR generalized power",
+              dailyGoal: "Feature Engineering Basics",
+              concepts: [
+                {
+                  id: "m2w5d6c1",
+                  title: "Feature Scaling - Normalization vs Standardization",
+                  videoUrl: "https://www.youtube.com/watch?v=mnKm3YP56PY",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w5d6h1",
+                  title: "Apply scaling to dataset",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 45
+            },
+            {
+              day: "🔥 Weekend Project: Predict house prices like you're scouting your future mansion - informed decisions only",
+              dailyGoal: "Weekend Project - House Price Predictor",
+              concepts: [],
+              weekendProject: {
+                id: "m2w5proj",
+                name: "House Price Prediction",
+                description: "Build a Linear Regression model to predict house prices",
+                requirements: [
+                  "Load Boston Housing or similar dataset",
+                  "Perform EDA with visualizations",
+                  "Split data and train model",
+                  "Evaluate with R-squared",
+                  "Save model using pickle"
+                ],
+                xp: 100,
+                estimatedHours: 4
+              },
+              totalXP: 100
+            }
+          ]
+        },
+        {
+          weekNum: 6,
+          title: "Logistic Regression & Classification",
+          goal: "Master classification algorithms and evaluation",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: Linear Regression predicts Lamborghini resale value. y = mx + b is the formula to depreciation-proof wealth",
+              dailyGoal: "Introduction to Classification",
+              concepts: [
+                {
+                  id: "m2w6d1c1",
+                  title: "Logistic Regression",
+                  videoUrl: "https://www.youtube.com/watch?v=yIYKR4sgzI8",
+                  channel: "StatQuest",
+                  duration: "25 min",
+                  xp: 30
+                },
+                {
+                  id: "m2w6d1c2",
+                  title: "Sigmoid Function",
+                  videoUrl: "https://www.youtube.com/watch?v=JDU3AzH3WKg",
+                  channel: "Krish Naik",
+                  duration: "15 min",
+                  xp: 20
+                }
+              ],
+              handson: [],
+              totalXP: 50
+            },
+            {
+              day: "👑 Girls: Regression lines find the BEST fit, not ANY fit. Same energy for relationships and code",
+              dailyGoal: "Classification Metrics",
+              concepts: [
+                {
+                  id: "m2w6d2c1",
+                  title: "Confusion Matrix",
+                  videoUrl: "https://www.youtube.com/watch?v=Kdsp6soqA7o",
+                  channel: "StatQuest",
+                  duration: "15 min",
+                  xp: 20
+                },
+                {
+                  id: "m2w6d2c2",
+                  title: "Precision, Recall, F1-Score",
+                  videoUrl: "https://www.youtube.com/watch?v=j-EB6RqqjGI",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w6d2h1",
+                  title: "Implement classification metrics",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "🚗 Boys: Polynomial features add curves to Maserati body lines. Sometimes linear isn't enough for beauty",
+              dailyGoal: "Regularization",
+              concepts: [
+                {
+                  id: "m2w6d3c1",
+                  title: "L1 and L2 Regularization",
+                  videoUrl: "https://www.youtube.com/watch?v=Q81RR3yKn30",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w6d3h1",
+                  title: "Compare regularized models",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "💎 Girls: R² score is how well your predictions align with reality. Aim for 1.0 in code AND life planning",
+              dailyGoal: "Multi-class Classification",
+              concepts: [
+                {
+                  id: "m2w6d4c1",
+                  title: "One-vs-Rest and One-vs-One",
+                  videoUrl: "https://www.youtube.com/watch?v=sxPL760f6Lg",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w6d4h1",
+                  title: "MNIST digit classification",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/c/digit-recognizer",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🏁 Boys: Gradient descent is RCB climbing the points table - small steps, right direction, eventual victory",
+              dailyGoal: "ROC and AUC",
+              concepts: [
+                {
+                  id: "m2w6d5c1",
+                  title: "ROC and AUC Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=4jRBRDbJemM",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w6d5h1",
+                  title: "Plot ROC curves",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🌟 Girls: Regularization prevents over-commitment. Lasso drops useless features, Ridge keeps all but balanced",
+              dailyGoal: "Handling Imbalanced Data",
+              concepts: [
+                {
+                  id: "m2w6d6c1",
+                  title: "SMOTE and Oversampling",
+                  videoUrl: "https://www.youtube.com/watch?v=FheTDyCwRdE",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w6d6h1",
+                  title: "Handle imbalanced dataset",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🔥 Weekend Project: Predict your salary - because negotiating without data is like racing blindfolded",
+              dailyGoal: "Weekend Project - Spam Classifier",
+              concepts: [],
+              weekendProject: {
+                id: "m2w6proj",
+                name: "Email Spam Classifier",
+                description: "Build a Logistic Regression spam classifier",
+                requirements: [
+                  "Load spam email dataset",
+                  "Preprocess text data",
+                  "Train Logistic Regression",
+                  "Evaluate with precision, recall, F1",
+                  "Create confusion matrix"
+                ],
+                xp: 100,
+                estimatedHours: 4
+              },
+              totalXP: 100
+            }
+          ]
+        },
+        {
           weekNum: 7,
-          title: "ML Foundations + Regression",
-          goal: "Understand ML math, build from scratch",
-          hoursThisWeek: 35,
-          summary: "Linear/Logistic regression (math + code), gradient descent, cost functions. Weekend: Implement both from scratch, compare with sklearn.",
-          resources: [
-            { name: "Andrew Ng - ML Course (Coursera)", url: "https://www.coursera.org/learn/machine-learning", type: "course" },
-            { name: "3Blue1Brown - Linear Algebra", url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab", type: "video" },
-            { name: "StatQuest - Gradient Descent", url: "https://www.youtube.com/watch?v=sDv4f4s2SB8", type: "video" },
-            { name: "Scikit-learn Linear Models", url: "https://scikit-learn.org/stable/modules/linear_model.html", type: "docs" }
+          title: "Decision Trees & Ensemble Methods",
+          goal: "Master tree-based algorithms and ensemble techniques",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: Logistic Regression classifies: Is this a supercar or not? Binary decisions, maximum clarity",
+              dailyGoal: "Decision Trees",
+              concepts: [
+                {
+                  id: "m2w7d1c1",
+                  title: "Decision Trees Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=_L39rN6gz7Y",
+                  channel: "StatQuest",
+                  duration: "25 min",
+                  xp: 30
+                },
+                {
+                  id: "m2w7d1c2",
+                  title: "Gini Impurity and Entropy",
+                  videoUrl: "https://www.youtube.com/watch?v=7VeUPuFGJHk",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 55
+            },
+            {
+              day: "👑 Girls: Confusion matrix reveals true positives in life. Know who's genuinely loyal vs. false positives",
+              dailyGoal: "Random Forest",
+              concepts: [
+                {
+                  id: "m2w7d2c1",
+                  title: "Random Forest",
+                  videoUrl: "https://www.youtube.com/watch?v=J4Wdy0Wc_xQ",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                },
+                {
+                  id: "m2w7d2c2",
+                  title: "Bagging Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=2Mg8QD0F1dQ",
+                  channel: "StatQuest",
+                  duration: "15 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w7d2h1",
+                  title: "Train Random Forest classifier",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/learn/intermediate-machine-learning",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 75
+            },
+            {
+              day: "🚗 Boys: Decision trees are BMW's manufacturing decision paths. Each node = a precise engineering choice",
+              dailyGoal: "Gradient Boosting",
+              concepts: [
+                {
+                  id: "m2w7d3c1",
+                  title: "Gradient Boosting",
+                  videoUrl: "https://www.youtube.com/watch?v=3CC4N4z3GJc",
+                  channel: "StatQuest",
+                  duration: "25 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w7d3h1",
+                  title: "Train Gradient Boosting model",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "💎 Girls: Precision vs Recall - would you rather catch ALL opportunities (recall) or only the RIGHT ones (precision)?",
+              dailyGoal: "XGBoost",
+              concepts: [
+                {
+                  id: "m2w7d4c1",
+                  title: "XGBoost Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=OtD8wVaFm6E",
+                  channel: "StatQuest",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w7d4h1",
+                  title: "XGBoost on Kaggle dataset",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/learn/xgboost",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 60
+            },
+            {
+              day: "🏁 Boys: Random Forest combines 100 player opinions to make one perfect team decision. Ensemble power",
+              dailyGoal: "Hyperparameter Tuning",
+              concepts: [
+                {
+                  id: "m2w7d5c1",
+                  title: "Grid Search and Random Search",
+                  videoUrl: "https://www.youtube.com/watch?v=HdlDYng8g9s",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w7d5h1",
+                  title: "Tune hyperparameters with GridSearchCV",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🌟 Girls: ROC curves show your threshold choices. Where do YOU draw the line? AUC measures your standards",
+              dailyGoal: "Feature Importance",
+              concepts: [
+                {
+                  id: "m2w7d6c1",
+                  title: "Feature Importance in Tree Models",
+                  videoUrl: "https://www.youtube.com/watch?v=H4XlI6Q6RK4",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w7d6h1",
+                  title: "Visualize feature importance",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 45
+            },
+            {
+              day: "🔥 Weekend Project: Classify spam emails like you filter toxic people - high precision, no false negatives",
+              dailyGoal: "Weekend Project - Customer Churn Prediction",
+              concepts: [],
+              weekendProject: {
+                id: "m2w7proj",
+                name: "Bank Customer Churn Prediction",
+                description: "Predict which customers will leave using Random Forest",
+                requirements: [
+                  "Load customer dataset",
+                  "Feature engineering",
+                  "Compare Decision Tree vs Random Forest vs XGBoost",
+                  "Hyperparameter tuning",
+                  "Feature importance analysis"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
+            }
           ]
         },
         {
           weekNum: 8,
-          title: "Scikit-learn Mastery",
-          goal: "Production ML with sklearn",
-          hoursThisWeek: 35,
-          summary: "Pipelines, cross-validation, hyperparameter tuning, model selection. Weekend: Kaggle competition submission.",
-          resources: [
-            { name: "Scikit-learn Official Tutorial", url: "https://scikit-learn.org/stable/tutorial/index.html", type: "docs" },
-            { name: "Kaggle Learn - Intro to ML", url: "https://www.kaggle.com/learn/intro-to-machine-learning", type: "interactive" },
-            { name: "Pipeline Tutorial", url: "https://scikit-learn.org/stable/modules/compose.html", type: "docs" },
-            { name: "Hyperparameter Tuning Guide", url: "https://scikit-learn.org/stable/modules/grid_search.html", type: "docs" }
-          ]
-        },
-        {
-          weekNum: 9,
-          title: "Neural Networks from Scratch",
-          goal: "Build NN with pure NumPy (understand backprop)",
-          hoursThisWeek: 38,
-          summary: "Forward prop, backprop, activation functions, optimization. Weekend: Implement multi-layer NN, train on MNIST.",
-          resources: [
-            { name: "3Blue1Brown - Neural Networks", url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi", type: "video" },
-            { name: "Michael Nielsen - Neural Networks Book", url: "http://neuralnetworksanddeeplearning.com/", type: "book" },
-            { name: "Andrej Karpathy - Building Micrograd", url: "https://www.youtube.com/watch?v=VMj-3S1tku0", type: "video" },
-            { name: "MNIST Dataset", url: "http://yann.lecun.com/exdb/mnist/", type: "dataset" }
-          ]
-        },
-        {
-          weekNum: 10,
-          title: "Deep Learning with PyTorch",
-          goal: "Modern DL framework, CNNs, transfer learning",
-          hoursThisWeek: 36,
-          summary: "PyTorch basics, build CNNs, transfer learning. Weekend: Image classifier (your own dataset).",
-          resources: [
-            { name: "PyTorch Official Tutorial", url: "https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html", type: "docs" },
-            { name: "Fast.ai Practical Deep Learning", url: "https://course.fast.ai/", type: "course" },
-            { name: "Stanford CS231n - CNNs", url: "https://cs231n.github.io/", type: "course" },
-            { name: "PyTorch Image Models (timm)", url: "https://github.com/huggingface/pytorch-image-models", type: "tool" }
+          title: "Unsupervised Learning",
+          goal: "Master clustering and dimensionality reduction",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: SVM finds the perfect boundary between Bugatti and everyone else. Maximum margin = maximum exclusivity",
+              dailyGoal: "K-Means Clustering",
+              concepts: [
+                {
+                  id: "m2w8d1c1",
+                  title: "K-Means Clustering",
+                  videoUrl: "https://www.youtube.com/watch?v=4b5d3muPQmA",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                },
+                {
+                  id: "m2w8d1c2",
+                  title: "Elbow Method",
+                  videoUrl: "https://www.youtube.com/watch?v=E81b-0ZxPic",
+                  channel: "Krish Naik",
+                  duration: "15 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w8d1h1",
+                  title: "K-Means implementation",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "👑 Girls: K-Means clustering finds your tribe. Let the algorithm group you with queens, not pretenders",
+              dailyGoal: "Hierarchical Clustering",
+              concepts: [
+                {
+                  id: "m2w8d2c1",
+                  title: "Hierarchical Clustering",
+                  videoUrl: "https://www.youtube.com/watch?v=7xHsRkOdVwo",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w8d2h1",
+                  title: "Create dendrograms",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🚗 Boys: XGBoost is why Porsche keeps winning races. Boosting weak learners into championship material",
+              dailyGoal: "DBSCAN",
+              concepts: [
+                {
+                  id: "m2w8d3c1",
+                  title: "DBSCAN Clustering",
+                  videoUrl: "https://www.youtube.com/watch?v=RDZUdRSDOok",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w8d3h1",
+                  title: "DBSCAN on spatial data",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "💎 Girls: PCA reduces dimensionality to what TRULY matters. Cut the noise, keep the essence of who you are",
+              dailyGoal: "PCA - Dimensionality Reduction",
+              concepts: [
+                {
+                  id: "m2w8d4c1",
+                  title: "Principal Component Analysis",
+                  videoUrl: "https://www.youtube.com/watch?v=FgakZw6K1QQ",
+                  channel: "StatQuest",
+                  duration: "25 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w8d4h1",
+                  title: "Apply PCA to high-dimensional data",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 60
+            },
+            {
+              day: "🏁 Boys: Hyperparameter tuning is RCB adjusting batting order for maximum impact. GridSearch perfection",
+              dailyGoal: "t-SNE for Visualization",
+              concepts: [
+                {
+                  id: "m2w8d5c1",
+                  title: "t-SNE Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=NEaUSP4YerM",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w8d5h1",
+                  title: "Visualize MNIST with t-SNE",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🌟 Girls: Feature importance tells you what ACTUALLY predicts success. Focus energy on what moves the needle",
+              dailyGoal: "Anomaly Detection",
+              concepts: [
+                {
+                  id: "m2w8d6c1",
+                  title: "Anomaly Detection Techniques",
+                  videoUrl: "https://www.youtube.com/watch?v=kx_CKUaHYz0",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m2w8d6h1",
+                  title: "Detect anomalies in dataset",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🔥 Weekend Project: Customer segmentation is knowing your audience - market yourself to the right crowd",
+              dailyGoal: "Weekend Project - Customer Segmentation",
+              concepts: [],
+              weekendProject: {
+                id: "m2w8proj",
+                name: "Customer Segmentation with K-Means",
+                description: "Segment customers based on purchasing behavior",
+                requirements: [
+                  "Load customer data",
+                  "Apply K-Means clustering",
+                  "Find optimal K with elbow method",
+                  "Visualize clusters",
+                  "Interpret customer segments"
+                ],
+                xp: 100,
+                estimatedHours: 4
+              },
+              totalXP: 100
+            }
           ]
         }
       ]
     },
     {
       id: 3,
-      title: "LLMs & Modern AI Stack",
-      weeks: 6,
-      hoursPerWeek: 38,
-      color: "from-green-500 to-teal-500",
+      title: "Deep Learning & Neural Networks",
+      weeks: 4,
+      color: "from-purple-500 to-pink-500",
       icon: Zap,
-      description: "Transformers, RAG, Agents, Production deployment",
-      skillProgress: "Theory → Production Gen AI Systems | Ready for CEO interviews",
-      projects: [
-        { name: "Mini-GPT from Scratch", week: 11, tech: "PyTorch, Transformers" },
-        { name: "Multi-tool Chatbot", week: 12, tech: "OpenAI API, Function calling" },
-        { name: "RAG System from Scratch", week: 13, tech: "OpenAI, ChromaDB" },
-        { name: "Production RAG (TCS Banking Docs)", week: 14, tech: "LangChain, Pinecone, FastAPI" },
-        { name: "Autonomous Research Agent", week: 15, tech: "LangGraph, Tools, Memory" },
-        { name: "Deployed Gen AI API", week: 16, tech: "Docker, GCP, CI/CD, Monitoring" }
-      ],
+      description: "Master neural networks - the core of modern AI",
+      skillProgress: "Deep Learning 0/10 → 7/10",
+
       weeks_detail: [
         {
-          weekNum: 11,
-          title: "Transformer Architecture Deep Dive",
-          goal: "NEVER freeze on 'explain transformers' again",
-          hoursThisWeek: 40,
-          summary: "Attention mechanism (code from scratch), positional encoding, encoder/decoder. Weekend: Build mini-GPT following Karpathy tutorial.",
-          resources: [
-            { name: "Attention Is All You Need (Paper)", url: "https://arxiv.org/abs/1706.03762", type: "paper" },
-            { name: "Andrej Karpathy - Let's Build GPT", url: "https://www.youtube.com/watch?v=kCc8FmEb1nY", type: "video" },
-            { name: "The Illustrated Transformer", url: "https://jalammar.github.io/illustrated-transformer/", type: "article" },
-            { name: "Hugging Face Transformers Course", url: "https://huggingface.co/learn/nlp-course/chapter1/1", type: "course" },
-            { name: "Stanford CS224N - Attention Mechanisms", url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOCXd21gf0CF4xr35yINeOy", type: "video", note: "Watch Lectures 6-8" },
-            { name: "Stanford CS224N - Transformers", url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOCXd21gf0CF4xr35yINeOy", type: "video", note: "Watch Lectures 9-10" },
-            { name: "Transformer from Scratch - Aladdin Persson", url: "https://www.youtube.com/watch?v=U0s0f995w14", type: "video" }
-          ],
-          handsOn: [
+          weekNum: 9,
+          title: "Introduction to Neural Networks",
+          goal: "Understand how neural networks work from scratch",
+          hoursThisWeek: 25,
+          days: [
             {
-              rootTopic: "Attention Mechanism",
-              subTopics: ["Query-Key-Value", "Scaled Dot-Product", "Multi-Head Attention", "Self-Attention"],
-              exercises: [
-                { difficulty: "medium", task: "Implement scaled dot-product attention from scratch: attention = softmax(Q @ K.T / sqrt(d_k)) @ V. Test on dummy data", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "Build multi-head attention: Split into h heads, compute attention for each, concatenate. Compare with single-head", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Implement self-attention for sequence: Input is same sequence for Q, K, V. Visualize attention weights as heatmap", xp: 70, estimatedHours: 2.5 },
-                { difficulty: "expert", task: "Add masking for decoder: Prevent attending to future tokens. Implement causal mask (lower triangular matrix)", xp: 85, estimatedHours: 3.5 }
-              ]
+              day: "🏎️ Boys: Neural networks are Ferrari's AI driving assistant - layers of intelligence for peak performance",
+              dailyGoal: "What are Neural Networks?",
+              concepts: [
+                {
+                  id: "m3w9d1c1",
+                  title: "But what is a Neural Network?",
+                  videoUrl: "https://www.youtube.com/watch?v=aircAruvnKk",
+                  channel: "3Blue1Brown",
+                  duration: "19 min",
+                  xp: 30
+                },
+                {
+                  id: "m3w9d1c2",
+                  title: "Perceptron and Activation Functions",
+                  videoUrl: "https://www.youtube.com/watch?v=GVsUOuSjvcg",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 55
             },
             {
-              rootTopic: "Positional Encoding",
-              subTopics: ["Sinusoidal encoding", "Learned embeddings", "Position representation"],
-              exercises: [
-                { difficulty: "medium", task: "Implement sinusoidal positional encoding: PE(pos, 2i) = sin(pos/10000^(2i/d)), PE(pos, 2i+1) = cos(...)", xp: 55, estimatedHours: 2 },
-                { difficulty: "medium", task: "Visualize positional encodings: Plot 128 positions x 512 dimensions as heatmap. Observe the patterns", xp: 40, estimatedHours: 1 },
-                { difficulty: "hard", task: "Compare learned vs sinusoidal: Train small model with both, measure which generalizes to longer sequences", xp: 70, estimatedHours: 3 }
-              ]
+              day: "👑 Girls: Activation functions decide what passes through. Like your boundaries - ReLU blocks negativity",
+              dailyGoal: "Forward Propagation",
+              concepts: [
+                {
+                  id: "m3w9d2c1",
+                  title: "Gradient Descent, how neural networks learn",
+                  videoUrl: "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+                  channel: "3Blue1Brown",
+                  duration: "21 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w9d2h1",
+                  title: "Implement forward pass from scratch",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 65
             },
             {
-              rootTopic: "Transformer Encoder",
-              subTopics: ["Multi-head attention", "Feed-forward network", "Layer normalization", "Residual connections"],
-              exercises: [
-                { difficulty: "hard", task: "Build encoder layer: MHA → Add & Norm → FFN → Add & Norm. Use PyTorch nn.Module", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "hard", task: "Stack 6 encoder layers. Add dropout between layers. Test on sentence classification task", xp: 85, estimatedHours: 4 },
-                { difficulty: "expert", task: "Implement encoder with configurable: num_layers, d_model, num_heads, d_ff. Match BERT-base architecture", xp: 95, estimatedHours: 5 }
-              ]
+              day: "🚗 Boys: Forward propagation is the Lambo accelerator. Data flows forward, predictions emerge. Speed is essence",
+              dailyGoal: "Backpropagation",
+              concepts: [
+                {
+                  id: "m3w9d3c1",
+                  title: "What is backpropagation really doing?",
+                  videoUrl: "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+                  channel: "3Blue1Brown",
+                  duration: "14 min",
+                  xp: 30
+                },
+                {
+                  id: "m3w9d3c2",
+                  title: "Backpropagation calculus",
+                  videoUrl: "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+                  channel: "3Blue1Brown",
+                  duration: "10 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w9d3h1",
+                  title: "Implement backprop manually",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 40
+                }
+              ],
+              totalXP: 95
             },
             {
-              rootTopic: "Transformer Decoder",
-              subTopics: ["Masked attention", "Cross-attention", "Auto-regressive generation"],
-              exercises: [
-                { difficulty: "hard", task: "Build decoder layer: Masked MHA → Add & Norm → Cross-attention (to encoder) → Add & Norm → FFN → Add & Norm", xp: 90, estimatedHours: 4 },
-                { difficulty: "expert", task: "Implement auto-regressive generation: Start with [START], predict next token, append, repeat until [END]", xp: 100, estimatedHours: 5 },
-                { difficulty: "expert", task: "Add temperature, top-k, top-p sampling to generation. Compare outputs with different sampling strategies", xp: 85, estimatedHours: 3 }
-              ]
+              day: "💎 Girls: Backpropagation is learning from mistakes. Gradient flows back, weights update. Growth is painful but necessary",
+              dailyGoal: "Activation Functions Deep Dive",
+              concepts: [
+                {
+                  id: "m3w9d4c1",
+                  title: "Sigmoid, ReLU, Tanh, Softmax",
+                  videoUrl: "https://www.youtube.com/watch?v=Xvg00QnyaIY",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w9d4h1",
+                  title: "Compare activation functions",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
             },
             {
-              rootTopic: "Training Transformers",
-              subTopics: ["Learning rate scheduling", "Warmup", "Label smoothing", "Gradient clipping"],
-              exercises: [
-                { difficulty: "hard", task: "Implement learning rate warmup: Linear increase for first 4000 steps, then inverse sqrt decay", xp: 65, estimatedHours: 2 },
-                { difficulty: "hard", task: "Add label smoothing: Instead of hard 0/1 targets, use 0.1/0.9. Compare training stability", xp: 60, estimatedHours: 2 },
-                { difficulty: "expert", task: "Full training loop: Train small transformer on tiny dataset (e.g., date conversion). Monitor loss, perplexity", xp: 100, estimatedHours: 6 }
-              ]
+              day: "🏁 Boys: Loss functions measure how far you are from the championship. Cross-entropy = your performance gap",
+              dailyGoal: "Loss Functions",
+              concepts: [
+                {
+                  id: "m3w9d5c1",
+                  title: "Cross Entropy Loss",
+                  videoUrl: "https://www.youtube.com/watch?v=6ArSys5qHAU",
+                  channel: "StatQuest",
+                  duration: "15 min",
+                  xp: 25
+                },
+                {
+                  id: "m3w9d5c2",
+                  title: "MSE vs Cross Entropy",
+                  videoUrl: "https://www.youtube.com/watch?v=Md5qFpm1VnY",
+                  channel: "Krish Naik",
+                  duration: "15 min",
+                  xp: 20
+                }
+              ],
+              handson: [],
+              totalXP: 45
+            },
+            {
+              day: "🌟 Girls: Optimizers find the path of least resistance to your goals. Adam optimizer = smart, adaptive queen energy",
+              dailyGoal: "Introduction to TensorFlow/Keras",
+              concepts: [
+                {
+                  id: "m3w9d6c1",
+                  title: "TensorFlow 2.0 Complete Course",
+                  videoUrl: "https://www.youtube.com/watch?v=tPYj3fFJGjk",
+                  channel: "freeCodeCamp",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w9d6h1",
+                  title: "Build first Keras model",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "🔥 Weekend Project: Build a neural net from scratch. Understanding beats copying. Know your own power",
+              dailyGoal: "Weekend Project - MNIST from Scratch",
+              concepts: [],
+              weekendProject: {
+                id: "m3w9proj",
+                name: "MNIST Digit Classifier",
+                description: "Build a neural network from scratch to classify digits",
+                requirements: [
+                  "Load MNIST dataset",
+                  "Build NN with NumPy only",
+                  "Implement forward and backprop",
+                  "Train for 10 epochs",
+                  "Achieve 90%+ accuracy"
+                ],
+                xp: 150,
+                estimatedHours: 6
+              },
+              totalXP: 150
             }
-          ],
-          weekendProject: {
-            name: "Mini-GPT from Scratch (Karpathy Tutorial)",
-            duration: "12 hours",
-            description: "Follow Andrej Karpathy's tutorial to build GPT from scratch, understand every line",
-            requirements: [
-              "Watch Karpathy's 'Let's build GPT' video (2.5 hours)",
-              "Implement character-level GPT: Tokenization, embeddings, transformer blocks",
-              "Train on Shakespeare dataset (or similar small corpus)",
-              "Implement: Multi-head self-attention, position embeddings, MLP, layer norm",
-              "Training: Cross-entropy loss, AdamW optimizer, learning rate scheduling",
-              "Generation: Auto-regressive sampling with temperature control",
-              "Achieve coherent text generation (even if not perfect)",
-              "Document each component: What it does, why it's needed",
-              "Compare with Stanford CS224N lectures: Note differences in implementation",
-              "Add type hints, tests for attention mechanism"
-            ],
-            techStack: "PyTorch, NumPy, Jupyter",
-            evaluation: "Model generates coherent Shakespeare-style text, all components understood",
-            portfolioValue: "Shows: Deep understanding of transformers, ability to implement papers, PyTorch mastery",
-            stanfordLectures: [
-              "Lecture 6: Neural Machine Translation, Seq2Seq, Attention",
-              "Lecture 7: Translation, Seq2Seq, Attention (continued)",
-              "Lecture 8: Self-Attention and Transformers",
-              "Lecture 9: Transformers and Pretraining",
-              "Lecture 10: More about Transformers and Pretraining"
-            ]
-          }
+          ]
+        },
+        {
+          weekNum: 10,
+          title: "Convolutional Neural Networks (CNNs)",
+          goal: "Master CNNs for image recognition",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: CNNs are how Tesla's cameras recognize road signs. Convolutions = eyes of the machine, vision of the future",
+              dailyGoal: "How CNNs Work",
+              concepts: [
+                {
+                  id: "m3w10d1c1",
+                  title: "But what is a convolution?",
+                  videoUrl: "https://www.youtube.com/watch?v=KuXjwB4LzSA",
+                  channel: "3Blue1Brown",
+                  duration: "23 min",
+                  xp: 30
+                },
+                {
+                  id: "m3w10d1c2",
+                  title: "CNN Architectures Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=YRhxdVk_sIs",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 55
+            },
+            {
+              day: "👑 Girls: Filters extract features you want to see. Apply the right filter to life - amplify beauty, minimize noise",
+              dailyGoal: "CNN Layers",
+              concepts: [
+                {
+                  id: "m3w10d2c1",
+                  title: "Convolutional Layers, Pooling, Fully Connected",
+                  videoUrl: "https://www.youtube.com/watch?v=pj9-rr1wDhM",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w10d2h1",
+                  title: "Build CNN with Keras",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/learn/intro-to-deep-learning",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🚗 Boys: Pooling reduces complexity while keeping essence. MaxPool keeps the BEST, just like your garage",
+              dailyGoal: "Regularization in Deep Learning",
+              concepts: [
+                {
+                  id: "m3w10d3c1",
+                  title: "Dropout Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=ARq74QuavAo",
+                  channel: "StatQuest",
+                  duration: "15 min",
+                  xp: 20
+                },
+                {
+                  id: "m3w10d3c2",
+                  title: "Batch Normalization",
+                  videoUrl: "https://www.youtube.com/watch?v=yXOMHOpbon8",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w10d3h1",
+                  title: "Add regularization to CNN",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "💎 Girls: Padding protects edges from being lost. Some boundaries need extra protection. Self-preservation is code",
+              dailyGoal: "Famous CNN Architectures",
+              concepts: [
+                {
+                  id: "m3w10d4c1",
+                  title: "VGG, ResNet, Inception",
+                  videoUrl: "https://www.youtube.com/watch?v=dZVkygnKh1M",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w10d4h1",
+                  title: "Use pretrained ResNet",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 60
+            },
+            {
+              day: "🏁 Boys: ImageNet is RCB's trophy cabinet goal - 1000 classes of excellence to aspire to",
+              dailyGoal: "Data Augmentation",
+              concepts: [
+                {
+                  id: "m3w10d5c1",
+                  title: "Image Data Augmentation",
+                  videoUrl: "https://www.youtube.com/watch?v=mTVf7BN7S8w",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w10d5h1",
+                  title: "Implement augmentation pipeline",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🌟 Girls: Transfer learning is inheriting wisdom. Don't start from zero when giants offer their shoulders",
+              dailyGoal: "Transfer Learning",
+              concepts: [
+                {
+                  id: "m3w10d6c1",
+                  title: "Transfer Learning Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=yofjFQddwHE",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w10d6h1",
+                  title: "Fine-tune VGG16 on custom dataset",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/c/dogs-vs-cats",
+                  difficulty: "medium",
+                  xp: 35
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🔥 Weekend Project: Image classifier - teach machines to see the world through YOUR categories",
+              dailyGoal: "Weekend Project - CIFAR-10 Classifier",
+              concepts: [],
+              weekendProject: {
+                id: "m3w10proj",
+                name: "CIFAR-10 Image Classifier",
+                description: "Build a CNN to classify CIFAR-10 images",
+                requirements: [
+                  "Load CIFAR-10 dataset",
+                  "Build CNN architecture",
+                  "Use data augmentation",
+                  "Apply dropout and batch norm",
+                  "Achieve 80%+ accuracy"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
+            }
+          ]
+        },
+        {
+          weekNum: 11,
+          title: "Recurrent Neural Networks (RNNs)",
+          goal: "Master sequence models for time-series and text",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: RNNs remember the lap sequence. Every corner matters. Sequential data is racing telemetry",
+              dailyGoal: "Introduction to RNNs",
+              concepts: [
+                {
+                  id: "m3w11d1c1",
+                  title: "Recurrent Neural Networks",
+                  videoUrl: "https://www.youtube.com/watch?v=AsNTP8Kwu80",
+                  channel: "StatQuest",
+                  duration: "20 min",
+                  xp: 25
+                },
+                {
+                  id: "m3w11d1c2",
+                  title: "RNN Architecture Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=Y2wfIKQyd1I",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 50
+            },
+            {
+              day: "👑 Girls: Memory in networks is like emotional intelligence. Past context shapes present understanding",
+              dailyGoal: "Vanishing Gradient Problem",
+              concepts: [
+                {
+                  id: "m3w11d2c1",
+                  title: "Vanishing Gradient Problem",
+                  videoUrl: "https://www.youtube.com/watch?v=qhXZsFVxGKo",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w11d2h1",
+                  title: "Visualize gradient flow",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🚗 Boys: Vanishing gradients are why McLaren improved pit stop memory. Long sequences need LSTM cells",
+              dailyGoal: "LSTM Networks",
+              concepts: [
+                {
+                  id: "m3w11d3c1",
+                  title: "LSTM clearly explained",
+                  videoUrl: "https://www.youtube.com/watch?v=YCzL96nL7j0",
+                  channel: "StatQuest",
+                  duration: "25 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w11d3h1",
+                  title: "Build LSTM for text",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 60
+            },
+            {
+              day: "💎 Girls: Forget gates decide what to release. Some memories don't serve you. Let the LSTM handle letting go",
+              dailyGoal: "GRU Networks",
+              concepts: [
+                {
+                  id: "m3w11d4c1",
+                  title: "GRU Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=8HyCNIVRbSU",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w11d4h1",
+                  title: "Compare LSTM vs GRU",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🏁 Boys: Time series is IPL match-by-match analysis. Predict tomorrow's performance from yesterday's data",
+              dailyGoal: "Sequence to Sequence Models",
+              concepts: [
+                {
+                  id: "m3w11d5c1",
+                  title: "Seq2Seq Models",
+                  videoUrl: "https://www.youtube.com/watch?v=L8HKweZIOmg",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 30
+                }
+              ],
+              handson: [],
+              totalXP: 30
+            },
+            {
+              day: "🌟 Girls: Bidirectional LSTMs read past AND future. Like intuition - you sense what's coming while learning from what was",
+              dailyGoal: "Time Series Forecasting",
+              concepts: [
+                {
+                  id: "m3w11d6c1",
+                  title: "Time Series with LSTM",
+                  videoUrl: "https://www.youtube.com/watch?v=QIUxPv5PJOY",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w11d6h1",
+                  title: "Stock price prediction",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🔥 Weekend Project: Predict stock prices - because financial independence is the ultimate liberation",
+              dailyGoal: "Weekend Project - Stock Price Predictor",
+              concepts: [],
+              weekendProject: {
+                id: "m3w11proj",
+                name: "Stock Price Prediction with LSTM",
+                description: "Build an LSTM model to predict stock prices",
+                requirements: [
+                  "Fetch historical stock data",
+                  "Preprocess time series",
+                  "Build LSTM model",
+                  "Predict next 7 days",
+                  "Visualize predictions"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
+            }
+          ]
         },
         {
           weekNum: 12,
-          title: "LLM APIs & Prompt Engineering",
-          goal: "Master OpenAI/Claude APIs, understand parameters",
-          hoursThisWeek: 38,
-          summary: "Temperature, top_p, function calling, streaming, error handling. Weekend: Build multi-functional chatbot.",
-          resources: [
-            { name: "OpenAI API Documentation", url: "https://platform.openai.com/docs/introduction", type: "docs" },
-            { name: "OpenAI Cookbook", url: "https://github.com/openai/openai-cookbook", type: "github" },
-            { name: "Prompt Engineering Guide", url: "https://www.promptingguide.ai/", type: "guide" },
-            { name: "Function Calling Tutorial", url: "https://platform.openai.com/docs/guides/function-calling", type: "docs" },
-            { name: "Stanford CS224N - Language Models", url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOCXd21gf0CF4xr35yINeOy", type: "video", note: "Watch Lectures 11-13" },
-            { name: "Prompt Engineering - OpenAI DevDay", url: "https://www.youtube.com/watch?v=ahnGLM-RC1Y", type: "video" }
-          ],
-          handsOn: [
+          title: "Advanced Deep Learning",
+          goal: "Master advanced architectures: GANs, Autoencoders, Transfer Learning",
+          hoursThisWeek: 25,
+          days: [
             {
-              rootTopic: "LLM Parameters Understanding",
-              subTopics: ["Temperature", "top_p", "top_k", "max_tokens", "frequency_penalty"],
-              exercises: [
-                { difficulty: "easy", task: "Test temperature: Generate same prompt 10 times with temp=0, 0.5, 1.0, 2.0. Observe creativity vs consistency", xp: 35, estimatedHours: 1 },
-                { difficulty: "medium", task: "Compare top_p vs temperature: Generate text with different combinations. Document when to use each", xp: 45, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Build parameter playground: Streamlit app with sliders for all parameters. Real-time generation", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Analyze frequency_penalty: Test on code generation (reduce repetition) vs creative writing. Find optimal values", xp: 55, estimatedHours: 2 }
-              ]
+              day: "🏎️ Boys: GANs create fake Ferraris so real that experts can't tell. Generator vs Discriminator = ultimate competition",
+              dailyGoal: "Autoencoders",
+              concepts: [
+                {
+                  id: "m3w12d1c1",
+                  title: "Autoencoders Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=7mRfwaGGAPg",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w12d1h1",
+                  title: "Build autoencoder for denoising",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
             },
             {
-              rootTopic: "Prompt Engineering Techniques",
-              subTopics: ["Few-shot learning", "Chain-of-thought", "ReAct prompting", "System messages"],
-              exercises: [
-                { difficulty: "medium", task: "Implement few-shot classifier: Give 3 examples, classify new inputs. Test on sentiment, intent detection", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Chain-of-thought: Add 'Let's think step by step' for math problems. Compare accuracy with/without CoT", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Build prompt template system: Variables, conditional sections, output parsing. Like LangChain PromptTemplate", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Auto-optimize prompts: Generate variations, test on eval set, find best performing prompt automatically", xp: 90, estimatedHours: 4 }
-              ]
+              day: "👑 Girls: Autoencoders compress you to your essence, then reconstruct stronger. Transformation through compression",
+              dailyGoal: "Variational Autoencoders (VAE)",
+              concepts: [
+                {
+                  id: "m3w12d2c1",
+                  title: "VAE Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=9zKuYvjFFS8",
+                  channel: "Arxiv Insights",
+                  duration: "20 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w12d2h1",
+                  title: "Generate faces with VAE",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 65
             },
             {
-              rootTopic: "Function Calling",
-              subTopics: ["Tool definition", "JSON schema", "Function execution", "Error handling"],
-              exercises: [
-                { difficulty: "medium", task: "Define 3 functions: get_weather(city), calculate_tip(bill, percent), search_wikipedia(query). Test with OpenAI", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Build calculator chatbot: Parse user intent, call appropriate function (add, multiply, etc), return result", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Multi-step function calling: User asks complex query requiring 2-3 sequential function calls to answer", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Build TCS banking assistant: Functions for balance, transactions, transfers. Handle authentication, validation", xp: 100, estimatedHours: 5 }
-              ]
+              day: "🚗 Boys: Batch normalization is F1 tire management - consistent performance across all track conditions",
+              dailyGoal: "Introduction to GANs",
+              concepts: [
+                {
+                  id: "m3w12d3c1",
+                  title: "GANs Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=8L11aMN5KY8",
+                  channel: "Computerphile",
+                  duration: "15 min",
+                  xp: 25
+                },
+                {
+                  id: "m3w12d3c2",
+                  title: "How GANs work",
+                  videoUrl: "https://www.youtube.com/watch?v=Sw9r8CL98N0",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 50
             },
             {
-              rootTopic: "Streaming & Error Handling",
-              subTopics: ["Server-sent events", "Token-by-token", "Retry logic", "Rate limiting"],
-              exercises: [
-                { difficulty: "medium", task: "Implement streaming: Display tokens as they arrive (like ChatGPT). Use async/await", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "Add retry logic with exponential backoff: Retry on 429, 500, 503 errors. Max 3 retries", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Rate limiting: Track tokens/minute, queue requests if limit reached. Use Redis for distributed tracking", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Build production LLM client: Retries, rate limiting, caching, cost tracking, token counting, error handling", xp: 95, estimatedHours: 5 }
-              ]
+              day: "💎 Girls: Dropout is trusting yourself without all resources. Sometimes constraints reveal your true capability",
+              dailyGoal: "Building GANs",
+              concepts: [
+                {
+                  id: "m3w12d4c1",
+                  title: "Build GAN from scratch",
+                  videoUrl: "https://www.youtube.com/watch?v=OljTVUVzPpM",
+                  channel: "Aladdin Persson",
+                  duration: "40 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w12d4h1",
+                  title: "Generate MNIST digits with GAN",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 40
+                }
+              ],
+              totalXP: 75
             },
             {
-              rootTopic: "Cost Optimization",
-              subTopics: ["Token counting", "Caching", "Prompt compression", "Model selection"],
-              exercises: [
-                { difficulty: "medium", task: "Build token counter: Estimate cost before API call. Use tiktoken library. Alert if >1000 tokens", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Implement semantic caching: Hash prompt, check cache (Redis), return cached response if exists", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Prompt compression: Summarize long context before sending to LLM. Measure token savings vs quality loss", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Smart model routing: Use GPT-4 for complex, GPT-3.5 for simple. Auto-classify query difficulty", xp: 85, estimatedHours: 4 }
-              ]
+              day: "🏁 Boys: Learning rate scheduling is IPL strategy - aggressive early, conservative in finals. Timing is everything",
+              dailyGoal: "Transfer Learning Deep Dive",
+              concepts: [
+                {
+                  id: "m3w12d5c1",
+                  title: "Transfer Learning for Computer Vision",
+                  videoUrl: "https://www.youtube.com/watch?v=oDHpqu52soI",
+                  channel: "DeepLearning.AI",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w12d5h1",
+                  title: "Fine-tune for custom task",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 60
+            },
+            {
+              day: "🌟 Girls: TensorBoard visualizes your journey. See your growth curve. Celebrate progress, not just endpoints",
+              dailyGoal: "Model Optimization",
+              concepts: [
+                {
+                  id: "m3w12d6c1",
+                  title: "Adam, RMSprop, Learning Rate Scheduling",
+                  videoUrl: "https://www.youtube.com/watch?v=NE88eqLngkg",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m3w12d6h1",
+                  title: "Compare optimizers",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🔥 Weekend Project: Neural style transfer - make AI art as unique as your fingerprint",
+              dailyGoal: "Weekend Project - Image Style Transfer",
+              concepts: [],
+              weekendProject: {
+                id: "m3w12proj",
+                name: "Neural Style Transfer",
+                description: "Apply artistic styles to images using CNNs",
+                requirements: [
+                  "Use VGG19 pretrained model",
+                  "Implement content and style loss",
+                  "Apply style to custom image",
+                  "Optimize with LBFGS",
+                  "Create gallery of results"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "Multi-Tool AI Assistant",
-            duration: "10 hours",
-            description: "Build chatbot with 10+ tools using function calling, streaming, error handling",
-            requirements: [
-              "10+ functions: Weather, Wikipedia, calculator, unit conversion, timezone, currency, stocks, etc.",
-              "Function calling: LLM decides which tool to use based on user query",
-              "Streaming responses: Show tokens in real-time",
-              "Error handling: Graceful failures, retry logic",
-              "Cost tracking: Log tokens used, estimate cost per conversation",
-              "Semantic caching: Cache responses for similar queries (90% similarity)",
-              "Rate limiting: Respect OpenAI rate limits",
-              "Conversation memory: Remember last 5 messages for context",
-              "UI: Streamlit or Gradio for chat interface",
-              "Logging: Track all API calls, responses, errors, costs"
-            ],
-            techStack: "OpenAI API, Streamlit, Redis, tiktoken",
-            evaluation: "Bot handles 10+ different query types, streaming works, costs <$0.10 per conversation",
-            portfolioValue: "Shows: API mastery, function calling, production practices, cost awareness",
-            stanfordLectures: [
-              "Lecture 11: Question Answering",
-              "Lecture 12: Natural Language Generation",
-              "Lecture 13: Contextual Word Embeddings"
-            ]
-          }
-        },
-        {
-          weekNum: 13,
-          title: "RAG Fundamentals",
-          goal: "Build RAG without frameworks (understand internals)",
-          hoursThisWeek: 38,
-          summary: "Embeddings, vector search, ChromaDB, chunking strategies. Weekend: Document Q&A system (no LangChain).",
-          resources: [
-            { name: "OpenAI Embeddings Guide", url: "https://platform.openai.com/docs/guides/embeddings", type: "docs" },
-            { name: "ChromaDB Documentation", url: "https://docs.trychroma.com/", type: "docs" },
-            { name: "Building RAG from Scratch", url: "https://www.youtube.com/watch?v=sVcwVQRHIc8", type: "video" },
-            { name: "RAG Paper (Lewis et al.)", url: "https://arxiv.org/abs/2005.11401", type: "paper" },
-            { name: "Stanford CS224N - Word Vectors", url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOCXd21gf0CF4xr35yINeOy", type: "video", note: "Watch Lectures 1-2" },
-            { name: "Stanford CS224N - Information Retrieval", url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOCXd21gf0CF4xr35yINeOy", type: "video", note: "Watch Lecture 14" },
-            { name: "RAG Tutorial - LangChain", url: "https://www.youtube.com/watch?v=tcqEUSNCn8I", type: "video" }
-          ],
-          handsOn: [
-            {
-              rootTopic: "Embeddings",
-              subTopics: ["Text embeddings", "Cosine similarity", "Semantic search", "Embedding models"],
-              exercises: [
-                { difficulty: "easy", task: "Generate embeddings for 100 sentences using OpenAI. Store in NumPy array. Visualize with t-SNE/UMAP in 2D", xp: 40, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Implement cosine similarity: Find 5 most similar sentences to query. Compare with string matching (Levenshtein)", xp: 50, estimatedHours: 2 },
-                { difficulty: "medium", task: "Build semantic search: Embed 1000 documents, search with natural language queries. Compare search quality vs keyword search", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Compare embedding models: OpenAI ada-002, sentence-transformers, instructor-xl. Benchmark on retrieval accuracy", xp: 70, estimatedHours: 3 }
-              ]
-            },
-            {
-              rootTopic: "Vector Databases",
-              subTopics: ["ChromaDB", "FAISS", "Pinecone", "Indexing strategies"],
-              exercises: [
-                { difficulty: "medium", task: "Set up ChromaDB: Create collection, add 100 docs with embeddings, query with filters (metadata)", xp: 45, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Implement FAISS index: Use IndexFlatL2 for exact search, then IndexIVFFlat for approximate. Compare speed vs accuracy", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Build hybrid search: Combine vector similarity (semantic) with BM25 (keyword). Use reciprocal rank fusion", xp: 75, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Optimize for scale: Index 100K documents, achieve <100ms query time. Use HNSW or IVF_PQ algorithms", xp: 90, estimatedHours: 4 }
-              ]
-            },
-            {
-              rootTopic: "Chunking Strategies",
-              subTopics: ["Fixed-size chunks", "Semantic chunking", "Recursive splitting", "Overlap"],
-              exercises: [
-                { difficulty: "easy", task: "Implement fixed-size chunking: Split text into 500-char chunks with 50-char overlap. Handle sentence boundaries", xp: 35, estimatedHours: 1 },
-                { difficulty: "medium", task: "Semantic chunking: Use sentence embeddings, cluster similar sentences, create coherent chunks", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Recursive text splitter: Split by paragraphs, then sentences, then words. Respect max chunk size", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Evaluate chunking: Test 3 strategies on Q&A accuracy. Measure: retrieval precision, answer quality, context efficiency", xp: 75, estimatedHours: 3 }
-              ]
-            },
-            {
-              rootTopic: "RAG Pipeline",
-              subTopics: ["Query → Embed → Retrieve → Augment → Generate", "Context window", "Prompt construction"],
-              exercises: [
-                { difficulty: "medium", task: "Build basic RAG: User query → embed → retrieve top 3 docs → inject into prompt → generate answer", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Add query rewriting: Expand user query to 3 variations, retrieve for each, deduplicate results", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Implement re-ranking: Retrieve 20 docs, use cross-encoder to re-rank, keep top 5 for LLM context", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Multi-hop RAG: Answer requires multiple retrieval steps. Chain reasoning: Retrieve → Generate sub-question → Retrieve again", xp: 95, estimatedHours: 5 }
-              ]
-            },
-            {
-              rootTopic: "Evaluation & Quality",
-              subTopics: ["Retrieval metrics", "Answer quality", "Hallucination detection", "Ground truth comparison"],
-              exercises: [
-                { difficulty: "medium", task: "Calculate retrieval metrics: Precision@k, Recall@k, MRR, nDCG on test set of 100 queries", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Build hallucination detector: Check if answer claims are in retrieved context. Use NLI model", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Answer quality scoring: Compare generated answer with ground truth. Use ROUGE, BLEU, BERTScore", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Full RAG evaluation suite: Retrieval quality, answer accuracy, latency, cost. Create comprehensive dashboard", xp: 90, estimatedHours: 4 }
-              ]
-            }
-          ],
-          weekendProject: {
-            name: "Document Q&A System from Scratch",
-            duration: "12 hours",
-            description: "Build complete RAG system without LangChain - understand every component",
-            requirements: [
-              "Data ingestion: Load PDFs/docs, extract text, clean, chunk (use PyPDF2 or similar)",
-              "Embedding: Generate embeddings for all chunks using OpenAI ada-002",
-              "Vector store: Use ChromaDB or FAISS for storage and retrieval",
-              "Query processing: Accept natural language question, embed query",
-              "Retrieval: Find top-k most relevant chunks (k=5), experiment with similarity threshold",
-              "Context construction: Build prompt with retrieved chunks + question",
-              "Generation: Call OpenAI to generate answer based on context",
-              "Source attribution: Return which documents were used (citations)",
-              "Evaluation: Create 20 test questions with ground truth, measure accuracy",
-              "UI: Streamlit interface for asking questions, showing sources",
-              "No frameworks: Pure Python + OpenAI + ChromaDB (no LangChain)"
-            ],
-            techStack: "Python, OpenAI API, ChromaDB, PyPDF2, Streamlit",
-            evaluation: "Answers 15/20 test questions correctly, shows source citations, <3 second latency",
-            portfolioValue: "Shows: Deep RAG understanding, no black-box frameworks, system design thinking",
-            stanfordLectures: [
-              "Lecture 1: Introduction and Word Vectors",
-              "Lecture 2: Word Vectors and Word Senses",
-              "Lecture 14: Question Answering and Information Retrieval"
-            ],
-            testDatasets: [
-              "Use your TCS project documentation (if available)",
-              "Or Stanford SQuAD dataset",
-              "Or create custom dataset from Wikipedia articles"
-            ]
-          }
-        },
-        {
-          weekNum: 14,
-          title: "Production RAG with LangChain",
-          goal: "Enterprise-ready RAG system",
-          hoursThisWeek: 40,
-          summary: "LangChain components, retrieval optimization, re-ranking, evaluation. Weekend: **YOUR TCS BANKING DOCS** RAG system.",
-          resources: [
-            { name: "LangChain Documentation", url: "https://python.langchain.com/docs/get_started/introduction", type: "docs" },
-            { name: "Pinecone Vector Database", url: "https://docs.pinecone.io/guides/get-started/overview", type: "docs" },
-            { name: "Advanced RAG Techniques", url: "https://www.youtube.com/watch?v=T-D1OfcDW1M", type: "video" },
-            { name: "LlamaIndex for RAG", url: "https://docs.llamaindex.ai/en/stable/", type: "docs" }
-          ],
-          handsOn: [
-            {
-              rootTopic: "LangChain RAG Components",
-              subTopics: ["Document loaders", "Text splitters", "Retrievers", "Chains"],
-              exercises: [
-                { difficulty: "medium", task: "Use LangChain document loaders: PDFLoader, CSVLoader, WebLoader. Load 10 different file types", xp: 50, estimatedHours: 2 },
-                { difficulty: "medium", task: "Compare text splitters: CharacterTextSplitter, RecursiveCharacterTextSplitter, TokenTextSplitter. Test on 100-page doc", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Build LangChain retriever: VectorStoreRetriever with Pinecone. Add MMR (max marginal relevance) for diversity", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Create custom chain: RetrievalQA with custom prompt template, source filtering, and answer verification", xp: 75, estimatedHours: 3.5 }
-              ]
-            },
-            {
-              rootTopic: "Advanced Retrieval",
-              subTopics: ["Re-ranking", "Hybrid search", "Parent-child chunks", "Multi-query"],
-              exercises: [
-                { difficulty: "hard", task: "Implement cross-encoder re-ranking: Retrieve 20 docs, re-rank with BERT cross-encoder, keep top 5", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "hard", task: "Build hybrid search: Combine dense (embeddings) + sparse (BM25). Use reciprocal rank fusion for merging", xp: 85, estimatedHours: 4 },
-                { difficulty: "expert", task: "Parent-child chunking: Store small chunks for retrieval, large chunks for context. Test on legal docs", xp: 90, estimatedHours: 4.5 },
-                { difficulty: "expert", task: "Multi-query retrieval: Generate 3 query variations, retrieve for each, deduplicate, re-rank combined results", xp: 95, estimatedHours: 5 }
-              ]
-            },
-            {
-              rootTopic: "Production Vector Databases",
-              subTopics: ["Pinecone", "Weaviate", "Qdrant", "Migration strategies"],
-              exercises: [
-                { difficulty: "medium", task: "Set up Pinecone: Create index, upsert 10K vectors with metadata, query with filters", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Compare vector DBs: Benchmark Pinecone vs Weaviate vs Qdrant on speed, accuracy, cost for 100K docs", xp: 75, estimatedHours: 3.5 },
-                { difficulty: "hard", task: "Implement incremental updates: Add/update/delete documents without rebuilding entire index", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Multi-tenant vector store: Isolate data per user, implement namespace strategy, test security", xp: 85, estimatedHours: 4 }
-              ]
-            },
-            {
-              rootTopic: "RAG Evaluation",
-              subTopics: ["RAGAS framework", "Context relevance", "Answer faithfulness", "Groundedness"],
-              exercises: [
-                { difficulty: "medium", task: "Install RAGAS, evaluate RAG on 50 Q&A pairs. Measure: context_precision, answer_relevancy, faithfulness", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Build custom evaluator: Check if answer is grounded in context using NLI model (entailment score)", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "A/B test chunking strategies: Compare 5 approaches on retrieval quality using RAGAS metrics", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Full evaluation pipeline: Synthetic test generation (LLM creates Q&A), auto-eval, regression detection", xp: 95, estimatedHours: 5 }
-              ]
-            },
-            {
-              rootTopic: "Cost & Performance Optimization",
-              subTopics: ["Caching", "Token reduction", "Lazy loading", "Batch processing"],
-              exercises: [
-                { difficulty: "medium", task: "Implement semantic caching: Cache similar queries (>0.95 similarity), measure hit rate, cost savings", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Token optimization: Compress retrieved context with extractive summarization before LLM. Measure quality vs savings", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Batch embedding generation: Process 10K docs in batches of 100, implement retry logic, progress tracking", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Smart routing: Use small LLM for simple queries, large for complex. Auto-classify query complexity", xp: 90, estimatedHours: 4.5 }
-              ]
-            }
-          ],
-          weekendProject: {
-            name: "TCS Banking Documents RAG System",
-            duration: "14 hours",
-            description: "Production-ready RAG for your TCS banking project docs - showcase in interviews!",
-            requirements: [
-              "Ingest TCS project docs: Requirements, design docs, code docs, API specs, test plans",
-              "LangChain pipeline: Document loaders, chunking (recursive 1000 chars, 200 overlap), Pinecone storage",
-              "Advanced retrieval: Hybrid search (semantic + keyword), cross-encoder re-ranking",
-              "Query types: 'Explain authentication flow', 'Show transaction API', 'List security measures'",
-              "Answer with citations: Return source document names, page numbers, confidence scores",
-              "Evaluation: 30 test questions, achieve >85% accuracy, <2s latency",
-              "API: FastAPI endpoint POST /query with authentication",
-              "Caching: Redis for semantic caching, 70% cache hit rate target",
-              "Monitoring: Log queries, latency, costs, retrieval quality",
-              "UI: Streamlit interface showing: query, answer, sources, confidence, cost"
-            ],
-            techStack: "LangChain, Pinecone, FastAPI, Redis, Streamlit",
-            evaluation: "Answers 25/30 test questions correctly, <$0.05 per query, 70% cache hit rate",
-            portfolioValue: "HUGE: Shows production RAG on real enterprise docs. 'I built this for my TCS project'",
-            interviewTalking: "Walk through: Architecture diagram, chunking strategy, why hybrid search, cost optimization"
-          }
-        },
-        {
-          weekNum: 15,
-          title: "AI Agents & LangGraph",
-          goal: "Build autonomous agents (like your TCS projects)",
-          hoursThisWeek: 40,
-          summary: "ReAct pattern, LangGraph state machines, tools, memory. Weekend: Multi-step research agent.",
-          resources: [
-            { name: "LangGraph Documentation", url: "https://langchain-ai.github.io/langgraph/", type: "docs" },
-            { name: "ReAct Paper (Yao et al.)", url: "https://arxiv.org/abs/2210.03629", type: "paper" },
-            { name: "Building AI Agents", url: "https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/", type: "course" },
-            { name: "AutoGPT Repository", url: "https://github.com/Significant-Gravitas/AutoGPT", type: "github" }
-          ],
-          handsOn: [
-            {
-              rootTopic: "ReAct Pattern",
-              subTopics: ["Reasoning", "Action", "Observation", "Iteration"],
-              exercises: [
-                { difficulty: "medium", task: "Implement basic ReAct loop: Thought → Action (choose tool) → Observation → repeat. Test on math problems", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Build ReAct agent with 5 tools: Wikipedia search, calculator, web scrape, code execution, weather API", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "hard", task: "Add max iterations limit (10), handle infinite loops, implement 'give up' logic if no progress", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Self-reflection: Agent critiques its own reasoning, corrects mistakes. 'Did I solve it correctly?'", xp: 95, estimatedHours: 5 }
-              ]
-            },
-            {
-              rootTopic: "LangGraph State Machines",
-              subTopics: ["Nodes", "Edges", "State", "Conditional routing"],
-              exercises: [
-                { difficulty: "medium", task: "Build simple graph: Start → Query → Search → Summarize → End. Use StateGraph class", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Add conditional edges: Route to different nodes based on query type (factual → search, math → calculator)", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Implement cycles: Research loop that retrieves → analyzes → decides if more info needed → retrieves again", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Multi-agent collaboration: Researcher agent → Writer agent → Editor agent. Pass state between agents", xp: 100, estimatedHours: 5 }
-              ]
-            },
-            {
-              rootTopic: "Agent Tools",
-              subTopics: ["Tool definition", "Error handling", "Tool selection", "Custom tools"],
-              exercises: [
-                { difficulty: "easy", task: "Create 3 custom tools: File reader, SQL executor, API caller. Use @tool decorator from LangChain", xp: 45, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Tool with complex inputs: SQL tool takes {query: str, database: str, timeout: int}. Validate all inputs", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Implement tool error handling: Retry on network errors, skip on auth errors, fallback tool on failures", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Dynamic tool loading: Agent learns new tools at runtime. 'I need a YouTube search tool' → creates it", xp: 90, estimatedHours: 4.5 }
-              ]
-            },
-            {
-              rootTopic: "Agent Memory",
-              subTopics: ["Conversation history", "Entity memory", "Summary memory", "Vector memory"],
-              exercises: [
-                { difficulty: "medium", task: "Implement conversation buffer: Store last 10 messages, inject into context. Test with multi-turn dialogue", xp: 50, estimatedHours: 2 },
-                { difficulty: "hard", task: "Entity memory: Extract and track entities (people, dates, facts) across conversation. Use NER model", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Summary memory: Summarize old messages when context limit reached. Keep last 5 + summary of rest", xp: 70, estimatedHours: 3 },
-                { difficulty: "expert", task: "Vector memory: Store all interactions as embeddings, retrieve relevant past conversations for context", xp: 90, estimatedHours: 4 }
-              ]
-            },
-            {
-              rootTopic: "Planning & Execution",
-              subTopics: ["Task decomposition", "Plan generation", "Execution tracking", "Re-planning"],
-              exercises: [
-                { difficulty: "hard", task: "Task decomposer: Break 'Plan a trip to Paris' into subtasks: flights, hotels, itinerary, budget", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Plan-and-execute agent: Generate plan (steps 1-5) → execute step 1 → update plan → execute step 2 → ...", xp: 95, estimatedHours: 5 },
-                { difficulty: "expert", task: "Re-planning: If step fails or new info discovered, regenerate remaining plan. Handle plan conflicts", xp: 90, estimatedHours: 4.5 },
-                { difficulty: "expert", task: "Parallel execution: Execute independent steps simultaneously (API calls), merge results, continue", xp: 100, estimatedHours: 5 }
-              ]
-            }
-          ],
-          weekendProject: {
-            name: "Autonomous Research Agent",
-            duration: "12 hours",
-            description: "Agent that researches complex questions using multiple tools, writes comprehensive reports",
-            requirements: [
-              "Input: Complex question like 'Compare Gen AI adoption in banking vs healthcare 2024'",
-              "Planning: Agent creates research plan (5-7 steps): Define search queries, identify sources, verify facts",
-              "Tools: Wikipedia search, Tavily API (web search), Arxiv papers, Python REPL for data analysis",
-              "ReAct loop: Thought → Action → Observation → adjust approach based on findings",
-              "Information synthesis: Combine data from multiple sources, resolve conflicts, identify gaps",
-              "Report generation: 1000-word report with sections: Summary, Findings, Data, Conclusions, Sources",
-              "Self-evaluation: Agent scores its own report quality, identifies weaknesses",
-              "LangGraph state machine: Planning → Research → Analysis → Writing → Review → Final",
-              "Memory: Track researched topics to avoid redundant searches",
-              "Error handling: Retry failed searches, skip unavailable sources, timeout after 10 minutes"
-            ],
-            techStack: "LangGraph, LangChain, Tavily API, OpenAI, Python",
-            evaluation: "Produces accurate 1000-word report, cites 5+ sources, completes in <5 minutes",
-            portfolioValue: "Shows autonomous AI, complex reasoning, tool use - exactly what TCS/Accenture need",
-            interviewTalking: "Explain: ReAct pattern, why LangGraph over simple loops, how you handle agent failures"
-          }
-        },
-        {
-          weekNum: 16,
-          title: "Production Deployment",
-          goal: "Deploy complete Gen AI system",
-          hoursThisWeek: 42,
-          summary: "FastAPI, Docker, GCP Cloud Run, CI/CD, monitoring (LangSmith). Weekend: **DEPLOY EVERYTHING** - live URL to show in interviews.",
-          resources: [
-            { name: "FastAPI Documentation", url: "https://fastapi.tiangolo.com/", type: "docs" },
-            { name: "Docker for ML", url: "https://docs.docker.com/get-started/", type: "docs" },
-            { name: "Google Cloud Run", url: "https://cloud.google.com/run/docs/quickstarts", type: "docs" },
-            { name: "LangSmith Monitoring", url: "https://docs.smith.langchain.com/", type: "docs" }
-          ],
-          handsOn: [
-            {
-              rootTopic: "FastAPI for Gen AI",
-              subTopics: ["API design", "Streaming responses", "Authentication", "Rate limiting"],
-              exercises: [
-                { difficulty: "medium", task: "Build FastAPI app: POST /chat, POST /embed, GET /health. Include Swagger docs, request validation", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Implement streaming: Use FastAPI StreamingResponse for token-by-token LLM output. Test with async client", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Add JWT authentication: Protect endpoints, validate tokens, implement refresh tokens, rate limit per user", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "API rate limiting: Token bucket algorithm, per-user quotas, cost tracking, auto-throttle expensive users", xp: 85, estimatedHours: 4 }
-              ]
-            },
-            {
-              rootTopic: "Dockerization",
-              subTopics: ["Multi-stage builds", "Image optimization", "Environment variables", "Health checks"],
-              exercises: [
-                { difficulty: "medium", task: "Write Dockerfile: Python 3.11, install deps, copy code, expose port 8000. Build and run locally", xp: 50, estimatedHours: 2 },
-                { difficulty: "hard", task: "Multi-stage build: Builder stage (compile deps) → runtime stage (slim image). Reduce from 2GB → 500MB", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Add health check: HEALTHCHECK endpoint responds <1s, Docker restarts if 3 failures. Test container recovery", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "expert", task: "Production Dockerfile: Non-root user, security scanning (Snyk), secrets management, logging config", xp: 90, estimatedHours: 4 }
-              ]
-            },
-            {
-              rootTopic: "Cloud Deployment (GCP)",
-              subTopics: ["Cloud Run", "Secret Manager", "Cloud Build", "Load balancing"],
-              exercises: [
-                { difficulty: "medium", task: "Deploy to Cloud Run: Push image to Artifact Registry, deploy service, configure autoscaling (0-10 instances)", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Secrets management: Store OpenAI key in Secret Manager, inject at runtime. Never commit secrets to code", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Custom domain + HTTPS: Map custom domain to Cloud Run, enable HTTPS, configure CORS for frontend", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "expert", task: "Multi-region deployment: Deploy to 3 regions (US, EU, Asia), use load balancer for geo-routing", xp: 95, estimatedHours: 5 }
-              ]
-            },
-            {
-              rootTopic: "CI/CD Pipeline",
-              subTopics: ["GitHub Actions", "Automated testing", "Deployment automation", "Rollback strategy"],
-              exercises: [
-                { difficulty: "medium", task: "Set up GitHub Actions: On push to main → run tests → build Docker → deploy to Cloud Run", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Add testing stage: Run pytest, check coverage >80%, fail pipeline if tests fail. No deploy on red tests", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Blue-green deployment: Deploy new version to separate service, run smoke tests, switch traffic if pass", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Canary deployment: Route 10% traffic to new version, monitor error rate, auto-rollback if >1% errors", xp: 95, estimatedHours: 5 }
-              ]
-            },
-            {
-              rootTopic: "Monitoring & Observability",
-              subTopics: ["LangSmith", "Logging", "Metrics", "Alerting"],
-              exercises: [
-                { difficulty: "medium", task: "Set up LangSmith: Track all LLM calls, trace chains, view latency/cost per request. Integrate with LangChain", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Structured logging: JSON logs with trace IDs, user IDs, latency, costs. Ship to Cloud Logging", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Metrics dashboard: Track requests/sec, p95 latency, error rate, cost/request. Use Cloud Monitoring", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Alerting: PagerDuty alerts for: error rate >5%, latency >5s, cost >$10/hour, API key leaked", xp: 85, estimatedHours: 4 }
-              ]
-            }
-          ],
-          weekendProject: {
-            name: "Deploy Full-Stack Gen AI Application",
-            duration: "16 hours",
-            description: "Deploy RAG system + Agent to production with monitoring - LIVE URL FOR RESUME",
-            requirements: [
-              "Backend API: FastAPI with 10 endpoints (chat, RAG, agent, embeddings, health, metrics)",
-              "Docker: Multi-stage build, <600MB image, health checks, non-root user",
-              "Cloud Run: Deploy to GCP, autoscaling 0-5 instances, custom domain (genai-portfolio.com)",
-              "Frontend: React/Streamlit UI deployed to Vercel/Netlify, calls your backend API",
-              "Authentication: JWT tokens, API keys for programmatic access",
-              "Rate limiting: 100 requests/hour free tier, 1000/hour for paid",
-              "Monitoring: LangSmith for LLM tracing, Cloud Monitoring for metrics",
-              "Logging: Structured JSON logs, searchable in Cloud Logging",
-              "CI/CD: GitHub Actions - push to main auto-deploys after tests pass",
-              "Documentation: README with API docs, curl examples, architecture diagram",
-              "Cost controls: Budget alerts at $20, $50, $100/month. Auto-shutdown if exceeded",
-              "Security: Snyk scan in CI, secrets in Secret Manager, HTTPS only"
-            ],
-            techStack: "FastAPI, Docker, GCP Cloud Run, GitHub Actions, LangSmith, React/Streamlit",
-            evaluation: "Live URL works, <2s latency, costs <$5/month, uptime >99%",
-            portfolioValue: "CRITICAL: You have a deployed Gen AI app. URL on resume. 'Try it yourself at...'",
-            interviewTalking: "Show live demo in interview. Explain: Architecture, scaling strategy, cost optimization, security",
-            resumeSection: "• Deployed production Gen AI API to GCP Cloud Run with 99.9% uptime, serving 1000+ requests/day\n• Implemented CI/CD pipeline with automated testing, reducing deployment time from 2 hours to 5 minutes\n• Optimized costs to $4/month through caching and smart model routing, handling 30K requests/month"
-          }
+          ]
         }
       ]
     },
     {
       id: 4,
-      title: "Portfolio & Interview Mastery",
+      title: "Specializations: NLP, CV, RL",
       weeks: 4,
-      hoursPerWeek: 30,
       color: "from-orange-500 to-red-500",
       icon: Trophy,
-      description: "Polish portfolio, master interviews, land 12-15k QAR offers",
-      skillProgress: "Hidden skills → Visible expertise | Interview confidence: 10/10",
-      projects: [
-        { name: "Portfolio Website", week: 17, tech: "React, Tailwind" },
-        { name: "System Design Case Studies", week: 18, tech: "Architecture diagrams" },
-        { name: "4 Showcase Projects", week: 19, tech: "Best work, documented" },
-        { name: "LinkedIn + GitHub Optimization", week: 20, tech: "Personal branding" }
-      ],
+      description: "Choose your specialization path and build portfolio projects",
+      skillProgress: "Specialization 0/10 → 6/10",
+
+      weeks_detail: [
+        {
+          weekNum: 13,
+          title: "Natural Language Processing (NLP)",
+          goal: "Master text processing and NLP fundamentals",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: NLP is how Alexa understands 'Start my BMW remotely'. Natural language = commanding machines with voice",
+              dailyGoal: "Introduction to NLP",
+              concepts: [
+                {
+                  id: "m4w13d1c1",
+                  title: "What is NLP?",
+                  videoUrl: "https://www.youtube.com/watch?v=fM4qTMfCoak",
+                  channel: "Stanford CS224N",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [],
+              totalXP: 40
+            },
+            {
+              day: "👑 Girls: Tokenization breaks text into meaningful units. Like analyzing gaslighting - word by word clarity",
+              dailyGoal: "Text Preprocessing",
+              concepts: [
+                {
+                  id: "m4w13d2c1",
+                  title: "Tokenization, Stemming, Lemmatization",
+                  videoUrl: "https://www.youtube.com/watch?v=nxhCyeRR75Q",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w13d2h1",
+                  title: "Preprocess tweets dataset",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🚗 Boys: TF-IDF weighs word importance. In your success story, which words carry the most weight?",
+              dailyGoal: "Text Representation",
+              concepts: [
+                {
+                  id: "m4w13d3c1",
+                  title: "Bag of Words and TF-IDF",
+                  videoUrl: "https://www.youtube.com/watch?v=hXNbFNCgPfY",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w13d3h1",
+                  title: "Implement TF-IDF from scratch",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "💎 Girls: Stopwords are filler people. Remove them to find the meaningful connections that matter",
+              dailyGoal: "Word Embeddings",
+              concepts: [
+                {
+                  id: "m4w13d4c1",
+                  title: "Word2Vec and GloVe",
+                  videoUrl: "https://www.youtube.com/watch?v=viZrOnJclY0",
+                  channel: "Stanford CS224N",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w13d4h1",
+                  title: "Train Word2Vec on custom corpus",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "🏁 Boys: Lemmatization finds the root. 'driving', 'drove', 'drives' → 'drive'. Core identity matters most",
+              dailyGoal: "Sentiment Analysis",
+              concepts: [
+                {
+                  id: "m4w13d5c1",
+                  title: "Sentiment Analysis with ML",
+                  videoUrl: "https://www.youtube.com/watch?v=M7SWr5xObkA",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w13d5h1",
+                  title: "IMDB sentiment classifier",
+                  platform: "Kaggle",
+                  url: "https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🌟 Girls: N-grams capture context. 'not happy' differs from 'happy'. Context is everything in communication",
+              dailyGoal: "Introduction to Transformers",
+              concepts: [
+                {
+                  id: "m4w13d6c1",
+                  title: "Attention is All You Need",
+                  videoUrl: "https://www.youtube.com/watch?v=iDulhoQ2pro",
+                  channel: "Yannic Kilcher",
+                  duration: "40 min",
+                  xp: 35
+                }
+              ],
+              handson: [],
+              totalXP: 35
+            },
+            {
+              day: "🔥 Weekend Project: Sentiment analyzer - let AI detect emotional manipulation before you do",
+              dailyGoal: "Weekend Project - Movie Review Analyzer",
+              concepts: [],
+              weekendProject: {
+                id: "m4w13proj",
+                name: "Movie Review Sentiment Analyzer",
+                description: "Build an end-to-end sentiment analysis system",
+                requirements: [
+                  "Preprocess IMDB reviews",
+                  "Use TF-IDF representation",
+                  "Train Logistic Regression + Naive Bayes",
+                  "Compare with LSTM model",
+                  "Build Flask API"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
+            }
+          ]
+        },
+        {
+          weekNum: 14,
+          title: "Computer Vision Specialization",
+          goal: "Master object detection and image segmentation",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: Word2Vec gives words coordinates in meaning-space. 'King - Man + Woman = Queen' is literal AI wit",
+              dailyGoal: "Image Preprocessing",
+              concepts: [
+                {
+                  id: "m4w14d1c1",
+                  title: "Image Augmentation and Preprocessing",
+                  videoUrl: "https://www.youtube.com/watch?v=oXlwWbU8l2o",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w14d1h1",
+                  title: "OpenCV basics tutorial",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 45
+            },
+            {
+              day: "👑 Girls: Embeddings capture semantic relationships. Your vibe attracts your tribe - mathematically proven",
+              dailyGoal: "Object Detection Introduction",
+              concepts: [
+                {
+                  id: "m4w14d2c1",
+                  title: "Object Detection - R-CNN to YOLO",
+                  videoUrl: "https://www.youtube.com/watch?v=GSwYGkTfOKk",
+                  channel: "Krish Naik",
+                  duration: "35 min",
+                  xp: 30
+                }
+              ],
+              handson: [],
+              totalXP: 30
+            },
+            {
+              day: "🚗 Boys: Attention mechanism is Porsche active suspension - focuses on what matters at each moment",
+              dailyGoal: "YOLO Implementation",
+              concepts: [
+                {
+                  id: "m4w14d3c1",
+                  title: "YOLOv5 Tutorial",
+                  videoUrl: "https://www.youtube.com/watch?v=tFNJGim3FXw",
+                  channel: "Krish Naik",
+                  duration: "40 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w14d3h1",
+                  title: "Run YOLOv5 on custom images",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "💎 Girls: Transformers process everything in parallel. No sequential waiting. Efficiency is self-respect",
+              dailyGoal: "Image Segmentation",
+              concepts: [
+                {
+                  id: "m4w14d4c1",
+                  title: "U-Net for Image Segmentation",
+                  videoUrl: "https://www.youtube.com/watch?v=azM57JuQpQI",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w14d4h1",
+                  title: "Build U-Net segmentation model",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🏁 Boys: BERT reads bidirectionally. Like reading the game from both ends of the pitch. Complete understanding",
+              dailyGoal: "Face Detection and Recognition",
+              concepts: [
+                {
+                  id: "m4w14d5c1",
+                  title: "Face Detection with OpenCV",
+                  videoUrl: "https://www.youtube.com/watch?v=WQeoO7MI0Bs",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w14d5h1",
+                  title: "Build face detection system",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🌟 Girls: Fine-tuning adapts pretrained power to YOUR specific needs. General wisdom, personal application",
+              dailyGoal: "Real-time Object Detection",
+              concepts: [
+                {
+                  id: "m4w14d6c1",
+                  title: "Webcam Object Detection",
+                  videoUrl: "https://www.youtube.com/watch?v=1LCb1PVqzeY",
+                  channel: "Nicholas Renotte",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w14d6h1",
+                  title: "Real-time detection with webcam",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🔥 Weekend Project: Chatbot with personality - create an AI that speaks your values",
+              dailyGoal: "Weekend Project - Object Detection App",
+              concepts: [],
+              weekendProject: {
+                id: "m4w14proj",
+                name: "Real-time Object Detection App",
+                description: "Build webcam-based object detector",
+                requirements: [
+                  "Use YOLOv5 pretrained model",
+                  "Integrate with OpenCV webcam feed",
+                  "Draw bounding boxes in real-time",
+                  "Display confidence scores",
+                  "Save detected frames"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
+            }
+          ]
+        },
+        {
+          weekNum: 15,
+          title: "Reinforcement Learning",
+          goal: "Master RL fundamentals and build AI agents",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: Object detection is how autonomous cars spot Lamborghinis from afar. YOLO sees, YOLO recognizes",
+              dailyGoal: "Introduction to RL",
+              concepts: [
+                {
+                  id: "m4w15d1c1",
+                  title: "Reinforcement Learning Introduction",
+                  videoUrl: "https://www.youtube.com/watch?v=2pWv7GOvuf0",
+                  channel: "David Silver",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [],
+              totalXP: 40
+            },
+            {
+              day: "👑 Girls: Image segmentation isolates what matters. Like cropping toxic people out of your life picture",
+              dailyGoal: "Markov Decision Processes",
+              concepts: [
+                {
+                  id: "m4w15d2c1",
+                  title: "MDP and Bellman Equation",
+                  videoUrl: "https://www.youtube.com/watch?v=lfHX2hHRMVQ",
+                  channel: "David Silver",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [],
+              totalXP: 40
+            },
+            {
+              day: "🚗 Boys: Bounding boxes frame value. Tesla's FSD draws boxes around everything worth tracking",
+              dailyGoal: "Q-Learning",
+              concepts: [
+                {
+                  id: "m4w15d3c1",
+                  title: "Q-Learning Algorithm",
+                  videoUrl: "https://www.youtube.com/watch?v=qhRNvCVVJaA",
+                  channel: "Sentdex",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w15d3h1",
+                  title: "Implement Q-Learning from scratch",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "💎 Girls: Pose estimation reads body language computationally. Machines learning emotional intelligence",
+              dailyGoal: "OpenAI Gym",
+              concepts: [
+                {
+                  id: "m4w15d4c1",
+                  title: "OpenAI Gym Introduction",
+                  videoUrl: "https://www.youtube.com/watch?v=Mut_u40Sqz4",
+                  channel: "Sentdex",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w15d4h1",
+                  title: "Solve CartPole with Q-Learning",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🏁 Boys: Optical flow tracks motion across frames. Like IPL hawk-eye tracking every ball movement",
+              dailyGoal: "Deep Q-Networks (DQN)",
+              concepts: [
+                {
+                  id: "m4w15d5c1",
+                  title: "DQN Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=TechyU1cD7k",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w15d5h1",
+                  title: "Build DQN agent",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🌟 Girls: Face recognition authenticates identity. Your face is your signature - let AI protect it",
+              dailyGoal: "Policy Gradient Methods",
+              concepts: [
+                {
+                  id: "m4w15d6c1",
+                  title: "Policy Gradient Introduction",
+                  videoUrl: "https://www.youtube.com/watch?v=bRfUxQs6xIM",
+                  channel: "David Silver",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [],
+              totalXP: 40
+            },
+            {
+              day: "🔥 Weekend Project: Real-time object detector - see the world through machine vision",
+              dailyGoal: "Weekend Project - CartPole Agent",
+              concepts: [],
+              weekendProject: {
+                id: "m4w15proj",
+                name: "CartPole RL Agent",
+                description: "Train an AI agent to balance a pole",
+                requirements: [
+                  "Setup OpenAI Gym",
+                  "Implement DQN agent",
+                  "Train for 500 episodes",
+                  "Achieve score > 195",
+                  "Visualize training progress"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
+            }
+          ]
+        },
+        {
+          weekNum: 16,
+          title: "Portfolio Building & Showcase",
+          goal: "Build impressive portfolio and documentation",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: RL is how DeepMind beats F1 simulators. Agent learns optimal racing lines through trial",
+              dailyGoal: "Review and Clean Projects",
+              concepts: [
+                {
+                  id: "m4w16d1c1",
+                  title: "Writing Good README Files",
+                  videoUrl: "https://www.youtube.com/watch?v=RZ5vduluea4",
+                  channel: "codeSTACKr",
+                  duration: "15 min",
+                  xp: 15
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w16d1h1",
+                  title: "Clean up 3 projects on GitHub",
+                  platform: "GitHub",
+                  url: "https://github.com",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 40
+            },
+            {
+              day: "👑 Girls: Reward functions define what success means to YOU. Don't let others define your reward signal",
+              dailyGoal: "Create GitHub Portfolio",
+              concepts: [
+                {
+                  id: "m4w16d2c1",
+                  title: "GitHub Profile README",
+                  videoUrl: "https://www.youtube.com/watch?v=G-EGDH50hGE",
+                  channel: "codeSTACKr",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w16d2h1",
+                  title: "Create stunning GitHub profile",
+                  platform: "GitHub",
+                  url: "https://github.com",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 45
+            },
+            {
+              day: "🚗 Boys: Exploration vs Exploitation - do you try new restaurants or stick to proven winners? Balance is strategy",
+              dailyGoal: "Build Portfolio Website",
+              concepts: [
+                {
+                  id: "m4w16d3c1",
+                  title: "Developer Portfolio with HTML/CSS",
+                  videoUrl: "https://www.youtube.com/watch?v=xV7S8BhIeBo",
+                  channel: "Traversy Media",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w16d3h1",
+                  title: "Create portfolio website",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "💎 Girls: Policy gradients optimize decision-making. Every choice compounds. Small decisions, large trajectories",
+              dailyGoal: "Deploy Portfolio to GitHub Pages",
+              concepts: [
+                {
+                  id: "m4w16d4c1",
+                  title: "Deploy to GitHub Pages",
+                  videoUrl: "https://www.youtube.com/watch?v=SKXkC4SqtRk",
+                  channel: "DevEd",
+                  duration: "15 min",
+                  xp: 15
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w16d4h1",
+                  title: "Deploy portfolio live",
+                  platform: "GitHub Pages",
+                  url: "https://pages.github.com",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 40
+            },
+            {
+              day: "🏁 Boys: Q-Learning finds optimal paths. Like Virat finding gaps in every field placement",
+              dailyGoal: "Write Technical Blog Post",
+              concepts: [
+                {
+                  id: "m4w16d5c1",
+                  title: "Writing Technical Blog Posts",
+                  videoUrl: "https://www.youtube.com/watch?v=JIv8CWtAoqA",
+                  channel: "freeCodeCamp",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w16d5h1",
+                  title: "Write blog on Medium/Dev.to",
+                  platform: "Medium",
+                  url: "https://medium.com",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🌟 Girls: Environment modeling is understanding the game before playing it. Preparation is power",
+              dailyGoal: "Create Project Demo Videos",
+              concepts: [
+                {
+                  id: "m4w16d6c1",
+                  title: "Creating Project Demo Videos",
+                  videoUrl: "https://www.youtube.com/watch?v=MG8KADrRIQ4",
+                  channel: "Traversy Media",
+                  duration: "15 min",
+                  xp: 15
+                }
+              ],
+              handson: [
+                {
+                  id: "m4w16d6h1",
+                  title: "Record demo of best project",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 40
+            },
+            {
+              day: "🔥 Weekend Project: Portfolio showcase - display your AI journey like a gallery of conquests",
+              dailyGoal: "Weekend Task - Complete Portfolio",
+              concepts: [],
+              weekendProject: {
+                id: "m4w16proj",
+                name: "Portfolio Finalization",
+                description: "Complete and polish your professional portfolio",
+                requirements: [
+                  "Portfolio website live",
+                  "5+ projects with READMEs",
+                  "1 technical blog post published",
+                  "Demo video of best project",
+                  "GitHub profile optimized"
+                ],
+                xp: 100,
+                estimatedHours: 4
+              },
+              totalXP: 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: "Deployment & MLOps",
+      weeks: 4,
+      color: "from-teal-500 to-green-500",
+      icon: Rocket,
+      description: "Learn to deploy AI models to production",
+      skillProgress: "MLOps 0/10 → 6/10",
+
       weeks_detail: [
         {
           weekNum: 17,
-          title: "Build Portfolio Website",
-          goal: "Showcase your work professionally",
-          hoursThisWeek: 30,
-          summary: "React site with all projects, deployed. Clean design, fast loading, mobile responsive.",
-          resources: [
-            { name: "React Official Tutorial", url: "https://react.dev/learn", type: "docs" },
-            { name: "Tailwind CSS", url: "https://tailwindcss.com/docs/installation", type: "docs" },
-            { name: "Vercel Deployment", url: "https://vercel.com/docs", type: "docs" },
-            { name: "Portfolio Examples", url: "https://github.com/topics/portfolio-website", type: "github" }
-          ],
-          handsOn: [
+          title: "Model Deployment Basics",
+          goal: "Deploy ML models with Flask and Streamlit",
+          hoursThisWeek: 25,
+          days: [
             {
-              rootTopic: "Portfolio Design",
-              subTopics: ["Layout", "Color scheme", "Typography", "Responsive design"],
-              exercises: [
-                { difficulty: "easy", task: "Design wireframe: Hero section, Projects grid, About, Contact. Use Figma or paper sketches", xp: 30, estimatedHours: 1 },
-                { difficulty: "medium", task: "Choose tech-professional color scheme: Primary, secondary, accent. Test contrast ratios (WCAG AA)", xp: 35, estimatedHours: 1 },
-                { difficulty: "medium", task: "Implement responsive layout: Mobile-first, breakpoints at 640px, 768px, 1024px. Test on 5 devices", xp: 50, estimatedHours: 2 },
-                { difficulty: "hard", task: "Add animations: Fade-in on scroll, smooth transitions, loading states. Use Framer Motion or CSS", xp: 60, estimatedHours: 2.5 }
-              ]
+              day: "🏎️ Boys: Flask serves ML models like a BMW dealership serves customers - API endpoints for every request",
+              dailyGoal: "Introduction to Model Deployment",
+              concepts: [
+                {
+                  id: "m5w17d1c1",
+                  title: "Why Deployment Matters",
+                  videoUrl: "https://www.youtube.com/watch?v=bjsJOl8gz5k",
+                  channel: "Krish Naik",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [],
+              totalXP: 20
             },
             {
-              rootTopic: "Project Showcase",
-              subTopics: ["Project cards", "Demo videos", "GitHub links", "Tech stack badges"],
-              exercises: [
-                { difficulty: "medium", task: "Create project cards: Title, description, tech stack, live demo, GitHub. Hover effects", xp: 45, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Record demo videos: 30-60 seconds per project. Show key features, narrate. Use OBS Studio", xp: 70, estimatedHours: 3 },
-                { difficulty: "medium", task: "Add tech stack badges: React, Python, Docker, etc. Use shields.io or custom SVGs", xp: 40, estimatedHours: 1 },
-                { difficulty: "hard", task: "Project detail pages: Architecture diagram, challenges faced, solutions, metrics, learnings", xp: 65, estimatedHours: 2.5 }
-              ]
+              day: "👑 Girls: REST APIs are professional boundaries. GET what's yours, POST your contributions. Clean transactions",
+              dailyGoal: "Flask Basics",
+              concepts: [
+                {
+                  id: "m5w17d2c1",
+                  title: "Flask for Beginners",
+                  videoUrl: "https://www.youtube.com/watch?v=Z1RJmh_OqeA",
+                  channel: "freeCodeCamp",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w17d2h1",
+                  title: "Build simple Flask API",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 65
             },
             {
-              rootTopic: "About & Contact",
-              subTopics: ["Bio", "Skills", "Timeline", "Contact form"],
-              exercises: [
-                { difficulty: "easy", task: "Write 200-word bio: TCS background, Gen AI transformation, goals. Professional but human tone", xp: 35, estimatedHours: 1 },
-                { difficulty: "medium", task: "Skills visualization: Progress bars or radar chart for Python, ML, Gen AI, Docker, etc.", xp: 50, estimatedHours: 2 },
-                { difficulty: "medium", task: "Build contact form: Name, email, message. Validate inputs, send via EmailJS or Formspree", xp: 55, estimatedHours: 2 },
-                { difficulty: "hard", task: "Timeline component: 20-week journey visualization. Weeks → Projects → Skills gained", xp: 65, estimatedHours: 2.5 }
-              ]
+              day: "🚗 Boys: JSON is the universal language of systems. Like how all supercars speak the language of speed",
+              dailyGoal: "Deploy ML Model with Flask",
+              concepts: [
+                {
+                  id: "m5w17d3c1",
+                  title: "ML Model Deployment with Flask",
+                  videoUrl: "https://www.youtube.com/watch?v=mrExsjcvF4o",
+                  channel: "Krish Naik",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w17d3h1",
+                  title: "Deploy trained model via Flask",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 65
             },
             {
-              rootTopic: "Performance & SEO",
-              subTopics: ["Image optimization", "Lazy loading", "Meta tags", "Lighthouse score"],
-              exercises: [
-                { difficulty: "medium", task: "Optimize images: Convert to WebP, compress, lazy load. Target <200KB per page", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "SEO optimization: Meta tags, Open Graph, structured data (JSON-LD), sitemap.xml, robots.txt", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Achieve Lighthouse 90+: Performance, Accessibility, Best Practices, SEO all green", xp: 75, estimatedHours: 3 },
-                { difficulty: "medium", task: "Analytics: Add Google Analytics or Plausible. Track: page views, project clicks, contact form", xp: 45, estimatedHours: 1.5 }
-              ]
+              day: "💎 Girls: Request validation protects your endpoint. Not everyone deserves API access to your intelligence",
+              dailyGoal: "Streamlit Introduction",
+              concepts: [
+                {
+                  id: "m5w17d4c1",
+                  title: "Streamlit Tutorial",
+                  videoUrl: "https://www.youtube.com/watch?v=Klqn-x3sZmk",
+                  channel: "Data Professor",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w17d4h1",
+                  title: "Build ML app with Streamlit",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
             },
             {
-              rootTopic: "Deployment & Domain",
-              subTopics: ["Vercel/Netlify", "Custom domain", "HTTPS", "CI/CD"],
-              exercises: [
-                { difficulty: "medium", task: "Deploy to Vercel: Connect GitHub, auto-deploy on push to main, preview deployments for PRs", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "medium", task: "Buy custom domain: yourname.dev or .ai (Namecheap $12/year), configure DNS, enable HTTPS", xp: 55, estimatedHours: 2 },
-                { difficulty: "easy", task: "Set up redirects: www → non-www, http → https, /github → your GitHub profile", xp: 35, estimatedHours: 1 },
-                { difficulty: "medium", task: "Test cross-browser: Chrome, Firefox, Safari, Edge. Fix any rendering issues", xp: 45, estimatedHours: 1.5 }
-              ]
+              day: "🏁 Boys: Authentication is VIP access. JWT tokens = membership to the exclusive API club",
+              dailyGoal: "Deploy to Heroku",
+              concepts: [
+                {
+                  id: "m5w17d5c1",
+                  title: "Deploy Flask to Heroku",
+                  videoUrl: "https://www.youtube.com/watch?v=Li0Abz-KT78",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w17d5h1",
+                  title: "Deploy model to Heroku",
+                  platform: "Heroku",
+                  url: "https://heroku.com",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🌟 Girls: Error handling is grace under pressure. 404? Redirect. 500? Recover. Never crash permanently",
+              dailyGoal: "Docker Basics",
+              concepts: [
+                {
+                  id: "m5w17d6c1",
+                  title: "Docker for Beginners",
+                  videoUrl: "https://www.youtube.com/watch?v=fqMOX6JJhGo",
+                  channel: "freeCodeCamp",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w17d6h1",
+                  title: "Dockerize Flask app",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 70
+            },
+            {
+              day: "🔥 Weekend Project: Deploy your first ML API - make your intelligence accessible to the world",
+              dailyGoal: "Weekend Project - Deploy ML API",
+              concepts: [],
+              weekendProject: {
+                id: "m5w17proj",
+                name: "ML Model API Deployment",
+                description: "Deploy trained model as REST API",
+                requirements: [
+                  "Train and save ML model",
+                  "Build Flask API",
+                  "Dockerize the app",
+                  "Deploy to Heroku",
+                  "Test API endpoints"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "Complete Portfolio Website",
-            duration: "10 hours",
-            description: "Build and deploy professional portfolio - YOUR PERSONAL BRAND",
-            requirements: [
-              "Hero section: Name, title 'Gen AI Engineer', tagline, CTA buttons (Projects, Contact)",
-              "Projects section: 12 portfolio projects with cards, filters by tech (Python, Gen AI, ML)",
-              "About section: Bio, skills radar chart, 20-week journey timeline, certifications",
-              "Contact: Working form, social links (LinkedIn, GitHub, Email)",
-              "Mobile responsive: Perfect on iPhone, Android, tablet",
-              "Fast: Lighthouse score >90, <3s page load",
-              "SEO: Ranks for '[Your Name] Gen AI Engineer' on Google",
-              "Custom domain: yourname.dev with HTTPS",
-              "Analytics: Track visitors, most viewed projects",
-              "Resume download: PDF button in hero section"
-            ],
-            techStack: "React, Tailwind CSS, Framer Motion, Vercel",
-            evaluation: "Looks professional, loads fast, mobile perfect, ranks on Google within 2 weeks",
-            portfolioValue: "Your personal brand. First thing recruiters see. 'I built my portfolio from scratch'",
-            criticalSections: [
-              "Projects must have: Live demo links, GitHub repos, tech stacks, metrics (99% uptime, <2s latency)",
-              "Avoid: Stock photos, Lorem ipsum, broken links, slow loading, bad mobile experience"
-            ]
-          }
+          ]
         },
         {
           weekNum: 18,
-          title: "System Design Mastery",
-          goal: "Design Gen AI systems at scale",
-          hoursThisWeek: 32,
-          summary: "LLMOps, cost optimization, safety, monitoring. Create 5 system design case studies.",
-          resources: [
-            { name: "System Design Primer", url: "https://github.com/donnemartin/system-design-primer", type: "github" },
-            { name: "Designing Data-Intensive Apps", url: "https://dataintensive.net/", type: "book" },
-            { name: "ML System Design Interview", url: "https://www.educative.io/courses/machine-learning-system-design", type: "course" },
-            { name: "OpenAI Production Best Practices", url: "https://platform.openai.com/docs/guides/production-best-practices", type: "docs" }
-          ],
-          handsOn: [
+          title: "Cloud Deployment (AWS/GCP)",
+          goal: "Master cloud platforms for ML deployment",
+          hoursThisWeek: 25,
+          days: [
             {
-              rootTopic: "System Design Fundamentals",
-              subTopics: ["Requirements gathering", "Capacity estimation", "Architecture diagrams", "Tradeoffs"],
-              exercises: [
-                { difficulty: "medium", task: "Design chatbot for 1M users: Estimate: requests/sec, compute, storage, cost. Document assumptions", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "Draw architecture: Load balancer, API gateway, services, databases, caches. Use draw.io or Excalidraw", xp: 70, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "Analyze tradeoffs: SQL vs NoSQL, sync vs async, monolith vs microservices for Gen AI app", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Full design doc: Requirements, non-functional reqs, architecture, API design, data model, deployment", xp: 90, estimatedHours: 4 }
-              ]
+              day: "🏎️ Boys: Docker containers are transport pods for your Maserati. Works on my machine → Works everywhere",
+              dailyGoal: "Introduction to AWS",
+              concepts: [
+                {
+                  id: "m5w18d1c1",
+                  title: "AWS for Machine Learning",
+                  videoUrl: "https://www.youtube.com/watch?v=Hf8Zv3I3BYM",
+                  channel: "AWS",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [],
+              totalXP: 35
             },
             {
-              rootTopic: "LLMOps & MLOps",
-              subTopics: ["Model versioning", "A/B testing", "Monitoring", "Fallbacks"],
-              exercises: [
-                { difficulty: "medium", task: "Design prompt versioning: Store prompts in DB, version control, A/B test, track performance", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "hard", task: "A/B testing framework: Route 10% to GPT-4, 90% to GPT-3.5. Compare: quality, latency, cost", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Build LLM fallback chain: GPT-4 → Claude → GPT-3.5 → rule-based. Switch on errors", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Full LLMOps pipeline: Prompt registry, versioning, deployment, rollback, monitoring, alerts", xp: 95, estimatedHours: 5 }
-              ]
+              day: "👑 Girls: Dockerfile is your recipe for success. Reproducible, scalable, independent. Document your process",
+              dailyGoal: "AWS EC2 and S3",
+              concepts: [
+                {
+                  id: "m5w18d2c1",
+                  title: "EC2 and S3 Tutorial",
+                  videoUrl: "https://www.youtube.com/watch?v=k1RI5locZE4",
+                  channel: "freeCodeCamp",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w18d2h1",
+                  title: "Setup EC2 instance",
+                  platform: "AWS",
+                  url: "https://aws.amazon.com",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 70
             },
             {
-              rootTopic: "Cost Optimization",
-              subTopics: ["Token reduction", "Caching strategies", "Model selection", "Rate limiting"],
-              exercises: [
-                { difficulty: "medium", task: "Calculate costs: 1M requests/month, avg 2K tokens. Compare GPT-4 ($60K) vs GPT-3.5 ($4K)", xp: 50, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Design caching strategy: Semantic cache (embeddings), exact match cache, TTL. Estimate savings", xp: 75, estimatedHours: 3 },
-                { difficulty: "hard", task: "Smart routing: Classify queries as simple/complex, route to appropriate model. Target 50% cost reduction", xp: 80, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Full cost optimization: Caching, prompt compression, batching, cheaper models, monitoring. <$0.01/request", xp: 90, estimatedHours: 4 }
-              ]
+              day: "🚗 Boys: Images are blueprints; containers are the running cars. Build once, deploy many",
+              dailyGoal: "AWS Lambda for Serverless",
+              concepts: [
+                {
+                  id: "m5w18d3c1",
+                  title: "AWS Lambda Tutorial",
+                  videoUrl: "https://www.youtube.com/watch?v=eOBq__h4OJ4",
+                  channel: "freeCodeCamp",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w18d3h1",
+                  title: "Deploy model on Lambda",
+                  platform: "AWS",
+                  url: "https://aws.amazon.com",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 70
             },
             {
-              rootTopic: "Safety & Moderation",
-              subTopics: ["Content filtering", "PII detection", "Jailbreak prevention", "Output validation"],
-              exercises: [
-                { difficulty: "medium", task: "Implement content moderation: OpenAI Moderation API, block harmful queries, log violations", xp: 60, estimatedHours: 2 },
-                { difficulty: "hard", task: "PII detection: Regex + NER model to detect emails, SSN, credit cards. Mask before logging", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Jailbreak prevention: Detect prompt injection attempts ('Ignore previous instructions'), block & alert", xp: 75, estimatedHours: 3 },
-                { difficulty: "expert", task: "Full safety pipeline: Input moderation, PII detection, jailbreak prevention, output validation, audit logs", xp: 95, estimatedHours: 5 }
-              ]
+              day: "💎 Girls: Volumes persist data across container restarts. Some things should survive system crashes - like your memories",
+              dailyGoal: "Google Cloud Platform",
+              concepts: [
+                {
+                  id: "m5w18d4c1",
+                  title: "GCP for ML Engineers",
+                  videoUrl: "https://www.youtube.com/watch?v=kzKFuHk8ovk",
+                  channel: "Google Cloud",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w18d4h1",
+                  title: "Setup GCP project",
+                  platform: "GCP",
+                  url: "https://cloud.google.com",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 65
             },
             {
-              rootTopic: "Case Study Creation",
-              subTopics: ["Problem statement", "Architecture", "Scaling", "Metrics"],
-              exercises: [
-                { difficulty: "hard", task: "Case Study 1: Design RAG for 10M documents. Cover: chunking, indexing, query routing, costs", xp: 80, estimatedHours: 3 },
-                { difficulty: "hard", task: "Case Study 2: Build chatbot for 100K concurrent users. Cover: scaling, rate limiting, latency", xp: 80, estimatedHours: 3 },
-                { difficulty: "hard", task: "Case Study 3: Design code generation platform. Cover: context management, sandboxing, security", xp: 85, estimatedHours: 3.5 },
-                { difficulty: "hard", task: "Case Study 4: Multi-tenant Gen AI SaaS. Cover: isolation, billing, model selection per tier", xp: 85, estimatedHours: 3.5 },
-                { difficulty: "expert", task: "Case Study 5: Design TCS banking AI assistant. Cover: security, compliance, integration, monitoring", xp: 95, estimatedHours: 4 }
-              ]
+              day: "🏁 Boys: Docker Compose orchestrates multiple services. Like coordinating your whole pit crew simultaneously",
+              dailyGoal: "Google Cloud Run",
+              concepts: [
+                {
+                  id: "m5w18d5c1",
+                  title: "Deploy to Cloud Run",
+                  videoUrl: "https://www.youtube.com/watch?v=t5EfITuFD9w",
+                  channel: "Google Cloud",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w18d5h1",
+                  title: "Deploy Docker to Cloud Run",
+                  platform: "GCP",
+                  url: "https://cloud.google.com",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🌟 Girls: Container isolation is healthy separation. Your dependencies don't leak into others' space",
+              dailyGoal: "API Gateway",
+              concepts: [
+                {
+                  id: "m5w18d6c1",
+                  title: "AWS API Gateway",
+                  videoUrl: "https://www.youtube.com/watch?v=SLB_c_ayRMo",
+                  channel: "Be A Better Dev",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w18d6h1",
+                  title: "Setup API Gateway",
+                  platform: "AWS",
+                  url: "https://aws.amazon.com",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🔥 Weekend Project: Containerize everything you've built - portability is freedom",
+              dailyGoal: "Weekend Project - Cloud ML API",
+              concepts: [],
+              weekendProject: {
+                id: "m5w18proj",
+                name: "Cloud-Deployed CNN Classifier",
+                description: "Deploy image classifier to cloud",
+                requirements: [
+                  "Train CNN model",
+                  "Containerize with Docker",
+                  "Deploy to AWS/GCP",
+                  "Setup API endpoint",
+                  "Test with web requests"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "5 System Design Case Studies",
-            duration: "12 hours",
-            description: "Create portfolio of system designs - show architecture thinking",
-            requirements: [
-              "Format per case study: Problem → Requirements → Architecture diagram → API design → Data model → Scaling strategy → Monitoring → Costs",
-              "Case Study 1: Document Q&A for 10M docs (like your TCS project)",
-              "Case Study 2: Real-time customer support chatbot (100K concurrent)",
-              "Case Study 3: Code generation IDE plugin (like Copilot)",
-              "Case Study 4: Multi-tenant Gen AI SaaS (3 pricing tiers)",
-              "Case Study 5: Banking AI assistant (your TCS domain)",
-              "Each must cover: Functional reqs, non-functional reqs, capacity estimation, architecture, tradeoffs",
-              "Diagrams: Use draw.io, Excalidraw, or Lucidchart",
-              "Write in Markdown, publish to GitHub, link from portfolio",
-              "Interview-ready: Practice explaining each in 15 minutes"
-            ],
-            techStack: "Draw.io, Markdown, GitHub",
-            evaluation: "5 complete case studies, clear diagrams, realistic numbers, explain tradeoffs",
-            portfolioValue: "HUGE: Shows senior-level thinking. 'Let me show you 5 systems I designed'",
-            interviewUse: "When asked 'Design a chatbot', pull up Case Study 2 and walk through it"
-          }
+          ]
         },
         {
           weekNum: 19,
-          title: "Mock Interviews (Every Day)",
-          goal: "Answer every question confidently",
-          hoursThisWeek: 35,
-          summary: "4 mock interviews/day (technical, system design, behavioral). Record, review, improve.",
-          resources: [
-            { name: "Pramp - Free Mock Interviews", url: "https://www.pramp.com/", type: "platform" },
-            { name: "Interviewing.io", url: "https://interviewing.io/", type: "platform" },
-            { name: "Tech Interview Handbook", url: "https://www.techinterviewhandbook.org/", type: "guide" },
-            { name: "LeetCode ML/AI Problems", url: "https://leetcode.com/problemset/all/?topicSlugs=machine-learning", type: "practice" }
-          ],
-          handsOn: [
+          title: "MLOps & CI/CD",
+          goal: "Automate ML pipelines with MLOps practices",
+          hoursThisWeek: 25,
+          days: [
             {
-              rootTopic: "Technical Questions Prep",
-              subTopics: ["LLM fundamentals", "RAG internals", "Transformers", "Production issues"],
-              exercises: [
-                { difficulty: "medium", task: "Answer 50 questions: Create flashcards, practice daily. Cover: attention, embeddings, RAG, agents", xp: 60, estimatedHours: 3 },
-                { difficulty: "hard", task: "Record yourself: Answer 20 questions on video. Watch, critique: filler words, clarity, confidence", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Deep dive 10 questions: Write 500-word answers with examples, diagrams, code. Memorize key points", xp: 75, estimatedHours: 4 },
-                { difficulty: "expert", task: "Mock technical interview: Friend/mentor asks 10 random questions. No notes. Target 8/10 correct", xp: 85, estimatedHours: 2 }
-              ]
+              day: "🏎️ Boys: AWS is your virtual garage - unlimited compute, storage, and power on demand. Scale like billionaires",
+              dailyGoal: "What is MLOps?",
+              concepts: [
+                {
+                  id: "m5w19d1c1",
+                  title: "MLOps Introduction",
+                  videoUrl: "https://www.youtube.com/watch?v=s8Jj9gzQ3xA",
+                  channel: "Krish Naik",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 25
             },
             {
-              rootTopic: "System Design Practice",
-              subTopics: ["Whiteboard design", "Time management", "Communication", "Tradeoff discussion"],
-              exercises: [
-                { difficulty: "hard", task: "Timed design (45 min): 'Design Netflix recommendation system'. Cover all aspects, no breaks", xp: 75, estimatedHours: 2 },
-                { difficulty: "hard", task: "Practice 5 Gen AI designs: Chatbot, RAG, code assistant, content moderation, search engine", xp: 80, estimatedHours: 4 },
-                { difficulty: "expert", task: "Mock system design interview: Use Pramp or friend. Get feedback on: clarity, depth, tradeoffs", xp: 90, estimatedHours: 2 },
-                { difficulty: "expert", task: "Design on whiteboard: Practice drawing without undo. Clean diagrams, clear labels, good layout", xp: 70, estimatedHours: 2 }
-              ]
+              day: "👑 Girls: Cloud services are delegation done right. Let infrastructure handle infrastructure. You handle innovation",
+              dailyGoal: "Git for ML Projects",
+              concepts: [
+                {
+                  id: "m5w19d2c1",
+                  title: "Git and GitHub for ML",
+                  videoUrl: "https://www.youtube.com/watch?v=RGOj5yH7evk",
+                  channel: "freeCodeCamp",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w19d2h1",
+                  title: "Setup ML project with Git",
+                  platform: "GitHub",
+                  url: "https://github.com",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 60
             },
             {
-              rootTopic: "Behavioral Questions",
-              subTopics: ["STAR method", "Conflict resolution", "Leadership", "Failure stories"],
-              exercises: [
-                { difficulty: "medium", task: "Prepare 10 STAR stories: TCS projects, 20-week journey, challenges overcome, team collaboration", xp: 55, estimatedHours: 2.5 },
-                { difficulty: "medium", task: "Answer common questions: 'Why Gen AI?', 'Biggest challenge?', 'Tell me about yourself' (2-min version)", xp: 50, estimatedHours: 2 },
-                { difficulty: "hard", task: "Record behavioral practice: Answer 20 questions on video. Refine: storytelling, conciseness, enthusiasm", xp: 65, estimatedHours: 3 },
-                { difficulty: "hard", task: "Mock behavioral round: Friend asks 10 questions. No preparation. Target: confident, natural answers", xp: 70, estimatedHours: 1.5 }
-              ]
+              day: "🚗 Boys: EC2 instances are rental supercars - spin up power when needed, release when done. Pay for what you use",
+              dailyGoal: "CI/CD Basics",
+              concepts: [
+                {
+                  id: "m5w19d3c1",
+                  title: "CI/CD for ML",
+                  videoUrl: "https://www.youtube.com/watch?v=i7AblxuFf3M",
+                  channel: "TechWorld with Nana",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [],
+              totalXP: 35
             },
             {
-              rootTopic: "Coding Challenges",
-              subTopics: ["Algorithms", "Data structures", "ML coding", "Live coding"],
-              exercises: [
-                { difficulty: "medium", task: "Solve 20 LeetCode easy: Arrays, strings, hashmaps. Practice explaining solution while coding", xp: 55, estimatedHours: 4 },
-                { difficulty: "hard", task: "Solve 30 medium problems: Trees, graphs, DP. Focus on ML-adjacent: matrix ops, sliding window", xp: 75, estimatedHours: 6 },
-                { difficulty: "hard", task: "ML coding: Implement K-means, decision tree, linear regression from scratch in 45 minutes each", xp: 80, estimatedHours: 4 },
-                { difficulty: "expert", task: "Mock coding interview: Pramp or interviewing.io. Live code, explain thinking, handle hints", xp: 85, estimatedHours: 2 }
-              ]
+              day: "💎 Girls: S3 storage is your digital vault. Objects safe, versioned, encrypted. Protect your assets",
+              dailyGoal: "GitHub Actions",
+              concepts: [
+                {
+                  id: "m5w19d4c1",
+                  title: "GitHub Actions Tutorial",
+                  videoUrl: "https://www.youtube.com/watch?v=R8_veQiYBjI",
+                  channel: "TechWorld with Nana",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w19d4h1",
+                  title: "Setup GitHub Actions workflow",
+                  platform: "GitHub",
+                  url: "https://github.com",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
             },
             {
-              rootTopic: "Project Deep Dive Prep",
-              subTopics: ["Portfolio projects", "Metrics", "Challenges", "Technical details"],
-              exercises: [
-                { difficulty: "medium", task: "Memorize 12 projects: For each, know: goal, tech stack, architecture, challenges, results", xp: 60, estimatedHours: 3 },
-                { difficulty: "hard", task: "Practice 'Tell me about a project': 5-minute version and 15-minute deep dive for each project", xp: 70, estimatedHours: 3 },
-                { difficulty: "hard", task: "Anticipate questions: For each project, list 10 likely questions (Why this tech? How did you scale?)", xp: 65, estimatedHours: 2.5 },
-                { difficulty: "expert", task: "Mock project grilling: Friend picks a project, asks tough questions for 30 minutes. No looking at notes", xp: 85, estimatedHours: 1.5 }
-              ]
+              day: "🏁 Boys: Lambda is serverless racing - code runs only when triggered. No idle engine costs",
+              dailyGoal: "Model Monitoring",
+              concepts: [
+                {
+                  id: "m5w19d5c1",
+                  title: "ML Model Monitoring",
+                  videoUrl: "https://www.youtube.com/watch?v=9BgIDqAzfuA",
+                  channel: "MLOps Community",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w19d5h1",
+                  title: "Setup logging for ML API",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🌟 Girls: IAM controls access like a bouncer at an exclusive party. Permissions are power management",
+              dailyGoal: "DVC for Data Version Control",
+              concepts: [
+                {
+                  id: "m5w19d6c1",
+                  title: "DVC Tutorial",
+                  videoUrl: "https://www.youtube.com/watch?v=kLKBcPonMYw",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w19d6h1",
+                  title: "Version control data with DVC",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "🔥 Weekend Project: Deploy to AWS - your model runs 24/7 even when you sleep",
+              dailyGoal: "Weekend Project - ML Pipeline",
+              concepts: [],
+              weekendProject: {
+                id: "m5w19proj",
+                name: "Automated ML Pipeline",
+                description: "Build CI/CD pipeline for ML",
+                requirements: [
+                  "Setup Git repository",
+                  "Create GitHub Actions workflow",
+                  "Auto-deploy on push",
+                  "Implement logging",
+                  "Test automated deployment"
+                ],
+                xp: 100,
+                estimatedHours: 5
+              },
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "Full Mock Interview Marathon",
-            duration: "8 hours",
-            description: "Simulate complete interview loop - get battle-ready",
-            requirements: [
-              "Schedule 4 mock interviews: Technical (1h), System Design (1h), Coding (1h), Behavioral (45m)",
-              "Use real platforms: Pramp (free), interviewing.io ($50/session), or friends",
-              "Treat as real: Dress code, quiet space, no notes, time pressure",
-              "Technical round: 15 rapid-fire questions about LLMs, RAG, transformers, production",
-              "System design: 'Design Instagram-like Gen AI app for photo captions'",
-              "Coding: 2 LeetCode medium problems in 45 minutes",
-              "Behavioral: 10 questions using STAR method",
-              "Record all sessions, review same day",
-              "Get feedback: Ask interviewer to rate 1-10 and provide improvement areas",
-              "Create improvement plan: Top 3 weaknesses, how to fix in Week 20"
-            ],
-            techStack: "Pramp, Zoom, Whiteboard tool (Excalidraw)",
-            evaluation: "Complete all 4 rounds, receive feedback, identify top 3 improvement areas",
-            portfolioValue: "Confidence boost. You've been through it before. 'I did 20+ mocks'",
-            postAnalysis: [
-              "Watch recordings: Count filler words (um, like, you know), target <5 per answer",
-              "Rate yourself: Technical depth (1-10), communication (1-10), confidence (1-10)",
-              "Compare to week start: Measure improvement"
-            ]
-          }
+          ]
         },
         {
           weekNum: 20,
-          title: "Job Hunt Sprint",
-          goal: "Apply to 50+ positions, negotiate offers",
-          hoursThisWeek: 30,
-          summary: "Optimize LinkedIn, update resume, apply everywhere, network, practice salary negotiation.",
-          resources: [
-            { name: "LinkedIn Profile Optimization", url: "https://www.linkedin.com/help/linkedin/answer/a522735", type: "guide" },
-            { name: "AI/ML Job Boards", url: "https://www.kaggle.com/jobs", type: "platform" },
-            { name: "Salary Negotiation Guide", url: "https://www.kalzumeus.com/2012/01/23/salary-negotiation/", type: "article" },
-            { name: "Networking Tips", url: "https://www.themuse.com/advice/networking-tips", type: "article" }
-          ],
-          handsOn: [
+          title: "Scaling AI Systems",
+          goal: "Learn to scale ML systems for production",
+          hoursThisWeek: 25,
+          days: [
             {
-              rootTopic: "LinkedIn Optimization",
-              subTopics: ["Headline", "About section", "Experience", "Skills & endorsements"],
-              exercises: [
-                { difficulty: "easy", task: "Update headline: 'Gen AI Engineer | LLMs, RAG, Agents | Ex-TCS | Python' (140 chars)", xp: 30, estimatedHours: 0.5 },
-                { difficulty: "medium", task: "Rewrite About: Hook (20-week transformation) → Skills → Projects → Call-to-action. 1000 chars", xp: 50, estimatedHours: 2 },
-                { difficulty: "medium", task: "Add 12 projects: Each with description, tech stack, link to live demo/GitHub, metrics", xp: 60, estimatedHours: 2.5 },
-                { difficulty: "medium", task: "Skills optimization: Add 30+ relevant skills (Gen AI, LLMs, RAG, LangChain, etc). Get 5+ endorsements", xp: 45, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Create 5 posts: Project showcases, learnings, tips. Use hashtags #GenAI #LLM. Target 100+ views each", xp: 65, estimatedHours: 3 }
-              ]
+              day: "🏎️ Boys: Kubernetes orchestrates containers like an F1 team manages the entire racing season",
+              dailyGoal: "Scaling Introduction",
+              concepts: [
+                {
+                  id: "m5w20d1c1",
+                  title: "Scaling ML Systems",
+                  videoUrl: "https://www.youtube.com/watch?v=y3ft7gDqXm8",
+                  channel: "MLOps Community",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 25
             },
             {
-              rootTopic: "Resume Perfection",
-              subTopics: ["ATS optimization", "Metrics", "Action verbs", "Tailoring"],
-              exercises: [
-                { difficulty: "medium", task: "Create ATS-friendly resume: Simple format, no tables/images. Use Overleaf LaTeX or Google Docs", xp: 50, estimatedHours: 2 },
-                { difficulty: "hard", task: "Add metrics to every bullet: '99.5% uptime', 'reduced costs 50%', 'handled 10K requests/day'", xp: 70, estimatedHours: 2.5 },
-                { difficulty: "medium", task: "Use strong verbs: 'Architected', 'Deployed', 'Optimized', 'Built'. Avoid 'Worked on', 'Helped with'", xp: 45, estimatedHours: 1 },
-                { difficulty: "hard", task: "Create 3 versions: Gen AI Engineer, ML Engineer, Backend Engineer. Tailor skills/projects per role", xp: 75, estimatedHours: 3 },
-                { difficulty: "medium", task: "Test ATS compatibility: Use Jobscan or Resume Worded. Score >80%. Fix keyword gaps", xp: 55, estimatedHours: 1.5 }
-              ]
+              day: "👑 Girls: Pods are self-sufficient units. Independent but coordinated. Self-reliance with teamwork",
+              dailyGoal: "Load Balancing",
+              concepts: [
+                {
+                  id: "m5w20d2c1",
+                  title: "Load Balancing Explained",
+                  videoUrl: "https://www.youtube.com/watch?v=sCR3SAVdyCc",
+                  channel: "TechWorld with Nana",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 25
             },
             {
-              rootTopic: "Job Applications",
-              subTopics: ["Job boards", "Company research", "Cover letters", "Application tracking"],
-              exercises: [
-                { difficulty: "medium", task: "Apply to 50 jobs: LinkedIn, Indeed, company sites. Target: Gen AI Engineer, ML Engineer, LLM roles", xp: 70, estimatedHours: 8 },
-                { difficulty: "medium", task: "Research top 20 companies: Product, tech stack, recent news, employee reviews. Create spreadsheet", xp: 55, estimatedHours: 3 },
-                { difficulty: "hard", task: "Write 5 custom cover letters: For dream companies (OpenAI, Anthropic, etc). Personalize per company", xp: 65, estimatedHours: 3 },
-                { difficulty: "easy", task: "Track applications: Spreadsheet with: Company, Role, Date, Status, Follow-up. Update daily", xp: 35, estimatedHours: 1 },
-                { difficulty: "medium", task: "Set up job alerts: LinkedIn, Indeed, Glassdoor for 'Gen AI', 'LLM', 'RAG' keywords. Check daily", xp: 30, estimatedHours: 0.5 }
-              ]
+              day: "🚗 Boys: Horizontal scaling adds more pods during load. Like adding more Lamborghinis to your fleet",
+              dailyGoal: "Kubernetes Introduction",
+              concepts: [
+                {
+                  id: "m5w20d3c1",
+                  title: "Kubernetes for Beginners",
+                  videoUrl: "https://www.youtube.com/watch?v=X48VuDVv0do",
+                  channel: "TechWorld with Nana",
+                  duration: "60 min",
+                  xp: 40
+                }
+              ],
+              handson: [],
+              totalXP: 40
             },
             {
-              rootTopic: "Networking & Outreach",
-              subTopics: ["LinkedIn connections", "Informational interviews", "Referrals", "Cold emails"],
-              exercises: [
-                { difficulty: "medium", task: "Connect with 50 Gen AI engineers: Personalized messages, common interest. Target 30% acceptance", xp: 55, estimatedHours: 3 },
-                { difficulty: "hard", task: "Request 5 informational interviews: 'I'd love 15 minutes to learn about Gen AI at [Company]'", xp: 65, estimatedHours: 2 },
-                { difficulty: "hard", task: "Ask for 3 referrals: From TCS colleagues now at target companies. Share your portfolio first", xp: 70, estimatedHours: 2 },
-                { difficulty: "medium", task: "Cold email 10 hiring managers: Brief intro, portfolio link, ask if they're hiring. 2-3 sentences max", xp: 60, estimatedHours: 2 },
-                { difficulty: "easy", task: "Engage with content: Comment on 20 Gen AI posts daily. Add value, show expertise. Build visibility", xp: 40, estimatedHours: 2 }
-              ]
+              day: "💎 Girls: CI/CD automates quality. No manual deployments. Your code pipeline has standards like you do",
+              dailyGoal: "Deploy to Kubernetes",
+              concepts: [
+                {
+                  id: "m5w20d4c1",
+                  title: "Deploy ML Model on Kubernetes",
+                  videoUrl: "https://www.youtube.com/watch?v=4xqVv-lTo40",
+                  channel: "MLOps Community",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w20d4h1",
+                  title: "Deploy with kubectl",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "hard",
+                  xp: 35
+                }
+              ],
+              totalXP: 70
             },
             {
-              rootTopic: "Salary Negotiation",
-              subTopics: ["Market research", "Anchoring", "Benefits", "Multiple offers"],
-              exercises: [
-                { difficulty: "medium", task: "Research salaries: Use Glassdoor, Levels.fyi. Target range for Gen AI Engineer in Qatar: 12-15K QAR", xp: 40, estimatedHours: 1.5 },
-                { difficulty: "hard", task: "Practice negotiation: 'Based on my skills and market rates, I'm targeting 14K QAR'. Role-play 5 times", xp: 65, estimatedHours: 2 },
-                { difficulty: "medium", task: "Negotiate benefits: List priorities: learning budget, conference budget, remote work, visa support", xp: 50, estimatedHours: 1 },
-                { difficulty: "hard", task: "Multi-offer strategy: If 2+ offers, use for leverage. 'Company A offered X, can you match?'", xp: 70, estimatedHours: 1.5 },
-                { difficulty: "expert", task: "Practice rejection: 'If you can meet 14K, I'll sign today. Otherwise, I'll go with Company B.' Be ready to walk", xp: 75, estimatedHours: 1 }
-              ]
+              day: "🏁 Boys: Rolling updates replace old with new without downtime. Seamless evolution like car model refreshes",
+              dailyGoal: "Distributed Training",
+              concepts: [
+                {
+                  id: "m5w20d5c1",
+                  title: "Distributed Training with TensorFlow",
+                  videoUrl: "https://www.youtube.com/watch?v=bRMGoPqsn20",
+                  channel: "TensorFlow",
+                  duration: "30 min",
+                  xp: 30
+                }
+              ],
+              handson: [],
+              totalXP: 30
+            },
+            {
+              day: "🌟 Girls: Monitoring with alerts catches issues before users do. Proactive, not reactive. Always ahead",
+              dailyGoal: "Model Optimization",
+              concepts: [
+                {
+                  id: "m5w20d6c1",
+                  title: "Model Quantization and Pruning",
+                  videoUrl: "https://www.youtube.com/watch?v=DKosV_-4pdQ",
+                  channel: "TensorFlow",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m5w20d6h1",
+                  title: "Optimize model size",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 55
+            },
+            {
+              day: "🔥 Weekend Project: Full MLOps pipeline - production-grade engineering mindset achieved",
+              dailyGoal: "Weekend Project - Scaled Deployment",
+              concepts: [],
+              weekendProject: {
+                id: "m5w20proj",
+                name: "Production ML System",
+                description: "Build scalable ML deployment",
+                requirements: [
+                  "Containerize model",
+                  "Deploy with Kubernetes",
+                  "Setup auto-scaling",
+                  "Load test the system",
+                  "Document architecture"
+                ],
+                xp: 100,
+                estimatedHours: 6
+              },
+              totalXP: 100
             }
-          ],
-          weekendProject: {
-            name: "Launch Full Job Hunt Campaign",
-            duration: "15 hours",
-            description: "Apply to 50+ jobs, optimize all profiles, network aggressively",
-            requirements: [
-              "LinkedIn: Optimized profile, 5 posts published, 50 new connections, Open to Work badge",
-              "Resume: 3 versions (Gen AI, ML, Backend), ATS score >80%, PDF and Word formats",
-              "Portfolio: Live website with all 12 projects, case studies, resume download",
-              "Applications: 50 jobs applied (LinkedIn 30, Indeed 10, company sites 10)",
-              "Spreadsheet: Track all applications with status, follow-up dates",
-              "Networking: 5 informational interviews requested, 3 referrals asked",
-              "Email: Professional signature with portfolio link, LinkedIn, GitHub",
-              "Elevator pitch: 60-second intro memorized, practiced 20 times",
-              "Target companies: List of 30 companies, prioritize top 10",
-              "Follow-up plan: Calendar reminders for 1-week, 2-week follow-ups"
-            ],
-            techStack: "LinkedIn, Indeed, Google Sheets, Gmail",
-            evaluation: "50 applications sent, 5 responses expected, 2 interviews scheduled within 2 weeks",
-            portfolioValue: "This is GO TIME. You're in the market. Every day: Apply 5 jobs, send 5 messages",
-            mindset: [
-              "Rejection is normal: 50 applications → 10 responses → 3 interviews → 1 offer is typical",
-              "Numbers game: More applications = more chances. Don't get discouraged",
-              "Follow up: 1 week after applying, polite message: 'Checking status of my application'",
-              "Confidence: You spent 20 weeks. You're ready. You're a Gen AI engineer."
-            ],
-            targetTimeline: "Week 20-22: Applications. Week 22-24: Interviews. Week 24-26: Offers & negotiation. Week 26: New job!" 
-          }
+          ]
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: "Job Preparation & Networking",
+      weeks: 4,
+      color: "from-indigo-500 to-purple-500",
+      icon: Briefcase,
+      description: "Prepare for AI engineering roles and land your dream job",
+      skillProgress: "Career Ready 0/10 → 8/10",
+
+      weeks_detail: [
+        {
+          weekNum: 21,
+          title: "Resume & LinkedIn Optimization",
+          goal: "Build professional online presence",
+          hoursThisWeek: 20,
+          days: [
+            {
+              day: "🏎️ Boys: Your resume is your spec sheet. 0-60 in 3 projects. Top speed: senior engineer level. Make them want it",
+              dailyGoal: "AI-Specific Resume",
+              concepts: [
+                {
+                  id: "m6w21d1c1",
+                  title: "AI/ML Resume Tips",
+                  videoUrl: "https://www.youtube.com/watch?v=aKjsy5rgQKc",
+                  channel: "TechLead",
+                  duration: "15 min",
+                  xp: 15
+                }
+              ],
+              handson: [
+                {
+                  id: "m6w21d1h1",
+                  title: "Create/update resume",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 40
+            },
+            {
+              day: "👑 Girls: LinkedIn is your personal brand. Curate it like the queen you are. First impressions are digital first",
+              dailyGoal: "LinkedIn Optimization",
+              concepts: [
+                {
+                  id: "m6w21d2c1",
+                  title: "LinkedIn for Developers",
+                  videoUrl: "https://www.youtube.com/watch?v=SG5Sb5WTV_g",
+                  channel: "Danny Thompson",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [
+                {
+                  id: "m6w21d2h1",
+                  title: "Optimize LinkedIn profile",
+                  platform: "LinkedIn",
+                  url: "https://linkedin.com",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 45
+            },
+            {
+              day: "🚗 Boys: ATS systems scan resumes like traffic cameras. Keywords are your fast-lane pass",
+              dailyGoal: "GitHub Profile Polish",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w21d3h1",
+                  title: "Add READMEs to all projects",
+                  platform: "GitHub",
+                  url: "https://github.com",
+                  difficulty: "easy",
+                  xp: 30
+                }
+              ],
+              totalXP: 30
+            },
+            {
+              day: "💎 Girls: Quantify your impact. 'Improved accuracy by 15%' beats 'made things better'. Numbers earn respect",
+              dailyGoal: "Cover Letter Writing",
+              concepts: [
+                {
+                  id: "m6w21d4c1",
+                  title: "Cover Letter Tips",
+                  videoUrl: "https://www.youtube.com/watch?v=NUhDP30IRKk",
+                  channel: "Jeff Su",
+                  duration: "15 min",
+                  xp: 15
+                }
+              ],
+              handson: [
+                {
+                  id: "m6w21d4h1",
+                  title: "Write template cover letter",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 35
+            },
+            {
+              day: "🏁 Boys: GitHub profile is your trophy case. Each repo is a championship you've conquered",
+              dailyGoal: "Personal Branding",
+              concepts: [
+                {
+                  id: "m6w21d5c1",
+                  title: "Building Personal Brand in Tech",
+                  videoUrl: "https://www.youtube.com/watch?v=q1gVjH5f3cA",
+                  channel: "Danny Thompson",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [],
+              totalXP: 20
+            },
+            {
+              day: "🌟 Girls: Networking isn't begging - it's strategic relationship building. Coffee chats are investments",
+              dailyGoal: "Share on LinkedIn",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w21d6h1",
+                  title: "Post about AI journey",
+                  platform: "LinkedIn",
+                  url: "https://linkedin.com",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 25
+            },
+            {
+              day: "🔥 Weekend Project: Portfolio website - your digital headquarters is now open",
+              dailyGoal: "Weekend Task - Complete Profile",
+              concepts: [],
+              weekendProject: {
+                id: "m6w21proj",
+                name: "Professional Profile Complete",
+                description: "Finalize all professional profiles",
+                requirements: [
+                  "Resume completed and reviewed",
+                  "LinkedIn 100% complete",
+                  "GitHub profile polished",
+                  "Cover letter template ready",
+                  "First LinkedIn post published"
+                ],
+                xp: 75,
+                estimatedHours: 3
+              },
+              totalXP: 75
+            }
+          ]
+        },
+        {
+          weekNum: 22,
+          title: "Technical Interview Preparation",
+          goal: "Master AI/ML interview questions",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: System design interviews are engineering your dream garage. Architecture for scale",
+              dailyGoal: "AI Interview Overview",
+              concepts: [
+                {
+                  id: "m6w22d1c1",
+                  title: "AI/ML Interview Process",
+                  videoUrl: "https://www.youtube.com/watch?v=V4sPqq2hE6Q",
+                  channel: "Krish Naik",
+                  duration: "25 min",
+                  xp: 25
+                }
+              ],
+              handson: [],
+              totalXP: 25
+            },
+            {
+              day: "👑 Girls: Behavioral interviews reveal character. STAR method structures your stories. Narrative power",
+              dailyGoal: "ML Theory Questions",
+              concepts: [
+                {
+                  id: "m6w22d2c1",
+                  title: "Top 50 ML Interview Questions",
+                  videoUrl: "https://www.youtube.com/watch?v=t6gOpFLt-Ks",
+                  channel: "Krish Naik",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [
+                {
+                  id: "m6w22d2h1",
+                  title: "Practice ML questions",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 65
+            },
+            {
+              day: "🚗 Boys: LeetCode is the driving test for tech. Medium problems daily = license to earn",
+              dailyGoal: "Coding Interview Prep",
+              concepts: [
+                {
+                  id: "m6w22d3c1",
+                  title: "Python for Interviews",
+                  videoUrl: "https://www.youtube.com/watch?v=0K_eZGS5NsU",
+                  channel: "NeetCode",
+                  duration: "30 min",
+                  xp: 25
+                }
+              ],
+              handson: [
+                {
+                  id: "m6w22d3h1",
+                  title: "LeetCode Easy problems",
+                  platform: "LeetCode",
+                  url: "https://leetcode.com/problemset/all/?difficulty=Easy",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 50
+            },
+            {
+              day: "💎 Girls: Salary negotiation is knowing your market value. Research, anchor high, never accept first offer",
+              dailyGoal: "LeetCode Practice",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w22d4h1",
+                  title: "Solve 5 LeetCode problems",
+                  platform: "LeetCode",
+                  url: "https://leetcode.com",
+                  difficulty: "medium",
+                  xp: 40
+                }
+              ],
+              totalXP: 40
+            },
+            {
+              day: "🏁 Boys: Mock interviews are practice laps. Fail in practice so you win in competition",
+              dailyGoal: "System Design for ML",
+              concepts: [
+                {
+                  id: "m6w22d5c1",
+                  title: "ML System Design",
+                  videoUrl: "https://www.youtube.com/watch?v=pOnRSYpNuXo",
+                  channel: "Chip Huyen",
+                  duration: "45 min",
+                  xp: 35
+                }
+              ],
+              handson: [],
+              totalXP: 35
+            },
+            {
+              day: "🌟 Girls: Questions for interviewers show standards. 'What does success look like here?' is power move",
+              dailyGoal: "Mock Interview Practice",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w22d6h1",
+                  title: "Practice explaining projects",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 30
+            },
+            {
+              day: "🔥 Weekend Project: Mock interview marathon - nervousness transforms into confidence",
+              dailyGoal: "Weekend Task - Mock Interview",
+              concepts: [],
+              weekendProject: {
+                id: "m6w22proj",
+                name: "Mock Technical Interview",
+                description: "Simulate real interview",
+                requirements: [
+                  "Explain 3 portfolio projects",
+                  "Answer 10 ML theory questions",
+                  "Solve 2 coding problems",
+                  "Discuss system design",
+                  "Get feedback from peer"
+                ],
+                xp: 75,
+                estimatedHours: 3
+              },
+              totalXP: 75
+            }
+          ]
+        },
+        {
+          weekNum: 23,
+          title: "Networking & Conferences",
+          goal: "Build AI professional network",
+          hoursThisWeek: 20,
+          days: [
+            {
+              day: "🏎️ Boys: Apply like you're building a car collection - targeted, strategic, curated. Not spray and pray",
+              dailyGoal: "Networking Strategy",
+              concepts: [
+                {
+                  id: "m6w23d1c1",
+                  title: "Networking in Tech",
+                  videoUrl: "https://www.youtube.com/watch?v=uF2djJYDeSo",
+                  channel: "Danny Thompson",
+                  duration: "20 min",
+                  xp: 20
+                }
+              ],
+              handson: [],
+              totalXP: 20
+            },
+            {
+              day: "👑 Girls: Cover letters are love letters to companies. Personalized, specific, showing why YOU fit THEM",
+              dailyGoal: "LinkedIn Connections",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w23d2h1",
+                  title: "Connect with 10 AI professionals",
+                  platform: "LinkedIn",
+                  url: "https://linkedin.com",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 25
+            },
+            {
+              day: "🚗 Boys: Referrals skip the traffic. Internal recommendations are the HOV lane of applications",
+              dailyGoal: "Join AI Communities",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w23d3h1",
+                  title: "Join Reddit/Discord communities",
+                  platform: "Discord",
+                  url: "https://discord.com",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 20
+            },
+            {
+              day: "💎 Girls: Rejection is redirection. Every 'no' calibrates your aim. The right 'yes' is coming",
+              dailyGoal: "AI Conferences",
+              concepts: [
+                {
+                  id: "m6w23d4c1",
+                  title: "Attending AI Conferences",
+                  videoUrl: "https://www.youtube.com/watch?v=SizGqvLy8bE",
+                  channel: "Abhishek Thakur",
+                  duration: "15 min",
+                  xp: 15
+                }
+              ],
+              handson: [],
+              totalXP: 15
+            },
+            {
+              day: "🏁 Boys: Follow-up shows hunger. One polite email after a week maintains presence without desperation",
+              dailyGoal: "Follow AI Researchers",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w23d5h1",
+                  title: "Follow 10 AI researchers on Twitter",
+                  platform: "Twitter",
+                  url: "https://twitter.com",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 20
+            },
+            {
+              day: "🌟 Girls: Multiple offers create leverage. Companies compete for YOU. Options are power positions",
+              dailyGoal: "Engage with Content",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w23d6h1",
+                  title: "Comment on 5 AI posts",
+                  platform: "LinkedIn",
+                  url: "https://linkedin.com",
+                  difficulty: "easy",
+                  xp: 20
+                }
+              ],
+              totalXP: 20
+            },
+            {
+              day: "🔥 Weekend Project: Apply to 10 dream companies - shooting shots is how championships are won",
+              dailyGoal: "Weekend Task - Attend Webinar",
+              concepts: [],
+              weekendProject: {
+                id: "m6w23proj",
+                name: "AI Webinar/Meetup",
+                description: "Attend online AI event",
+                requirements: [
+                  "Find AI webinar/meetup",
+                  "Attend and take notes",
+                  "Connect with 3 attendees",
+                  "Share learnings on LinkedIn",
+                  "Follow up with connections"
+                ],
+                xp: 75,
+                estimatedHours: 3
+              },
+              totalXP: 75
+            }
+          ]
+        },
+        {
+          weekNum: 24,
+          title: "Job Applications & Final Push",
+          goal: "Apply to jobs and land interviews",
+          hoursThisWeek: 25,
+          days: [
+            {
+              day: "🏎️ Boys: The finish line is visible. That BMW M5 isn't a dream anymore - it's a calculable timeline",
+              dailyGoal: "Research Companies",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w24d1h1",
+                  title: "List 20 target companies",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "easy",
+                  xp: 25
+                }
+              ],
+              totalXP: 25
+            },
+            {
+              day: "👑 Girls: You started with nothing. Now you have skills, portfolio, and confidence. Transformation complete",
+              dailyGoal: "Apply to Jobs",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w24d2h1",
+                  title: "Apply to 5 positions",
+                  platform: "LinkedIn",
+                  url: "https://linkedin.com/jobs",
+                  difficulty: "medium",
+                  xp: 35
+                }
+              ],
+              totalXP: 35
+            },
+            {
+              day: "🚗 Boys: Your first offer will feel surreal. The second will feel deserved. The third will feel inevitable",
+              dailyGoal: "More Applications",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w24d3h1",
+                  title: "Apply to 5 more positions",
+                  platform: "LinkedIn",
+                  url: "https://linkedin.com/jobs",
+                  difficulty: "medium",
+                  xp: 35
+                }
+              ],
+              totalXP: 35
+            },
+            {
+              day: "💎 Girls: Imposter syndrome lies. Your journey has proof. Your repos don't lie. Your skills don't lie",
+              dailyGoal: "Interview Prep Review",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w24d4h1",
+                  title: "Review common questions",
+                  platform: "Custom",
+                  url: "#",
+                  difficulty: "medium",
+                  xp: 30
+                }
+              ],
+              totalXP: 30
+            },
+            {
+              day: "🏁 Boys: RCB may wait for their trophy. YOU won't wait for yours. You built it yourself",
+              dailyGoal: "HR Interview Prep",
+              concepts: [
+                {
+                  id: "m6w24d5c1",
+                  title: "Behavioral Interview Tips",
+                  videoUrl: "https://www.youtube.com/watch?v=1mHjMNZZvFo",
+                  channel: "Jeff Su",
+                  duration: "15 min",
+                  xp: 15
+                }
+              ],
+              handson: [],
+              totalXP: 15
+            },
+            {
+              day: "🌟 Girls: The best investment was in yourself. 6 months ago you dreamed. Today you're engineered for success",
+              dailyGoal: "Final Application Push",
+              concepts: [],
+              handson: [
+                {
+                  id: "m6w24d6h1",
+                  title: "Complete 10 total applications",
+                  platform: "LinkedIn",
+                  url: "https://linkedin.com/jobs",
+                  difficulty: "medium",
+                  xp: 40
+                }
+              ],
+              totalXP: 40
+            },
+            {
+              day: "🔥 Weekend Project: You ARE the project now. Deploy yourself into the industry. Mission accomplished 🎯",
+              dailyGoal: "Celebrate & Plan Next Steps",
+              concepts: [],
+              weekendProject: {
+                id: "m6w24proj",
+                name: "Journey Complete!",
+                description: "Celebrate your AI Engineering journey",
+                requirements: [
+                  "Applied to 10+ positions",
+                  "Portfolio complete and live",
+                  "LinkedIn optimized",
+                  "Technical skills documented",
+                  "Ready for interviews"
+                ],
+                xp: 150,
+                estimatedHours: 2
+              },
+              totalXP: 150
+            }
+          ]
         }
       ]
     }
   ],
 
   portfolioProjects: [
-    { id: 1, title: "NumPy Data Processor", tech: "Python, NumPy", value: "Performance optimization", week: "Phase 1, Week 1" },
-    { id: 2, title: "ML Pipeline Library (OOP)", tech: "Python, OOP, sklearn", value: "Code architecture", week: "Phase 1, Week 2" },
-    { id: 3, title: "Kaggle EDA Notebook", tech: "Pandas, Matplotlib", value: "Data analysis", week: "Phase 1, Week 6" },
-    { id: 4, title: "ML from Scratch (Regression)", tech: "NumPy", value: "ML fundamentals", week: "Phase 2, Week 7" },
-    { id: 5, title: "Neural Network (Pure NumPy)", tech: "NumPy", value: "Deep understanding", week: "Phase 2, Week 9" },
-    { id: 6, title: "Image Classifier", tech: "PyTorch, CNNs", value: "Computer vision", week: "Phase 2, Week 10" },
-    { id: 7, title: "Mini-GPT Implementation", tech: "PyTorch, Transformers", value: "LLM internals", week: "Phase 3, Week 11" },
-    { id: 8, title: "RAG from Scratch", tech: "OpenAI, ChromaDB", value: "RAG fundamentals", week: "Phase 3, Week 13" },
-    { id: 9, title: "Production RAG (TCS Docs)", tech: "LangChain, Pinecone, FastAPI", value: "Production system", week: "Phase 3, Week 14" },
-    { id: 10, title: "Autonomous Agent", tech: "LangGraph, Tools", value: "Agentic AI", week: "Phase 3, Week 15" },
-    { id: 11, title: "Deployed Gen AI API", tech: "Docker, GCP, CI/CD", value: "DevOps", week: "Phase 3, Week 16" },
-    { id: 12, title: "Portfolio Website", tech: "React, Tailwind", value: "Personal brand", week: "Phase 4, Week 17" }
+    { id: 1, title: "Data Analysis Dashboard", tech: "Python, Pandas, Matplotlib", value: "Data Visualization" },
+    { id: 2, title: "House Price Predictor", tech: "Scikit-learn, Linear Regression", value: "ML Regression" },
+    { id: 3, title: "Email Spam Classifier", tech: "NLP, Logistic Regression", value: "ML Classification" },
+    { id: 4, title: "Customer Churn Prediction", tech: "XGBoost, Random Forest", value: "Ensemble Methods" },
+    { id: 5, title: "Customer Segmentation", tech: "K-Means, PCA", value: "Unsupervised Learning" },
+    { id: 6, title: "MNIST Digit Classifier", tech: "Neural Networks, NumPy", value: "Deep Learning Basics" },
+    { id: 7, title: "CIFAR-10 CNN Classifier", tech: "TensorFlow, Keras, CNNs", value: "Computer Vision" },
+    { id: 8, title: "Stock Price Predictor", tech: "LSTM, Time Series", value: "RNN Applications" },
+    { id: 9, title: "Neural Style Transfer", tech: "VGG19, Transfer Learning", value: "Generative AI" },
+    { id: 10, title: "Sentiment Analyzer API", tech: "NLP, Flask, TF-IDF", value: "NLP Deployment" },
+    { id: 11, title: "Object Detection App", tech: "YOLOv5, OpenCV", value: "Real-time CV" },
+    { id: 12, title: "CartPole RL Agent", tech: "OpenAI Gym, DQN", value: "Reinforcement Learning" },
+    { id: 13, title: "ML API on AWS", tech: "Docker, Lambda, API Gateway", value: "Cloud Deployment" },
+    { id: 14, title: "CI/CD ML Pipeline", tech: "GitHub Actions, DVC", value: "MLOps" },
+    { id: 15, title: "Kubernetes ML System", tech: "K8s, Load Balancing", value: "Scalable AI" },
+    { id: 16, title: "Portfolio Website", tech: "HTML, CSS, GitHub Pages", value: "Professional Presence" },
+    { id: 17, title: "Technical Blog Posts", tech: "Medium, Dev.to", value: "Thought Leadership" },
+    { id: 18, title: "Resume + LinkedIn", tech: "ATS-Optimized", value: "Career Materials" },
+    { id: 19, title: "Mock Interview Prep", tech: "LeetCode, System Design", value: "Interview Ready" },
+    { id: 20, title: "End-to-End ML Project", tech: "Full Stack AI", value: "Capstone Project" },
+    { id: 21, title: "Face Detection System", tech: "OpenCV, Haar Cascades", value: "CV Basics" },
+    { id: 22, title: "Chatbot with Transformers", tech: "HuggingFace, BERT", value: "Modern NLP" },
+    { id: 23, title: "Recommendation System", tech: "Collaborative Filtering", value: "RecSys" },
+    { id: 24, title: "AI-Powered Web App", tech: "Streamlit, Full Stack", value: "Production App" }
   ],
 
   interviewQuestions: [
     {
-      category: "LLM Fundamentals",
+      category: "Python Fundamentals",
       questions: [
-        { 
-          q: "What are LLM parameters? Explain each.", 
-          answer: "Temperature (0-2): randomness. Top_p: nucleus sampling. Max_tokens: output length. In TCS banking chatbot, I use temp=0.2 for accuracy, 0.8 for summaries." 
-        },
-        { 
-          q: "Explain transformer architecture", 
-          answer: "Self-attention allows each word to look at all others. Multi-head attention (8-16 heads). Positional encoding for order. Used in GPT (decoder-only) for generation." 
-        },
-        { 
-          q: "What are AI Agents?", 
-          answer: "Autonomous systems that reason and take actions. ReAct pattern: Reasoning → Tool selection → Execution → Observation → repeat. Built one in TCS NHTSA project." 
-        }
+        { q: "What is the difference between a list and a tuple?", answer: "Lists are mutable (can be changed), tuples are immutable (cannot be changed). Use tuples for fixed data like coordinates." },
+        { q: "Explain list comprehensions", answer: "A concise way to create lists: [x*2 for x in range(10)] creates [0,2,4,6,8,10,12,14,16,18]" },
+        { q: "What are *args and **kwargs?", answer: "*args collects positional arguments into a tuple. **kwargs collects keyword arguments into a dictionary." },
+        { q: "Explain decorators in Python", answer: "Functions that modify other functions. Used for logging, authentication, timing. Example: @timer decorates a function to measure execution time." }
       ]
     },
     {
-      category: "RAG & Vector DBs",
+      category: "Machine Learning Concepts",
       questions: [
-        { 
-          q: "How does RAG work?", 
-          answer: "Query → Embedding → Vector similarity search → Top-k docs → Context + Query → LLM → Response. Better than fine-tuning for frequently changing knowledge." 
-        },
-        { 
-          q: "RAG vs Fine-tuning?", 
-          answer: "RAG: Dynamic knowledge, low cost, instant updates. Fine-tuning: Behavior/style change, expensive, slow updates. Used RAG in TCS banking for product FAQs." 
-        }
+        { q: "What is overfitting and how do you prevent it?", answer: "Model memorizes training data instead of learning patterns. Prevention: more data, regularization, dropout, cross-validation, early stopping." },
+        { q: "Explain bias-variance tradeoff", answer: "Bias: error from oversimplified model. Variance: error from overcomplicated model. Goal: find balance that minimizes total error." },
+        { q: "When to use Random Forest vs XGBoost?", answer: "Random Forest: simpler, less tuning needed. XGBoost: better performance with proper tuning, handles missing values, sequential learning." },
+        { q: "Explain cross-validation", answer: "Split data into k folds, train on k-1, test on 1, repeat k times. Gives robust estimate of model performance." }
       ]
     },
     {
-      category: "Production & System Design",
+      category: "Deep Learning",
       questions: [
-        { 
-          q: "Design chatbot for 100k users/day", 
-          answer: "Load balancer → API Gateway → Auth → Rate limiter → Chat service (FastAPI) → RAG pipeline → LLM API → Cache (Redis) → DB. Caching: 50% cost reduction." 
-        },
-        { 
-          q: "How to reduce hallucinations?", 
-          answer: "1) RAG with source attribution 2) Confidence scoring 3) Consistency checks (ask 3x) 4) Fact verification 5) Output validation. Reduced TCS banking bot hallucinations from 3% → 0.5%." 
-        }
+        { q: "What is backpropagation?", answer: "Algorithm to compute gradients for neural network weights by propagating error backwards using chain rule. Enables gradient descent optimization." },
+        { q: "Explain vanishing gradient problem", answer: "In deep networks, gradients become very small in early layers during backprop. Solutions: ReLU, batch norm, skip connections, proper initialization." },
+        { q: "What is dropout and why is it used?", answer: "Randomly sets neurons to zero during training (typically 20-50%). Prevents co-adaptation of neurons, acts as regularization." },
+        { q: "Difference between CNN and RNN", answer: "CNN: spatial patterns, uses convolutions, great for images. RNN: sequential patterns, has memory, great for text/time series." }
+      ]
+    },
+    {
+      category: "NLP Questions",
+      questions: [
+        { q: "What is TF-IDF?", answer: "Term Frequency-Inverse Document Frequency. Measures word importance: high in current doc, rare across all docs = important." },
+        { q: "Explain Word2Vec", answer: "Neural network that learns word embeddings. Similar words get similar vectors. Captures semantic relationships: king-man+woman≈queen" },
+        { q: "What are Transformers?", answer: "Architecture using self-attention to process entire sequence at once (not sequentially). Faster training, captures long-range dependencies. Basis for BERT, GPT." },
+        { q: "How does BERT work?", answer: "Bidirectional transformer, pre-trained on masked language modeling and next sentence prediction. Fine-tune for downstream NLP tasks." }
+      ]
+    },
+    {
+      category: "MLOps & Deployment",
+      questions: [
+        { q: "What is MLOps?", answer: "Practices to deploy and maintain ML models in production. Includes CI/CD, monitoring, version control, automated retraining." },
+        { q: "How do you deploy a model to production?", answer: "Train → save model → create API (Flask/FastAPI) → containerize (Docker) → deploy to cloud (AWS/GCP) → set up monitoring." },
+        { q: "What is model drift?", answer: "Model performance degrades over time as data distribution changes. Solution: monitor performance, retrain periodically, A/B testing." },
+        { q: "Explain Docker containers", answer: "Lightweight, isolated environments that package code + dependencies. Ensures consistency across development, testing, production." }
       ]
     }
   ]
 };
+

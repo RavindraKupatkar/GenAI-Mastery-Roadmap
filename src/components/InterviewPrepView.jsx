@@ -19,7 +19,7 @@ const InterviewPrepView = ({ curriculum }) => {
       </div>
 
       <div className="space-y-4">
-        {curriculum.interviewQuestions.map((category, idx) => (
+        {(curriculum.interviewQuestions || []).map((category, idx) => (
           <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden">
             <button
               onClick={() => setExpandedCategory(expandedCategory === idx ? null : idx)}
@@ -35,7 +35,7 @@ const InterviewPrepView = ({ curriculum }) => {
                 </div>
               </div>
             </button>
-            
+
             {expandedCategory === idx && (
               <div className="border-t border-gray-200 p-6 space-y-6 bg-gray-50">
                 {category.questions.map((item, qIdx) => (

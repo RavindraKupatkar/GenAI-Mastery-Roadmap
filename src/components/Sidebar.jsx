@@ -1,14 +1,15 @@
 import React from 'react';
-import { Home, BookOpen, Code, Brain, Trophy, Target, X, TrendingUp } from 'lucide-react';
+import { Home, BookOpen, Code, Brain, Trophy, Target, X, TrendingUp, Settings } from 'lucide-react';
 
 const Sidebar = ({ currentView, setCurrentView, showSidebar, setShowSidebar, userProgress }) => {
-  
+
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'learning', label: 'Learning Path', icon: BookOpen },
     { id: 'interview', label: 'Interview Prep', icon: Brain },
     { id: 'portfolio', label: 'Portfolio', icon: Trophy },
     { id: 'charts', label: 'Progress Charts', icon: TrendingUp },
+    { id: 'settings', label: 'Profile Settings', icon: Settings },
   ];
 
   if (!showSidebar) return null;
@@ -21,7 +22,7 @@ const Sidebar = ({ currentView, setCurrentView, showSidebar, setShowSidebar, use
             <div className="text-2xl font-bold">Gen AI</div>
             <div className="text-sm opacity-75">Mastery Hub</div>
           </div>
-          <button 
+          <button
             onClick={() => setShowSidebar(false)}
             className="lg:hidden p-2 hover:bg-white/10 rounded-lg transition"
           >
@@ -35,7 +36,7 @@ const Sidebar = ({ currentView, setCurrentView, showSidebar, setShowSidebar, use
             <div className="text-2xl font-bold">{userProgress.level}</div>
             <div className="text-xs opacity-75">Level</div>
             <div className="mt-2 bg-white/20 rounded-full h-2">
-              <div 
+              <div
                 className="bg-white h-2 rounded-full transition-all"
                 style={{ width: `${(userProgress.xp % 1000) / 10}%` }}
               ></div>
@@ -52,11 +53,10 @@ const Sidebar = ({ currentView, setCurrentView, showSidebar, setShowSidebar, use
               <button
                 key={item.id}
                 onClick={() => setCurrentView(item.id)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                  isActive 
-                    ? 'bg-white text-blue-900 font-semibold shadow-lg' 
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
+                    ? 'bg-white text-blue-900 font-semibold shadow-lg'
                     : 'hover:bg-white/10'
-                }`}
+                  }`}
               >
                 <Icon size={20} />
                 <span>{item.label}</span>

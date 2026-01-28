@@ -17,17 +17,17 @@ const PortfolioView = ({ curriculum }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {curriculum.portfolioProjects.map((project) => (
+        {(curriculum.portfolioProjects || []).map((project) => (
           <div key={project.id} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all border-2 border-transparent hover:border-blue-500">
             <div className="flex items-start justify-between mb-3">
               <div className="text-2xl font-bold text-blue-600">#{project.id}</div>
               <div className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">{project.week}</div>
             </div>
-            
+
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-            
+
             <div className="text-sm text-gray-600 mb-3">{project.tech}</div>
-            
+
             <div className="bg-blue-50 text-blue-700 text-sm px-3 py-2 rounded-lg mb-4">
               <span className="font-semibold">Value:</span> {project.value}
             </div>
@@ -58,7 +58,7 @@ const PortfolioView = ({ curriculum }) => {
               <li>• Screenshots showing key features</li>
             </ul>
           </div>
-          
+
           <div className="border-l-4 border-green-500 pl-4">
             <div className="font-semibold mb-1">Make it shine:</div>
             <ul className="text-sm space-y-1">
