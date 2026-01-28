@@ -1,332 +1,142 @@
 # Gen AI Mastery Hub 🚀
 
-**Your personalized 20-week transformation from TCS Engineer to Senior Gen AI Engineer earning 12-15k QAR+**
+**A personalized, gamified learning platform designed to transform you into a Senior Gen AI Engineer in 20 weeks.**
 
-## 🎯 Purpose
+![Project Banner](https://img.shields.io/badge/Status-Active-success) ![License](https://img.shields.io/badge/License-MIT-blue) ![Version](https://img.shields.io/badge/Version-1.0.0-purple)
 
-This isn't just another learning platform. This is YOUR journey tracker, accountability system, and portfolio builder - all designed to help you:
+---
 
-- **Never freeze in interviews again** - Master every Gen AI question with confidence
-- **Transform Python skills** from 2/10 to 8/10 (production-ready)
-- **Build 12 portfolio projects** that prove your expertise
-- **Land 12-15k QAR+ offers** with systematic preparation
+## 📖 Overview
 
-## ✨ Features
+The **Gen AI Mastery Hub** is more than just a learning dashboard—it's a comprehensive career transformation tool. Built to guide you from a standard engineering role to a high-paying Senior Gen AI Engineer position, it combines structured curriculum, gamification, and portfolio building into a single, cohesive experience.
 
-### 📚 Structured Learning Path
-- **4 Phases, 20 Weeks** of curated content
-- Daily schedules with morning/night sessions
-- Every task mapped to AI/ML relevance
-- Direct connections to real TCS projects
+**Goal:** Master Generative AI, build a production-ready portfolio, and land a 12-15k QAR+ role.
 
-### 🎮 Gamification & Progress Tracking
-- **XP System** - Earn points for every completed task
-- **Level Up** - Visual progress as you advance
-- **Streak Tracking** - Build consistency, never break the chain
-- **Task Completion** - Check off tasks and watch your progress grow
-- **Phase Unlock System** 🔓 - Complete 80% to unlock next phase
-- **Progress Charts** 📊 - Visual analytics of XP, hours, tasks
-- **Continue Where You Left Off** ➡️ - Smart button to resume learning
-- **Export/Import Progress** 💾 - Backup and restore your data
-- **Activity Heatmap** 🔥 - 30-day visual activity tracker
+---
 
-### 💼 Portfolio Builder
-- Track all 12 projects you'll build
-- Guidelines for making each project shine
-- Direct links to repos and demos
-- Portfolio website planning
-
-### 🎯 Interview Preparation
-- Curated Gen AI interview questions
-- Answers tied to YOUR experience
-- Practice strategies for confidence
-- System design case studies
+## ✨ Key Features
 
 ### 🔐 Authentication & Personalization
-- **Secure Login** - Email/Password, Google, and GitHub OAuth support
-- **Gender-Based Personalization** 👤 - Tailored experience for Guys (BMW/Success focus) and Queens (Self-worth/Empowerment focus)
-- **Custom Greetings** - "Welcome Back, [Name]!" with personalized motivational quotes
-- **Profile Settings** ⚙️ - Update your name and gender preference anytime
-- **Email Verification** 📧 - Secure signup flow with verification templates
+- **Secure Login**: Sign up via Email/Password, Google, or GitHub.
+- **Gender-Based Experience**: Tailored interface and motivational content for **Guys** (🏎️ BMW/Success focus) and **Queens** (👑 Self-worth/Empowerment focus).
+- **Profile Management**: Update your name and gender preferences anytime via Settings.
 
-### 📊 Smart Dashboard
-- Visual overview of your journey
-- Current phase and week tracking
-- Hours invested and XP earned
-- Motivational reminders of your goal
+### 📚 Structured Learning Path
+- **20-Week Curriculum**: Divided into 4 phases, from Python basics to Advanced Gen AI.
+- **Daily Tasks**: Clear, actionable tasks for every day of the week.
+- **Progress Tracking**: Visual indicators for completed weeks and phases.
 
-## 🚀 Quick Start
+### 🎮 Gamification
+- **XP System**: Earn experience points for every task completed.
+- **Streaks**: Track your consistency with daily streak counters.
+- **Levels**: Level up as you gain more XP and master new skills.
+- **Badges**: Unlock achievements for milestones reached.
+
+### 💼 Career Tools
+- **Portfolio Builder**: Track and showcase your 12+ capstone projects.
+- **Interview Prep**: Curated questions and answers tailored to your experience.
+- **Resume Builder**: (Coming Soon) Tools to craft the perfect AI resume.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js, Vite
+- **Styling**: Tailwind CSS, Lucide React (Icons)
+- **Backend/Auth**: Supabase (Authentication & Database)
+- **Deployment**: Vercel (Recommended)
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally on your machine.
 
 ### Prerequisites
-- Node.js 18+ installed
-- npm or yarn package manager
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
 
 ### Installation
 
-```bash
-# Navigate to the learning platform directory
-cd learning-platform
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/RavindraKupatkar/GenAI-Mastery-Roadmap.git
+   cd GenAI-Mastery-Roadmap/learning-platform
+   ```
 
-# Install dependencies
-npm install
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Start development server
-npm run dev
-```
+3. **Configure Environment Variables**
+   Create a `.env.local` file in the root directory and add your Supabase credentials:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-The application will open at `http://localhost:3000`
+4. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000`.
 
-### Build for Production
+---
 
-```bash
-npm run build
-npm run preview
-```
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 learning-platform/
 ├── src/
-│   ├── components/
-│   │   ├── DashboardView.jsx      # Main dashboard with stats
-│   │   ├── PhaseView.jsx          # Phase overview and weeks
-│   │   ├── LearningView.jsx       # Daily task tracking
-│   │   ├── InterviewPrepView.jsx  # Interview questions
-│   │   ├── PortfolioView.jsx      # Portfolio projects
-│   │   ├── AuthPage.jsx           # Login/Signup & Gender selection
-│   │   ├── ProfileSettings.jsx    # User profile management
-│   │   ├── ProtectedRoute.jsx     # Route guard
-│   │   └── Sidebar.jsx            # Navigation sidebar
-│   ├── data/
-│   │   └── curriculum.js          # All learning content
-│   ├── App.jsx                    # Main application component
-│   ├── main.jsx                   # React entry point
-│   └── index.css                  # Global styles
-├── package.json
-├── vite.config.js
-└── tailwind.config.js
+│   ├── components/        # Reusable UI components
+│   │   ├── AuthPage.jsx       # Login/Signup screens
+│   │   ├── DashboardView.jsx  # Main user dashboard
+│   │   ├── LearningView.jsx   # Daily curriculum view
+│   │   ├── ProfileSettings.jsx # User settings
+│   │   └── ...
+│   ├── context/           # Global state (AuthContext)
+│   ├── data/              # Static data (Curriculum, Questions)
+│   ├── services/          # API services (Supabase)
+│   └── App.jsx            # Main application entry
+├── public/                # Static assets (Images, Icons)
+└── README.md              # Project documentation
 ```
 
-## 🎓 How to Use
+---
 
-### 1. Start from Dashboard
-- See your overall progress
-- View current week's mission
-- Check your streak and XP
+## 🌍 Deployment
 
-### 2. Navigate to Learning Path
-- Click on Phase 1 (Python for AI/ML)
-- Select Week 1
-- Start with Monday
+This project is optimized for deployment on **Vercel**.
 
-### 3. Complete Daily Tasks
-- Read each task carefully
-- Click the circle icon to mark as complete
-- Earn XP and level up
-- Track your daily progress
+1. Push your code to a GitHub repository.
+2. Log in to [Vercel](https://vercel.com) and import your repository.
+3. Add your Environment Variables (`VITE_SUPABASE_URL`, etc.) in the Vercel dashboard.
+4. Click **Deploy**.
 
-### 4. Build Projects
-- Weekend projects are your portfolio pieces
-- Follow the requirements
-- Document everything
-- Add to GitHub
+For more details, check the [Deployment Guide](./FREE_DEPLOYMENT_GUIDE.md).
 
-### 5. Prepare for Interviews
-- Review interview questions section
-- Practice answering out loud
-- Connect answers to your TCS experience
-- Record yourself for confidence
-
-## 💾 Progress Persistence
-
-Your progress is automatically saved to browser localStorage:
-- Completed tasks
-- XP and level
-- Streak count
-- Total hours studied
-
-**Note**: Clear browser data will reset progress. Consider exporting your data periodically.
-
-## 🎨 Customization
-
-### Adding New Content
-
-Edit `src/data/curriculum.js` to:
-- Add new phases or weeks
-- Create additional tasks
-- Update interview questions
-- Modify portfolio projects
-
-### Styling
-
-The app uses Tailwind CSS. Customize colors and styles in:
-- `tailwind.config.js` - Theme configuration
-- Component files - Component-specific styles
-
-## 🔥 Tips for Success
-
-1. **Be Consistent** - Study daily, even if just 1 hour
-2. **Track Everything** - Check off tasks as you complete them
-3. **Build in Public** - Share your projects on GitHub
-4. **Practice Interviews** - Use the prep section weekly
-5. **Connect to TCS** - Relate everything to your experience
-
-## 📝 Development Roadmap
-
-### Current Features ✅
-- Complete 4-phase curriculum structure
-- Week 1 detailed daily breakdown
-- Task tracking with XP system
-- Progress persistence
-- Interview prep section
-- Portfolio tracker
-
-### Future Enhancements 🎯
-- Week 2-20 detailed daily content
-- Export/import progress
-- Charts and analytics
-- Community features
-- Mobile app version
-- AI-powered study assistant
+---
 
 ## 🤝 Contributing
 
-This is a personal learning journey tracker, but if you want to adapt it:
+Contributions are welcome! If you have ideas for new features or curriculum improvements:
 
-1. Fork the repository
-2. Customize curriculum to your needs
-3. Add your own phases and projects
-4. Share your version!
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
 
 ## 📄 License
 
-MIT License - Feel free to use and modify for your learning journey
-
-## 🎯 Your Goal
-
-**Remember**: You're not just learning to code. You're transforming into a confident Senior Gen AI Engineer who:
-- Writes production-ready Python
-- Builds real AI systems
-- Answers any interview question with confidence
-- Commands 12-15k QAR+ salary
-
-**Start Date**: Week 1, Day 1, Monday  
-**Target Completion**: 20 weeks from start  
-**Expected Outcome**: Multiple job offers, 12-15k QAR+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-**Built with**: React + Vite + Tailwind CSS  
-**Designed for**: Ravindra's Gen AI Mastery Journey  
-**Motto**: Never freeze in interviews again 💪
-
-## 🚀 Ready to Start?
-
-```bash
-npm run dev
-```
-
-Open the dashboard, click "Start Learning Now", and begin your transformation! 🎉
-
----
-
-## 📦 Deploy Your Learning Platform (Free!)
-
-### Quick Setup
-
-```bash
-# Navigate to project
-cd d:\AI-Engineering-roadmap\learning-platform
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-### Deploy to Production (Choose One)
-
-#### ⚡ **Vercel** (Recommended - 2 minutes)
-1. Push code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Click "Deploy"
-5. Done! ✅
-
-#### **Netlify** (Also free)
-```bash
-npm install -g netlify-cli
-netlify deploy --prod
-```
-
-#### **Firebase Hosting** (Free tier available)
-```bash
-npm install -g firebase-tools
-firebase init hosting
-firebase deploy
-```
-
-#### **GitHub Pages**
-See [FREE_DEPLOYMENT_GUIDE.md](./FREE_DEPLOYMENT_GUIDE.md)
-
-**For detailed setup and all deployment options, see [FREE_DEPLOYMENT_GUIDE.md](./FREE_DEPLOYMENT_GUIDE.md)**
-
----
-
-## 🔧 Environment Setup
-
-### Local Development
-Create `.env.local` in `learning-platform/`:
-```env
-VITE_SUPABASE_URL=your_url
-VITE_SUPABASE_ANON_KEY=your_key
-```
-
-### Production Deployment
-Add these as environment variables in your hosting platform (Vercel/Netlify dashboard)
-
----
-
-## 📚 Project Structure
-
-```
-learning-platform/
-├── src/
-│   ├── components/        # Dashboard, Sidebar, Views
-│   ├── pages/            # Email verification, etc
-│   ├── context/          # Auth & State management
-│   ├── services/         # Supabase integration
-│   ├── data/             # Curriculum content
-│   ├── App.jsx           # Main app component
-│   └── main.jsx          # Entry point
-├── public/               # Static assets
-├── package.json          # Dependencies
-├── vite.config.js        # Vite configuration
-├── tailwind.config.js    # Tailwind CSS config
-├── FREE_DEPLOYMENT_GUIDE.md  # Deployment instructions
-└── README.md             # This file
-```
-
----
-
-## 🤝 Contributing
-
-Want to improve this platform?
-- Add curriculum content
-- Fix bugs or improve UI
-- Enhance features
-- Share feedback
-
----
-
-## 💬 Questions?
-
-- Check [FREE_DEPLOYMENT_GUIDE.md](./FREE_DEPLOYMENT_GUIDE.md) for deployment help
-- See [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) for quick checklist
-- Review [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md) for technical details
-
----
-
-**Good luck on your Gen AI Mastery journey! 🚀**
+<div align="center">
+  <p>Built with ❤️ by Ravindra Kupatkar</p>
+  <p><i>Master AI. Engineer Your Dreams.</i></p>
+</div>
